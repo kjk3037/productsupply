@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zq.backstage.dao.SupplierContactInformationMapper" >
+  <resultMap id="BaseResultMap" type="cn.zq.backstage.domain.SupplierContactInformation" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="supplier_id" property="supplierId" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone_number" property="phoneNumber" jdbcType="INTEGER" />
+    <result column="telephone_number" property="telephoneNumber" jdbcType="INTEGER" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="shop_link" property="shopLink" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, supplier_id, name, phone_number, telephone_number, position, email, shop_link
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from supplier_contact_information
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from supplier_contact_information
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.zq.backstage.domain.SupplierContactInformation" >
+    insert into supplier_contact_information (id, title, supplier_id, 
+      name, phone_number, telephone_number, 
+      position, email, shop_link
+      )
+    values (#{id,jdbcType=CHAR}, #{title,jdbcType=VARCHAR}, #{supplierId,jdbcType=CHAR}, 
+      #{name,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=INTEGER}, #{telephoneNumber,jdbcType=INTEGER}, 
+      #{position,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{shopLink,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zq.backstage.domain.SupplierContactInformation" >
+    insert into supplier_contact_information
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number,
+      </if>
+      <if test="telephoneNumber != null" >
+        telephone_number,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="shopLink != null" >
+        shop_link,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneNumber != null" >
+        #{telephoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLink != null" >
+        #{shopLink,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.backstage.domain.SupplierContactInformation" >
+    update supplier_contact_information
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneNumber != null" >
+        telephone_number = #{telephoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLink != null" >
+        shop_link = #{shopLink,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zq.backstage.domain.SupplierContactInformation" >
+    update supplier_contact_information
+    set title = #{title,jdbcType=VARCHAR},
+      supplier_id = #{supplierId,jdbcType=CHAR},
+      name = #{name,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=INTEGER},
+      telephone_number = #{telephoneNumber,jdbcType=INTEGER},
+      position = #{position,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      shop_link = #{shopLink,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

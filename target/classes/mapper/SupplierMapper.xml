@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zq.backstage.dao.SupplierMapper" >
+  <resultMap id="BaseResultMap" type="cn.zq.backstage.domain.Supplier" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="supplier_number" property="supplierNumber" jdbcType="VARCHAR" />
+    <result column="supplier_name" property="supplierName" jdbcType="VARCHAR" />
+    <result column="supplier_level" property="supplierLevel" jdbcType="VARCHAR" />
+    <result column="invoice_title" property="invoiceTitle" jdbcType="VARCHAR" />
+    <result column="supplier_desc" property="supplierDesc" jdbcType="VARCHAR" />
+    <result column="supplier_taxes_number" property="supplierTaxesNumber" jdbcType="VARCHAR" />
+    <result column="is_black_list" property="isBlackList" jdbcType="TINYINT" />
+    <result column="is_commodity_supplier" property="isCommoditySupplier" jdbcType="TINYINT" />
+    <result column="is_outsourcing_processors" property="isOutsourcingProcessors" jdbcType="TINYINT" />
+    <result column="supplier_address" property="supplierAddress" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, supplier_number, supplier_name, supplier_level, invoice_title, supplier_desc, 
+    supplier_taxes_number, is_black_list, is_commodity_supplier, is_outsourcing_processors, 
+    supplier_address, position
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from supplier
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from supplier
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.zq.backstage.domain.Supplier" >
+    insert into supplier (id, title, supplier_number, 
+      supplier_name, supplier_level, invoice_title, 
+      supplier_desc, supplier_taxes_number, is_black_list, 
+      is_commodity_supplier, is_outsourcing_processors, 
+      supplier_address, position)
+    values (#{id,jdbcType=CHAR}, #{title,jdbcType=VARCHAR}, #{supplierNumber,jdbcType=VARCHAR}, 
+      #{supplierName,jdbcType=VARCHAR}, #{supplierLevel,jdbcType=VARCHAR}, #{invoiceTitle,jdbcType=VARCHAR}, 
+      #{supplierDesc,jdbcType=VARCHAR}, #{supplierTaxesNumber,jdbcType=VARCHAR}, #{isBlackList,jdbcType=TINYINT}, 
+      #{isCommoditySupplier,jdbcType=TINYINT}, #{isOutsourcingProcessors,jdbcType=TINYINT}, 
+      #{supplierAddress,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zq.backstage.domain.Supplier" >
+    insert into supplier
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="supplierNumber != null" >
+        supplier_number,
+      </if>
+      <if test="supplierName != null" >
+        supplier_name,
+      </if>
+      <if test="supplierLevel != null" >
+        supplier_level,
+      </if>
+      <if test="invoiceTitle != null" >
+        invoice_title,
+      </if>
+      <if test="supplierDesc != null" >
+        supplier_desc,
+      </if>
+      <if test="supplierTaxesNumber != null" >
+        supplier_taxes_number,
+      </if>
+      <if test="isBlackList != null" >
+        is_black_list,
+      </if>
+      <if test="isCommoditySupplier != null" >
+        is_commodity_supplier,
+      </if>
+      <if test="isOutsourcingProcessors != null" >
+        is_outsourcing_processors,
+      </if>
+      <if test="supplierAddress != null" >
+        supplier_address,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierNumber != null" >
+        #{supplierNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null" >
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierLevel != null" >
+        #{supplierLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierDesc != null" >
+        #{supplierDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierTaxesNumber != null" >
+        #{supplierTaxesNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isBlackList != null" >
+        #{isBlackList,jdbcType=TINYINT},
+      </if>
+      <if test="isCommoditySupplier != null" >
+        #{isCommoditySupplier,jdbcType=TINYINT},
+      </if>
+      <if test="isOutsourcingProcessors != null" >
+        #{isOutsourcingProcessors,jdbcType=TINYINT},
+      </if>
+      <if test="supplierAddress != null" >
+        #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.backstage.domain.Supplier" >
+    update supplier
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierNumber != null" >
+        supplier_number = #{supplierNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null" >
+        supplier_name = #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierLevel != null" >
+        supplier_level = #{supplierLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierDesc != null" >
+        supplier_desc = #{supplierDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierTaxesNumber != null" >
+        supplier_taxes_number = #{supplierTaxesNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isBlackList != null" >
+        is_black_list = #{isBlackList,jdbcType=TINYINT},
+      </if>
+      <if test="isCommoditySupplier != null" >
+        is_commodity_supplier = #{isCommoditySupplier,jdbcType=TINYINT},
+      </if>
+      <if test="isOutsourcingProcessors != null" >
+        is_outsourcing_processors = #{isOutsourcingProcessors,jdbcType=TINYINT},
+      </if>
+      <if test="supplierAddress != null" >
+        supplier_address = #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zq.backstage.domain.Supplier" >
+    update supplier
+    set title = #{title,jdbcType=VARCHAR},
+      supplier_number = #{supplierNumber,jdbcType=VARCHAR},
+      supplier_name = #{supplierName,jdbcType=VARCHAR},
+      supplier_level = #{supplierLevel,jdbcType=VARCHAR},
+      invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      supplier_desc = #{supplierDesc,jdbcType=VARCHAR},
+      supplier_taxes_number = #{supplierTaxesNumber,jdbcType=VARCHAR},
+      is_black_list = #{isBlackList,jdbcType=TINYINT},
+      is_commodity_supplier = #{isCommoditySupplier,jdbcType=TINYINT},
+      is_outsourcing_processors = #{isOutsourcingProcessors,jdbcType=TINYINT},
+      supplier_address = #{supplierAddress,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
