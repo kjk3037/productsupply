@@ -2,9 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.backstage.dao.RoleMapper" >
   <resultMap id="BaseResultMap" type="cn.zq.backstage.domain.Role" >
-    <id column="id" property="id" jdbcType="CHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="authority" property="authority" jdbcType="VARCHAR" />
     <result column="desc" property="desc" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -13,21 +12,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from role
+    from account_role
     where id = #{id,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from role
+    delete from account_role
     where id = #{id,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="cn.zq.backstage.domain.Role" >
-    insert into role (id, name, authority, 
+    insert into account_role (id, name, authority,
       desc)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{authority,jdbcType=VARCHAR}, 
       #{desc,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zq.backstage.domain.Role" >
-    insert into role
+    insert into account_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -58,7 +57,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.zq.backstage.domain.Role" >
-    update role
+    update account_role
     <set >
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
@@ -73,10 +72,13 @@
     where id = #{id,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zq.backstage.domain.Role" >
-    update role
+    update account_role
     set name = #{name,jdbcType=VARCHAR},
       authority = #{authority,jdbcType=VARCHAR},
       desc = #{desc,jdbcType=VARCHAR}
     where id = #{id,jdbcType=CHAR}
   </update>
+  <select id="getRoles" resultMap="BaseResultMap">
+    select * from account_role
+  </select>
 </mapper>

@@ -3,6 +3,8 @@ package cn.zq.backstage.dao;
 import cn.zq.backstage.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(String id);
@@ -18,4 +20,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User loginCheck(User user);
+
+    List<User> getUsers();
 }

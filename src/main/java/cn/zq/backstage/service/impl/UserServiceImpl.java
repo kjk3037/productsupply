@@ -7,6 +7,8 @@ import cn.zq.backstage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -30,4 +32,14 @@ public class UserServiceImpl implements UserService {
         userMessage.setInfo("账号不存在");
         return userMessage;
     }
+
+    @Override
+    public Message<List> getUsers() {
+        Message<List> listMessage = new Message<>();
+        listMessage.setData(userMapper.getUsers());
+        listMessage.setCode("200");
+        listMessage.setInfo("获取成功");
+        return listMessage;
+    }
+
 }

@@ -14,21 +14,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
-    from user
+    from account_user
     where id = #{id,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from user
+    delete from account_user
     where id = #{id,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="cn.zq.backstage.domain.User" >
-    insert into user (id, username, password, 
+    insert into account_user (id, username, password,
       nickname, role_id)
     values (#{id,jdbcType=CHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{nickname,jdbcType=VARCHAR}, #{roleId,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zq.backstage.domain.User" >
-    insert into user
+    insert into account_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -65,7 +65,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.zq.backstage.domain.User" >
-    update user
+    update account_user
     <set >
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
@@ -83,7 +83,7 @@
     where id = #{id,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zq.backstage.domain.User" >
-    update user
+    update account_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
@@ -91,6 +91,9 @@
     where id = #{id,jdbcType=CHAR}
   </update>
   <select id="loginCheck" parameterType="cn.zq.backstage.domain.User" resultMap="BaseResultMap">
-    select * from user where username=#{username}
+    select * from account_user where username=#{username}
+  </select>
+  <select id="getUsers" resultMap="BaseResultMap">
+    select * from account_user
   </select>
 </mapper>

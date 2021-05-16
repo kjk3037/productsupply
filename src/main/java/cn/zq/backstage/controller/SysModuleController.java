@@ -17,10 +17,6 @@ public class SysModuleController {
     SysModuleService sysModuleService;
     @GetMapping("/getList")
     public Message getList(){
-        System.out.print("获取左边目录模块");
-        for(SysModule item:sysModuleService.getModule()){
-            System.out.println(item);
-        }
         Message<List> listMessage = new Message<List>();
         listMessage.setData(sysModuleService.getModule());
         return listMessage;
