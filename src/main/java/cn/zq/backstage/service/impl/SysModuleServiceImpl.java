@@ -16,6 +16,12 @@ public class SysModuleServiceImpl implements SysModuleService {
     SysModuleMapper sysModuleMapper;
     @Autowired
     SysSubModuleMapper sysSubModuleMapper;
+
+    @Override
+    public SysModule selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
     @Override
     public List<SysModule> getModule() {
         List<SysModule> modules = sysModuleMapper.getModules();

@@ -1,19 +1,18 @@
 package cn.zq.backstage.service.impl;
 
-import cn.zq.backstage.dao.SupplierMapper;
-import cn.zq.backstage.domain.Supplier;
-import cn.zq.backstage.service.SupplierService;
+import cn.zq.backstage.dao.DeptMapper;
+import cn.zq.backstage.domain.Dept;
+import cn.zq.backstage.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
-public class SupplierServiceImpl implements SupplierService {
+public class DeptServiceImlpl implements DeptService {
     @Autowired
-    SupplierMapper supplierMapper;
+    DeptMapper deptMapper;
     @Override
-    public Supplier selectByPrimaryKey(Integer id) {
+    public Dept selectByPrimaryKey(Integer id) {
         return null;
     }
 

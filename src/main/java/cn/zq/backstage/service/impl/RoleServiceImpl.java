@@ -22,4 +22,14 @@ public class RoleServiceImpl implements RoleService {
         listMessage.setInfo("获取角色列表");
         return listMessage;
     }
+
+    @Override
+    public Role selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
+    @Override
+    public List getList() {
+        return null;
+    }
 }

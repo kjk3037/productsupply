@@ -1,7 +1,9 @@
 package cn.zq.backstage.dao;
 
 import cn.zq.backstage.domain.Dict;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface DictMapper {
     int deleteByPrimaryKey(Integer id);
 
