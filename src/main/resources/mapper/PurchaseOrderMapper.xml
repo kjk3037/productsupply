@@ -328,4 +328,7 @@
       update_date = #{updateDate,jdbcType=DATE}
     where id = #{id,jdbcType=CHAR}
   </update>
+  <select id="getList" resultMap="BaseResultMap">
+    select * from purchase_order
+  </select>
 </mapper>

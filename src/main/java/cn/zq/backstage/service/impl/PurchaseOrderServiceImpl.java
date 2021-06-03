@@ -1,6 +1,7 @@
 package cn.zq.backstage.service.impl;
 
 import cn.zq.backstage.dao.PurchaseOrderMapper;
+import cn.zq.backstage.domain.PurchaseOrder;
 import cn.zq.backstage.domain.PurchaseOrderDetails;
 import cn.zq.backstage.service.PurchaseOrderDetailsService;
 import cn.zq.backstage.service.PurchaseOrderService;
@@ -11,12 +12,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PurchaseOrderServiceImpl implements PurchaseOrderDetailsService {
+public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     @Autowired
     PurchaseOrderMapper purchaseOrderMapper;
     @Override
-    public PurchaseOrderDetails selectByPrimaryKey(String id) {
-        return null;
+    public PurchaseOrder selectByPrimaryKey(String id) {
+        return purchaseOrderMapper.selectByPrimaryKey(id);
     }
 
     @Override

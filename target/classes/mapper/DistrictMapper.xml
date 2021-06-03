@@ -103,4 +103,7 @@
       district_sqe = #{districtSqe,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getList" resultMap="BaseResultMap">
+    select * from district
+  </select>
 </mapper>

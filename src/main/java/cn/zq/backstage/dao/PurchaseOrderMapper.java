@@ -3,6 +3,8 @@ package cn.zq.backstage.dao;
 import cn.zq.backstage.domain.PurchaseOrder;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface PurchaseOrderMapper {
     int deleteByPrimaryKey(String id);
@@ -16,4 +18,6 @@ public interface PurchaseOrderMapper {
     int updateByPrimaryKeySelective(PurchaseOrder record);
 
     int updateByPrimaryKey(PurchaseOrder record);
+
+    List getList();
 }

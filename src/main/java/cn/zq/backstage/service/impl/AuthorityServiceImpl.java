@@ -13,11 +13,11 @@ public class AuthorityServiceImpl implements AuthorityService {
     AuthorityMapper authorityMapper;
     @Override
     public Authority selectByPrimaryKey(Integer id) {
-        return null;
+        return authorityMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public List getList() {
-        return null;
+        return authorityMapper.getList();
     }
 }

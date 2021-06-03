@@ -3,6 +3,8 @@ package cn.zq.backstage.dao;
 import cn.zq.backstage.domain.SupplierContactInformation;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface SupplierContactInformationMapper {
     int deleteByPrimaryKey(String id);
@@ -16,4 +18,6 @@ public interface SupplierContactInformationMapper {
     int updateByPrimaryKeySelective(SupplierContactInformation record);
 
     int updateByPrimaryKey(SupplierContactInformation record);
+
+    List getList();
 }

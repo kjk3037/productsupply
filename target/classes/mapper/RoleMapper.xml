@@ -81,4 +81,5 @@
   <select id="getRoles" resultMap="BaseResultMap">
     select * from account_role
   </select>
+
 </mapper>
