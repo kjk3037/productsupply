@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
+Source Server         : localhost
 Source Server Version : 50734
 Source Host           : localhost:3306
 Source Database       : product_supply
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50734
 File Encoding         : 65001
 
-Date: 2021-06-03 19:55:12
+Date: 2021-07-27 12:33:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -98,6 +98,21 @@ INSERT INTO `account_role` VALUES ('18', '销售专员', null, '2', null);
 INSERT INTO `account_role` VALUES ('19', '销售助理', null, '2', null);
 
 -- ----------------------------
+-- Table structure for account_role_authority_relation
+-- ----------------------------
+DROP TABLE IF EXISTS `account_role_authority_relation`;
+CREATE TABLE `account_role_authority_relation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` varchar(255) DEFAULT NULL,
+  `authority_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of account_role_authority_relation
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for account_user
 -- ----------------------------
 DROP TABLE IF EXISTS `account_user`;
@@ -115,6 +130,21 @@ CREATE TABLE `account_user` (
 -- ----------------------------
 INSERT INTO `account_user` VALUES ('1', 'root', 'admin', '超级管理', '');
 INSERT INTO `account_user` VALUES ('2', 'kjk', '1122', '本人', null);
+
+-- ----------------------------
+-- Table structure for account_user_role_relation
+-- ----------------------------
+DROP TABLE IF EXISTS `account_user_role_relation`;
+CREATE TABLE `account_user_role_relation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
+  `role_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of account_user_role_relation
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for dict
@@ -5362,37 +5392,6 @@ INSERT INTO `sys_sub_module` VALUES ('7', '物料总表', '/material', '3');
 INSERT INTO `sys_sub_module` VALUES ('8', '到货待检', '/waitingCheck', '4');
 INSERT INTO `sys_sub_module` VALUES ('9', '合格入库', '/qualified', '4');
 INSERT INTO `sys_sub_module` VALUES ('10', '来料检验', '/imcomingCheck', '5');
-
--- ----------------------------
--- Table structure for test
--- ----------------------------
-DROP TABLE IF EXISTS `test`;
-CREATE TABLE `test` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of test
--- ----------------------------
-
--- ----------------------------
--- Table structure for test2
--- ----------------------------
-DROP TABLE IF EXISTS `test2`;
-CREATE TABLE `test2` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `tt` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of test2
--- ----------------------------
-INSERT INTO `test2` VALUES ('1', 'kjk', '333');
 
 -- ----------------------------
 -- Table structure for workflew
