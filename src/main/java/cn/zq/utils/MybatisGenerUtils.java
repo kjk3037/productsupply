@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ public class MybatisGenerUtils {
     private final String dbUrl = "jdbc:mysql://localhost:3306/product_supply?serverTimezone=UTC";
     private final String driver = "com.mysql.jdbc.Driver";
     private final String userName = "root";
-    private final String password = "1122521";
+    private final String password = "root";
 
     //项目名
     private final String projectName = "productsupply";
@@ -35,7 +36,7 @@ public class MybatisGenerUtils {
     //作者名
     private final String author = "kjk";
     //指定生成的表名
-    private final String[] tableNames = new String[]{"account_dept"};
+    private final String[] tableNames = new String[]{"workflew_branch"};
     @Test
     public void generateCode() {
         //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService
@@ -109,7 +110,8 @@ public class MybatisGenerUtils {
                 .setAuthor(author)
                 //设置输出路径
                 .setOutputDir(getOutputDir(projectName))
-                .setFileOverride(true);
+                .setFileOverride(true)
+                .setDateType(DateType.ONLY_DATE);
         if (!serviceNameStartWithI) {
             //设置service名
             globalConfig.setServiceName("%sService");
@@ -125,7 +127,7 @@ public class MybatisGenerUtils {
     private String getOutputDir(String projectName) {
 //        String path = this.getClass().getClassLoader().getResource("").getPath();
 //        int index = path.indexOf(projectName);
-        return "E:\\idea-java-project\\" + projectName + "\\src\\main\\java\\";
+        return "C:\\MyF\\project\\java\\" + projectName + "\\src\\main\\java\\";
     }
     /**
      * 策略配置

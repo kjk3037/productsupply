@@ -12,5 +12,5 @@ public class User {
 
     private String nickname;
 
-    private String roleId;
+    private Integer status;
 }

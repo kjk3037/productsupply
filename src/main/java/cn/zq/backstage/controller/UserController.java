@@ -19,4 +19,8 @@ public class UserController {
     public Message getUsers(){
         return userService.getUsers();
     }
+    @PostMapping("/add")
+    public Message add(@RequestBody User user){
+        return userService.addUser(user);
+    }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface UserService {
     Message login(User user);
     Message<List> getUsers();
+    Message addUser(User user);
 }
