@@ -1,6 +1,6 @@
 package cn.zq.backstage.service;
 
-import cn.zq.backstage.domain.WorkflewApprover;
+import cn.zq.backstage.domain.WorkflewExecutor;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-12-09
  */
-public interface WorkflewApproverService extends IService<WorkflewApprover> {
+public interface WorkflewExecutorService extends IService<WorkflewExecutor> {
 
 }

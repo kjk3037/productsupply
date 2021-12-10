@@ -1,16 +1,17 @@
 package cn.zq.backstage.service.impl;
 
+import cn.zq.backstage.dao.WorkflewExecutorMapper;
 import cn.zq.backstage.dao.WorkflewNodeMapper;
-import cn.zq.backstage.domain.Workflew;
 import cn.zq.backstage.domain.WorkflewEntity;
 import cn.zq.backstage.dao.WorkflewEntityMapper;
 import cn.zq.backstage.domain.WorkflewNode;
 import cn.zq.backstage.service.WorkflewEntityService;
 import cn.zq.backstage.service.WorkflewNodeService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import cn.zq.utils.FormatUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -20,7 +21,7 @@ import java.util.*;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-09-03
  */
 @Service
 public class WorkflewEntityServiceImpl extends ServiceImpl<WorkflewEntityMapper, WorkflewEntity> implements WorkflewEntityService {
@@ -30,57 +31,56 @@ public class WorkflewEntityServiceImpl extends ServiceImpl<WorkflewEntityMapper,
     WorkflewEntityMapper workflewEntityMapper;
     @Autowired
     WorkflewNodeService workflewNodeService;
-    /* 获取能获取的所有节点 */
+    @Autowired
+    WorkflewExecutorMapper workflewExecutorMapper;
     @Override
     public List<WorkflewNode> getLink(Integer eid) {
         //获取数据所属流程所有节点
-        WorkflewEntity workflewEntity = workflewEntityMapper.selectByEid(eid);
-        List<WorkflewNode> nodeList=workflewNodeMapper.getLinkById(workflewEntity.getWorkflewId());
-        //遍历查询出头节点
-        WorkflewNode head=null;
-        LinkedList<WorkflewNode> link=new LinkedList<>();
-        Iterator<WorkflewNode> iterator=nodeList.iterator();
-        while (iterator.hasNext()){
-            WorkflewNode workflewNode=iterator.next();
-            if (workflewNode.getNodeType()==0){
-                head=workflewNode;
-                iterator.remove();
-            }
-        }
-        link.addFirst(head);
-        //通过递归获取正序节点集合；
-        link=sortLink(nodeList,link);
-        return link;
+        WorkflewEntity workflewEntity = workflewEntityMapper.selectByEid(eid.toString());
+        return workflewNodeService.getLink(workflewEntity.getWorkflewId());
     }
     /* 新增数据流程实例 */
+    @Transactional
     @Override
-    public int addNewEntity(Integer moduleEntityId,Integer workflewId) {
+    public int addNewEntity(String uid,Integer moduleEntityId,Integer workflewId) {
         WorkflewEntity workflewEntity = new WorkflewEntity();
-        workflewEntity.setModuleEntityId(moduleEntityId);
+        //初始化流程实例信息头节点
+        workflewEntity.setId(FormatUtils.uuidFormat());
+        workflewEntity.setSubModuleId(moduleEntityId);
         workflewEntity.setWorkflewId(workflewId);
         workflewEntity.setStatus(2);
+        //workflewEntity.setApproverId(uid);
         WorkflewNode firstNode = workflewNodeService.selectFirstNode(workflewId);
         workflewEntity.setWorkflewNodeId(firstNode.getId());
+        //流程对象insert到数据库
         workflewEntityMapper.insert(workflewEntity);
+        //新增next节点
         workflewEntity.setWorkflewNodeId(firstNode.getNextNodeId());
         //待补入操作人
         workflewEntityMapper.insert(workflewEntity);
         return 1;
     }
 
-    private LinkedList<WorkflewNode> sortLink(List<WorkflewNode> nodeList,LinkedList<WorkflewNode> link) {
-        if (link.getLast().getNodeType()==5||link.getLast().getNodeType()==3) {
-            return link;
+    /*  生成下一个节点 */
+    @Transactional
+    public int addNextEntity(Integer wId,Integer nId,String eid){
+        WorkflewNode nextNode = workflewNodeMapper.getNextNodeById(nId);
+        //填充节点数据
+        WorkflewEntity workflewEntity = new WorkflewEntity();
+        workflewEntity.setSubModuleId(1);
+        //如果此节点是填写或者审批节点，节点初始状态为进行中(1)，其他为已结束
+        if (nextNode.getNodeType()==2 || nextNode.getNodeType()==1){
+            workflewEntity.setStatus(1);
+        }else {
+            workflewEntity.setStatus(2);
         }
-        Iterator<WorkflewNode> iterator = nodeList.iterator();
-        while (iterator.hasNext()) {
-            WorkflewNode workflewNode = iterator.next();
-            if (workflewNode.getId() == link.getLast().getNextNodeId()) {
-                link.offerLast(workflewNode);
-                iterator.remove();
-            }
-        }
-        return sortLink(nodeList,link);
+        workflewEntity.setPrevEntityId(eid);
+        workflewEntity.setId(FormatUtils.uuidFormat());
+        workflewEntity.setWorkflewNodeId(nextNode.getId());
+        workflewEntity.setCreateTime(new Date());
+        workflewEntity.setUpdateTime(new Date());
+        workflewEntity.setExecutorId("");
+        workflewEntityMapper.insert(workflewEntity);
+        return 1;
     }
-
 }

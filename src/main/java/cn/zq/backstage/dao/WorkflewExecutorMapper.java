@@ -1,6 +1,6 @@
 package cn.zq.backstage.dao;
 
-import cn.zq.backstage.domain.WorkflewApprover;
+import cn.zq.backstage.domain.WorkflewExecutor;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-12-09
  */
-public interface WorkflewApproverMapper extends BaseMapper<WorkflewApprover> {
+public interface WorkflewExecutorMapper extends BaseMapper<WorkflewExecutor> {
 
 }

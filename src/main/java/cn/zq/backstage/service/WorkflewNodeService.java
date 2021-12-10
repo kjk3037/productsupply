@@ -3,6 +3,8 @@ package cn.zq.backstage.service;
 import cn.zq.backstage.domain.WorkflewNode;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -15,4 +17,5 @@ public interface WorkflewNodeService extends IService<WorkflewNode> {
     WorkflewNode selectNextNode(Integer workflewId,Integer nodeId);
     WorkflewNode selectNode(Integer workflewId,Integer nodeId);
     WorkflewNode selectFirstNode(Integer workflewId);
+    List<WorkflewNode> getLink(Integer wid);
 }

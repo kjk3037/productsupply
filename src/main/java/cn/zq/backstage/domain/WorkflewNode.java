@@ -48,6 +48,8 @@ import lombok.EqualsAndHashCode;
      */
       private Integer nextNodeId;
 
+    private Integer executeType;
+
     private Date createDate;
 
     private Date updateDate;

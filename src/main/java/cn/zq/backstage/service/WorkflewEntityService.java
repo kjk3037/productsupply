@@ -12,9 +12,10 @@ import java.util.List;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-09-03
  */
 public interface WorkflewEntityService extends IService<WorkflewEntity> {
     List<WorkflewNode> getLink(Integer eid);
-    int addNewEntity(Integer moduleEntityId,Integer workflewId);
+    int addNewEntity(String uid,Integer moduleEntityId,Integer workflewId);
+    int addNextEntity(Integer wId,Integer nId,String eId);
 }

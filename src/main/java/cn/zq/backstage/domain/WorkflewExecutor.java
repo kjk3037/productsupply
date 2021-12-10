@@ -1,5 +1,6 @@
 package cn.zq.backstage.domain;
 
+import java.util.Date;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,11 +11,11 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-12-09
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
-    public class WorkflewApprover implements Serializable {
+    public class WorkflewExecutor implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,9 +25,14 @@ import lombok.EqualsAndHashCode;
 
     private Integer workflewNodeId;
 
-    private String approverType;
+      /**
+     * 1、账号；2、角色；3、部门
+     */
+      private Integer executorType;
 
-    private Integer approverId;
+    private Date createTime;
+
+    private Date updateTime;
 
 
 }

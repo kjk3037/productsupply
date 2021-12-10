@@ -1,9 +1,7 @@
 package cn.zq.backstage.domain;
 
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import java.util.Date;
-
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-09-03
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
@@ -21,19 +19,21 @@ import lombok.EqualsAndHashCode;
 
     private static final long serialVersionUID = 1L;
 
-      private Integer id;
+    private String id;
 
-    private Integer moduleEntityId;
+    private Integer subModuleId;
 
     private Integer workflewId;
 
     private Integer workflewNodeId;
 
-    private Integer approverId;
+    private String prevEntityId;
 
-    private String approverResult;
+    private String executorId;
 
-    private String approverSuggestion;
+    private String executorResult;
+
+    private String executorSuggestion;
 
       /**
      * 1、运行中；2、已完成；3、已终止

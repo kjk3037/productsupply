@@ -14,5 +14,7 @@ import java.util.List;
  * @since 2021-08-17
  */
 public interface WorkflewNodeMapper extends BaseMapper<WorkflewNode> {
-    List<WorkflewNode> getLinkById(Integer workflew_id);
+    List<WorkflewNode> getLinkByWid(Integer workflew_id);
+    WorkflewNode getById(Integer node_id);
+    WorkflewNode getNextNodeById(Integer node_id);
 }

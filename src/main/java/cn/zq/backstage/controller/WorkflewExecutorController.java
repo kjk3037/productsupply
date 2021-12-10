@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author kjk
- * @since 2021-08-17
+ * @since 2021-12-09
  */
 @RestController
-@RequestMapping("//workflewApprover")
-public class WorkflewApproverController {
+@RequestMapping("//workflewExecutor")
+public class WorkflewExecutorController {
 
 }
 

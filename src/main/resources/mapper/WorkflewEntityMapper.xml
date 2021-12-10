@@ -5,12 +5,13 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.zq.backstage.domain.WorkflewEntity">
         <id column="id" property="id" />
-        <result column="module_entity_id" property="moduleEntityId" />
+        <result column="sub_module_id" property="subModuleId" />
         <result column="workflew_id" property="workflewId" />
         <result column="workflew_node_id" property="workflewNodeId" />
-        <result column="approver_id" property="approverId" />
-        <result column="approver_result" property="approverResult" />
-        <result column="approver_suggestion" property="approverSuggestion" />
+        <result column="prev_entity_id" property="prevEntityId" />
+        <result column="executor_id" property="executorId" />
+        <result column="executor_result" property="executorResult" />
+        <result column="executor_suggestion" property="executorSuggestion" />
         <result column="status" property="status" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
@@ -18,10 +19,9 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, module_entity_id, workflew_id, workflew_node_id, approver_id, approver_result, approver_suggestion, status, create_time, update_time
+        id, sub_module_id, workflew_id, workflew_node_id, prev_entity_id, executor_id, executor_result, executor_suggestion, status, create_time, update_time
     </sql>
-
-    <select id="selectByEid" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+    <select id="selectByEid" resultMap="BaseResultMap" parameterType="java.lang.String">
         select * from workflew_entity where id=#{id}
     </select>
 </mapper>
