@@ -2,10 +2,7 @@ package cn.zq.backstage.service.impl;
 
 import cn.zq.backstage.dao.PurchaseOrderMapper;
 import cn.zq.backstage.domain.PurchaseOrder;
-import cn.zq.backstage.domain.PurchaseOrderDetails;
-import cn.zq.backstage.service.PurchaseOrderDetailsService;
 import cn.zq.backstage.service.PurchaseOrderService;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

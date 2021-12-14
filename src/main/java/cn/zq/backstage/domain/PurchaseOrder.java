@@ -54,6 +54,8 @@ public class PurchaseOrder {
 
     private Integer allMaterialQuantity;
 
-    private Date updateDate;
+    private Date createTime;
+
+    private Date updateTime;
 
 }

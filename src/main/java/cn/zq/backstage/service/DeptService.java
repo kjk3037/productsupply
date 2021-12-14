@@ -1,7 +1,5 @@
 package cn.zq.backstage.service;
 
-import cn.zq.backstage.domain.Dept;
-
 import java.util.List;
 
 public interface DeptService  {

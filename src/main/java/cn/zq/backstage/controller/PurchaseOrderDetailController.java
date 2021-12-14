@@ -5,5 +5,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/purchase/order/details")
 @Controller
-public class PurchaseOrderDetailsController {
+public class PurchaseOrderDetailController {
 }

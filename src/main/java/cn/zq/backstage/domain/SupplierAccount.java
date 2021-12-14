@@ -2,6 +2,8 @@ package cn.zq.backstage.domain;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class SupplierAccount {
     private String id;
@@ -17,4 +19,7 @@ public class SupplierAccount {
     private String depositbank;
 
     private Byte duplicateremove;
+    private Date createTime;
+
+    private Date updateTime;
 }

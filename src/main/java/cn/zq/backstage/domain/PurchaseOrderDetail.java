@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 @Data
-public class PurchaseOrderDetails {
+public class PurchaseOrderDetail {
     private String id;
 
     private String orderId;
@@ -22,5 +22,7 @@ public class PurchaseOrderDetails {
 
     private String materialNumber;
 
-    private Date updateDate;
+    private Date createTime;
+
+    private Date updateTime;
 }

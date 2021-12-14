@@ -7,9 +7,11 @@
     <result column="status" property="status" jdbcType="TINYINT" />
     <result column="module" property="module" jdbcType="VARCHAR" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" javaType="DATETIME" />
+    <result column="update_time" property="updateTime" javaType="DATETIME" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, describe, status, module, role_id
+    id, describe, status, module, role_id ,create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

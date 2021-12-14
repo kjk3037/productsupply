@@ -2,6 +2,8 @@ package cn.zq.backstage.domain;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class SupplierContactInformation {
     private String id;
@@ -21,4 +23,7 @@ public class SupplierContactInformation {
     private String email;
 
     private String shopLink;
+    private Date createTime;
+
+    private Date updateTime;
 }
