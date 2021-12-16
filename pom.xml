@@ -6,7 +6,13 @@
 
   <groupId>cn.zq</groupId>
   <artifactId>product-supply</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>productsupply-web</module>
+    <module>productsupply-service</module>
+  </modules>
+
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -61,11 +67,11 @@
       <artifactId>java-jwt</artifactId>
       <version>3.4.0</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-devtools</artifactId>-->
+      <!--<optional>true</optional>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid-spring-boot-starter</artifactId>
@@ -115,6 +121,27 @@
   </dependencies>
 
   <build>
+      <!--<resources>-->
+          <!--<resource>-->
+              <!--<directory>src/main/java</directory>-->
+              <!--<includes>-->
+                  <!--<include>**/*.yml</include>-->
+                  <!--<include>**/*.properties</include>-->
+                  <!--<include>**/*.xml</include>-->
+              <!--</includes>-->
+              <!--<filtering>false</filtering>-->
+          <!--</resource>-->
+          <!--<resource>-->
+              <!--<directory>src/main/resources</directory>-->
+              <!--<includes>-->
+                  <!--<include>**/*.yml</include>-->
+                  <!--<include>**/*.properties</include>-->
+                  <!--<include>**/*.xml</include>-->
+              <!--</includes>-->
+              <!--<filtering>false</filtering>-->
+          <!--</resource>-->
+      <!--</resources>-->
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -179,4 +206,5 @@
       <!--</plugin>-->
     <!--</plugins>-->
   </build>
+
 </project>

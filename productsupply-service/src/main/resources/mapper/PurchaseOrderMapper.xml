@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zq.dao.PurchaseOrderMapper" >
+  <resultMap id="BaseResultMap" type="cn.zq.domain.PurchaseOrder" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="purchase_content" property="purchaseContent" jdbcType="VARCHAR" />
+    <result column="order_amount" property="orderAmount" jdbcType="DECIMAL" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="order_number" property="orderNumber" jdbcType="INTEGER" />
+    <result column="order_date" property="orderDate" jdbcType="TIMESTAMP" />
+    <result column="out_standing_amount" property="outStandingAmount" jdbcType="DECIMAL" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="process_status" property="processStatus" jdbcType="INTEGER" />
+    <result column="purchase_reason" property="purchaseReason" jdbcType="VARCHAR" />
+    <result column="other_purchase_reason_remark" property="otherPurchaseReasonRemark" jdbcType="VARCHAR" />
+    <result column="goods_type" property="goodsType" jdbcType="INTEGER" />
+    <result column="order_remark" property="orderRemark" jdbcType="VARCHAR" />
+    <result column="amount_paid" property="amountPaid" jdbcType="DECIMAL" />
+    <result column="warehousing_status" property="warehousingStatus" jdbcType="INTEGER" />
+    <result column="invoice_type" property="invoiceType" jdbcType="INTEGER" />
+    <result column="is_invoice" property="isInvoice" jdbcType="INTEGER" />
+    <result column="invoice_status" property="invoiceStatus" jdbcType="INTEGER" />
+    <result column="jd_purchase_order_number" property="jdPurchaseOrderNumber" jdbcType="VARCHAR" />
+    <result column="payment_method" property="paymentMethod" jdbcType="INTEGER" />
+    <result column="other_payment_method_reason" property="otherPaymentMethodReason" jdbcType="VARCHAR" />
+    <result column="full_payment_status" property="fullPaymentStatus" jdbcType="INTEGER" />
+    <result column="all_material_quantity" property="allMaterialQuantity" jdbcType="INTEGER" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, purchase_content, order_amount, supplier_id, order_number, order_date, 
+    out_standing_amount, remark, process_status, purchase_reason, other_purchase_reason_remark, 
+    goods_type, order_remark, amount_paid, warehousing_status, invoice_type, is_invoice, 
+    invoice_status, jd_purchase_order_number, payment_method, other_payment_method_reason, 
+    full_payment_status, all_material_quantity, update_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from purchase_order
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from purchase_order
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.zq.domain.PurchaseOrder" >
+    insert into purchase_order (id, title, purchase_content, 
+      order_amount, supplier_id, order_number, 
+      order_date, out_standing_amount, remark, 
+      process_status, purchase_reason, other_purchase_reason_remark, 
+      goods_type, order_remark, amount_paid, 
+      warehousing_status, invoice_type, is_invoice, 
+      invoice_status, jd_purchase_order_number, payment_method, 
+      other_payment_method_reason, full_payment_status, 
+      all_material_quantity, update_date)
+    values (#{id,jdbcType=CHAR}, #{title,jdbcType=VARCHAR}, #{purchaseContent,jdbcType=VARCHAR}, 
+      #{orderAmount,jdbcType=DECIMAL}, #{supplierId,jdbcType=INTEGER}, #{orderNumber,jdbcType=INTEGER}, 
+      #{orderDate,jdbcType=DATE}, #{outStandingAmount,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, 
+      #{processStatus,jdbcType=INTEGER}, #{purchaseReason,jdbcType=VARCHAR}, #{otherPurchaseReasonRemark,jdbcType=VARCHAR}, 
+      #{goodsType,jdbcType=INTEGER}, #{orderRemark,jdbcType=VARCHAR}, #{amountPaid,jdbcType=DECIMAL}, 
+      #{warehousingStatus,jdbcType=INTEGER}, #{invoiceType,jdbcType=INTEGER}, #{isInvoice,jdbcType=INTEGER}, 
+      #{invoiceStatus,jdbcType=INTEGER}, #{jdPurchaseOrderNumber,jdbcType=VARCHAR}, #{paymentMethod,jdbcType=INTEGER}, 
+      #{otherPaymentMethodReason,jdbcType=VARCHAR}, #{fullPaymentStatus,jdbcType=INTEGER}, 
+      #{allMaterialQuantity,jdbcType=INTEGER}, #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zq.domain.PurchaseOrder" >
+    insert into purchase_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="purchaseContent != null" >
+        purchase_content,
+      </if>
+      <if test="orderAmount != null" >
+        order_amount,
+      </if>
+      <if test="supplierId != null" >
+        supplier_id,
+      </if>
+      <if test="orderNumber != null" >
+        order_number,
+      </if>
+      <if test="orderDate != null" >
+        order_date,
+      </if>
+      <if test="outStandingAmount != null" >
+        out_standing_amount,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="processStatus != null" >
+        process_status,
+      </if>
+      <if test="purchaseReason != null" >
+        purchase_reason,
+      </if>
+      <if test="otherPurchaseReasonRemark != null" >
+        other_purchase_reason_remark,
+      </if>
+      <if test="goodsType != null" >
+        goods_type,
+      </if>
+      <if test="orderRemark != null" >
+        order_remark,
+      </if>
+      <if test="amountPaid != null" >
+        amount_paid,
+      </if>
+      <if test="warehousingStatus != null" >
+        warehousing_status,
+      </if>
+      <if test="invoiceType != null" >
+        invoice_type,
+      </if>
+      <if test="isInvoice != null" >
+        is_invoice,
+      </if>
+      <if test="invoiceStatus != null" >
+        invoice_status,
+      </if>
+      <if test="jdPurchaseOrderNumber != null" >
+        jd_purchase_order_number,
+      </if>
+      <if test="paymentMethod != null" >
+        payment_method,
+      </if>
+      <if test="otherPaymentMethodReason != null" >
+        other_payment_method_reason,
+      </if>
+      <if test="fullPaymentStatus != null" >
+        full_payment_status,
+      </if>
+      <if test="allMaterialQuantity != null" >
+        all_material_quantity,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContent != null" >
+        #{purchaseContent,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAmount != null" >
+        #{orderAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="supplierId != null" >
+        #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null" >
+        #{orderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null" >
+        #{orderDate,jdbcType=DATE},
+      </if>
+      <if test="outStandingAmount != null" >
+        #{outStandingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="processStatus != null" >
+        #{processStatus,jdbcType=INTEGER},
+      </if>
+      <if test="purchaseReason != null" >
+        #{purchaseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="otherPurchaseReasonRemark != null" >
+        #{otherPurchaseReasonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType != null" >
+        #{goodsType,jdbcType=INTEGER},
+      </if>
+      <if test="orderRemark != null" >
+        #{orderRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="amountPaid != null" >
+        #{amountPaid,jdbcType=DECIMAL},
+      </if>
+      <if test="warehousingStatus != null" >
+        #{warehousingStatus,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceType != null" >
+        #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="isInvoice != null" >
+        #{isInvoice,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceStatus != null" >
+        #{invoiceStatus,jdbcType=INTEGER},
+      </if>
+      <if test="jdPurchaseOrderNumber != null" >
+        #{jdPurchaseOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentMethod != null" >
+        #{paymentMethod,jdbcType=INTEGER},
+      </if>
+      <if test="otherPaymentMethodReason != null" >
+        #{otherPaymentMethodReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fullPaymentStatus != null" >
+        #{fullPaymentStatus,jdbcType=INTEGER},
+      </if>
+      <if test="allMaterialQuantity != null" >
+        #{allMaterialQuantity,jdbcType=INTEGER},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.PurchaseOrder" >
+    update purchase_order
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseContent != null" >
+        purchase_content = #{purchaseContent,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAmount != null" >
+        order_amount = #{orderAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="supplierId != null" >
+        supplier_id = #{supplierId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null" >
+        order_number = #{orderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null" >
+        order_date = #{orderDate,jdbcType=DATE},
+      </if>
+      <if test="outStandingAmount != null" >
+        out_standing_amount = #{outStandingAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="processStatus != null" >
+        process_status = #{processStatus,jdbcType=INTEGER},
+      </if>
+      <if test="purchaseReason != null" >
+        purchase_reason = #{purchaseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="otherPurchaseReasonRemark != null" >
+        other_purchase_reason_remark = #{otherPurchaseReasonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType != null" >
+        goods_type = #{goodsType,jdbcType=INTEGER},
+      </if>
+      <if test="orderRemark != null" >
+        order_remark = #{orderRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="amountPaid != null" >
+        amount_paid = #{amountPaid,jdbcType=DECIMAL},
+      </if>
+      <if test="warehousingStatus != null" >
+        warehousing_status = #{warehousingStatus,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceType != null" >
+        invoice_type = #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="isInvoice != null" >
+        is_invoice = #{isInvoice,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceStatus != null" >
+        invoice_status = #{invoiceStatus,jdbcType=INTEGER},
+      </if>
+      <if test="jdPurchaseOrderNumber != null" >
+        jd_purchase_order_number = #{jdPurchaseOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentMethod != null" >
+        payment_method = #{paymentMethod,jdbcType=INTEGER},
+      </if>
+      <if test="otherPaymentMethodReason != null" >
+        other_payment_method_reason = #{otherPaymentMethodReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fullPaymentStatus != null" >
+        full_payment_status = #{fullPaymentStatus,jdbcType=INTEGER},
+      </if>
+      <if test="allMaterialQuantity != null" >
+        all_material_quantity = #{allMaterialQuantity,jdbcType=INTEGER},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.PurchaseOrder" >
+    update purchase_order
+    set title = #{title,jdbcType=VARCHAR},
+      purchase_content = #{purchaseContent,jdbcType=VARCHAR},
+      order_amount = #{orderAmount,jdbcType=DECIMAL},
+      supplier_id = #{supplierId,jdbcType=INTEGER},
+      order_number = #{orderNumber,jdbcType=INTEGER},
+      order_date = #{orderDate,jdbcType=DATE},
+      out_standing_amount = #{outStandingAmount,jdbcType=DECIMAL},
+      remark = #{remark,jdbcType=VARCHAR},
+      process_status = #{processStatus,jdbcType=INTEGER},
+      purchase_reason = #{purchaseReason,jdbcType=VARCHAR},
+      other_purchase_reason_remark = #{otherPurchaseReasonRemark,jdbcType=VARCHAR},
+      goods_type = #{goodsType,jdbcType=INTEGER},
+      order_remark = #{orderRemark,jdbcType=VARCHAR},
+      amount_paid = #{amountPaid,jdbcType=DECIMAL},
+      warehousing_status = #{warehousingStatus,jdbcType=INTEGER},
+      invoice_type = #{invoiceType,jdbcType=INTEGER},
+      is_invoice = #{isInvoice,jdbcType=INTEGER},
+      invoice_status = #{invoiceStatus,jdbcType=INTEGER},
+      jd_purchase_order_number = #{jdPurchaseOrderNumber,jdbcType=VARCHAR},
+      payment_method = #{paymentMethod,jdbcType=INTEGER},
+      other_payment_method_reason = #{otherPaymentMethodReason,jdbcType=VARCHAR},
+      full_payment_status = #{fullPaymentStatus,jdbcType=INTEGER},
+      all_material_quantity = #{allMaterialQuantity,jdbcType=INTEGER},
+      update_date = #{updateDate,jdbcType=DATE}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <select id="getList" resultMap="BaseResultMap">
+    select * from purchase_order
+  </select>
+</mapper>

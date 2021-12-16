@@ -7,17 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="productsupply" />
+        <module name="productsupply-service" />
+        <module name="productsupply-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="product-supply" target="1.8" />
       <module name="productsupply" target="1.8" />
+      <module name="productsupply-service" target="1.8" />
+      <module name="productsupply-web" target="1.8" />
+      <module name="productsupplyums" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="productsupply" options="-parameters" />
+      <module name="productsupply-service" options="-parameters" />
+      <module name="productsupply-web" options="-parameters" />
+      <module name="productsupplyums" options="-parameters" />
     </option>
   </component>
 </project>
