@@ -8,7 +8,7 @@
     <result column="order_amount" property="orderAmount" jdbcType="DECIMAL" />
     <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
     <result column="order_number" property="orderNumber" jdbcType="INTEGER" />
-    <result column="order_date" property="orderDate" jdbcType="DATE" />
+    <result column="order_date" property="orderDate" jdbcType="TIMESTAMP" />
     <result column="out_standing_amount" property="outStandingAmount" jdbcType="DECIMAL" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="process_status" property="processStatus" jdbcType="INTEGER" />
@@ -26,7 +26,7 @@
     <result column="other_payment_method_reason" property="otherPaymentMethodReason" jdbcType="VARCHAR" />
     <result column="full_payment_status" property="fullPaymentStatus" jdbcType="INTEGER" />
     <result column="all_material_quantity" property="allMaterialQuantity" jdbcType="INTEGER" />
-    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, title, purchase_content, order_amount, supplier_id, order_number, order_date, 

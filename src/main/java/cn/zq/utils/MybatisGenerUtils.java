@@ -39,7 +39,7 @@ public class MybatisGenerUtils {
     private final String[] tableNames = new String[]{"workflew_executor"};
     @Test
     public void generateCode() {
-        //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService
+        //serviceNameStartWithI：user -> UserAccountService, 设置成true: user -> IUserService
         generateByTables(false, packageName, tableNames);
     }
     /**

@@ -10,16 +10,23 @@
         <result column="workflew_id" property="workflewId" />
         <result column="prev_node_id" property="prevNodeId" />
         <result column="next_node_id" property="nextNodeId" />
+        <result column="execute_type" property="executeType"/>
         <result column="create_date" property="createDate" />
         <result column="update_date" property="updateDate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, node_type, node_name, workflew_id, prev_node_id, next_node_id, create_date, update_date
+        id, node_type, node_name, workflew_id, prev_node_id, next_node_id, create_date, update_date, execute_type
     </sql>
 
-    <select id="getLinkById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="getLinkByWid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select * from workflew_node where  workflew_id =#{workflewId}
+    </select>
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from workflew_node where  id =#{node_id}
+    </select>
+    <select id="getNextNodeById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from workflew_node where prev_node_id=#{node_id}
     </select>
 </mapper>
