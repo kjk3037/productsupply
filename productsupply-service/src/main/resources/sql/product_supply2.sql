@@ -10,154 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50731
 File Encoding         : 65001
 
-Date: 2021-12-10 16:44:48
+Date: 2021-12-17 17:33:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for account_authority
--- ----------------------------
-DROP TABLE IF EXISTS `account_authority`;
-CREATE TABLE `account_authority` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `describe` char(20) NOT NULL COMMENT '权限描述',
-  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '是否启用（0禁用，1启用）',
-  `module_id` varchar(255) NOT NULL,
-  `role_id` int(11) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_authority
--- ----------------------------
-
--- ----------------------------
--- Table structure for account_dept
--- ----------------------------
-DROP TABLE IF EXISTS `account_dept`;
-CREATE TABLE `account_dept` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dept_name` varchar(255) DEFAULT NULL COMMENT '部门名称',
-  `desc` varchar(255) DEFAULT NULL,
-  `parent_id` int(11) DEFAULT NULL COMMENT '上级部门',
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_dept
--- ----------------------------
-INSERT INTO `account_dept` VALUES ('1', '运营团队', '', null, null, null);
-INSERT INTO `account_dept` VALUES ('2', '销售', null, '12', null, null);
-INSERT INTO `account_dept` VALUES ('3', '研发', null, '1', null, null);
-INSERT INTO `account_dept` VALUES ('4', '财务', null, '1', null, null);
-INSERT INTO `account_dept` VALUES ('5', '管理', null, '1', null, null);
-INSERT INTO `account_dept` VALUES ('6', '试用', null, '1', null, null);
-INSERT INTO `account_dept` VALUES ('7', '品控', null, '3', null, null);
-INSERT INTO `account_dept` VALUES ('8', '产品', null, '3', null, null);
-INSERT INTO `account_dept` VALUES ('9', '仓储', null, '4', null, null);
-INSERT INTO `account_dept` VALUES ('10', '人事', null, '5', null, null);
-INSERT INTO `account_dept` VALUES ('11', '信息', null, '5', null, null);
-INSERT INTO `account_dept` VALUES ('12', '运营', null, '1', null, null);
-INSERT INTO `account_dept` VALUES ('13', '交付', null, '12', null, null);
-
--- ----------------------------
--- Table structure for account_role
--- ----------------------------
-DROP TABLE IF EXISTS `account_role`;
-CREATE TABLE `account_role` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `desc` varchar(255) DEFAULT NULL,
-  `parent_id` int(11) DEFAULT NULL COMMENT '上级领导',
-  `dept_id` int(11) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_role
--- ----------------------------
-INSERT INTO `account_role` VALUES ('1', '总经理', 'test', null, null, null, null);
-INSERT INTO `account_role` VALUES ('2', '副总经理', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('3', '采购专员', null, '6', null, null, null);
-INSERT INTO `account_role` VALUES ('4', '交付专员', null, '5', null, null, null);
-INSERT INTO `account_role` VALUES ('5', '交付经理', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('6', '交付主管', null, '5', null, null, null);
-INSERT INTO `account_role` VALUES ('7', '研发专员', null, '17', null, null, null);
-INSERT INTO `account_role` VALUES ('8', '品控专员', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('9', '仓储专员', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('10', '人事专员', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('11', '信息管理', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('12', '出纳', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('13', '法务专员', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('14', '顾问', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('15', '运营会计', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('16', '总账会计', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('17', '研发主管', null, '1', null, null, null);
-INSERT INTO `account_role` VALUES ('18', '销售专员', null, '2', null, null, null);
-INSERT INTO `account_role` VALUES ('19', '销售助理', null, '2', null, null, null);
-
--- ----------------------------
--- Table structure for account_role_authority_relation
--- ----------------------------
-DROP TABLE IF EXISTS `account_role_authority_relation`;
-CREATE TABLE `account_role_authority_relation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_id` varchar(255) DEFAULT NULL,
-  `authority_id` varchar(255) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_role_authority_relation
--- ----------------------------
-
--- ----------------------------
--- Table structure for account_user
--- ----------------------------
-DROP TABLE IF EXISTS `account_user`;
-CREATE TABLE `account_user` (
-  `id` char(32) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `nickname` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL COMMENT '1、使用中；2、注册中；3、冻结中；0、注销',
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_user
--- ----------------------------
-INSERT INTO `account_user` VALUES ('1', 'root', 'admin', '超级管理', '1', null, null);
-INSERT INTO `account_user` VALUES ('2', 'kjk', '1122', '本人', '1', null, null);
-INSERT INTO `account_user` VALUES ('2ed6aca54cc9476297bd27de92ade417', 'jack', '123', 'jack123', '1', null, null);
-
--- ----------------------------
--- Table structure for account_user_role_relation
--- ----------------------------
-DROP TABLE IF EXISTS `account_user_role_relation`;
-CREATE TABLE `account_user_role_relation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(255) DEFAULT NULL,
-  `role_id` varchar(255) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of account_user_role_relation
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for dict
@@ -5402,7 +5258,7 @@ CREATE TABLE `sys_sub_module` (
 -- ----------------------------
 -- Records of sys_sub_module
 -- ----------------------------
-INSERT INTO `sys_sub_module` VALUES ('1', '账号管理', '/userAccount', '1', null);
+INSERT INTO `sys_sub_module` VALUES ('1', '账号管理', '/user', '1', null);
 INSERT INTO `sys_sub_module` VALUES ('2', '角色管理', '/role', '1', null);
 INSERT INTO `sys_sub_module` VALUES ('3', '权限管理', '/authority', '1', null);
 INSERT INTO `sys_sub_module` VALUES ('4', '采购订单', '/order', '2', null);
@@ -5412,6 +5268,150 @@ INSERT INTO `sys_sub_module` VALUES ('7', '物料总表', '/material', '3', null
 INSERT INTO `sys_sub_module` VALUES ('8', '到货待检', '/waitingCheck', '4', null);
 INSERT INTO `sys_sub_module` VALUES ('9', '合格入库', '/qualified', '4', null);
 INSERT INTO `sys_sub_module` VALUES ('10', '来料检验', '/imcomingCheck', '5', null);
+
+-- ----------------------------
+-- Table structure for user_account
+-- ----------------------------
+DROP TABLE IF EXISTS `user_account`;
+CREATE TABLE `user_account` (
+  `id` char(32) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `nickname` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL COMMENT '1、使用中；2、注册中；3、冻结中；0、注销',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_account
+-- ----------------------------
+INSERT INTO `user_account` VALUES ('1', 'root', 'admin', '超级管理', '1', null, null);
+INSERT INTO `user_account` VALUES ('2', 'kjk', '1122', '本人', '1', null, null);
+INSERT INTO `user_account` VALUES ('2ed6aca54cc9476297bd27de92ade417', 'jack', '123', 'jack123', '1', null, null);
+
+-- ----------------------------
+-- Table structure for user_account_role_relation
+-- ----------------------------
+DROP TABLE IF EXISTS `user_account_role_relation`;
+CREATE TABLE `user_account_role_relation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
+  `role_id` varchar(255) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_account_role_relation
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_authority
+-- ----------------------------
+DROP TABLE IF EXISTS `user_authority`;
+CREATE TABLE `user_authority` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `describe` char(20) NOT NULL COMMENT '权限描述',
+  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '是否启用（0禁用，1启用）',
+  `module_id` varchar(255) NOT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_authority
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_dept
+-- ----------------------------
+DROP TABLE IF EXISTS `user_dept`;
+CREATE TABLE `user_dept` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dept_name` varchar(255) DEFAULT NULL COMMENT '部门名称',
+  `desc` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL COMMENT '上级部门',
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_dept
+-- ----------------------------
+INSERT INTO `user_dept` VALUES ('1', '运营团队', '', null, null, null);
+INSERT INTO `user_dept` VALUES ('2', '销售', null, '12', null, null);
+INSERT INTO `user_dept` VALUES ('3', '研发', null, '1', null, null);
+INSERT INTO `user_dept` VALUES ('4', '财务', null, '1', null, null);
+INSERT INTO `user_dept` VALUES ('5', '管理', null, '1', null, null);
+INSERT INTO `user_dept` VALUES ('6', '试用', null, '1', null, null);
+INSERT INTO `user_dept` VALUES ('7', '品控', null, '3', null, null);
+INSERT INTO `user_dept` VALUES ('8', '产品', null, '3', null, null);
+INSERT INTO `user_dept` VALUES ('9', '仓储', null, '4', null, null);
+INSERT INTO `user_dept` VALUES ('10', '人事', null, '5', null, null);
+INSERT INTO `user_dept` VALUES ('11', '信息', null, '5', null, null);
+INSERT INTO `user_dept` VALUES ('12', '运营', null, '1', null, null);
+INSERT INTO `user_dept` VALUES ('13', '交付', null, '12', null, null);
+
+-- ----------------------------
+-- Table structure for user_role
+-- ----------------------------
+DROP TABLE IF EXISTS `user_role`;
+CREATE TABLE `user_role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `desc` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL COMMENT '上级领导',
+  `dept_id` int(11) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_role
+-- ----------------------------
+INSERT INTO `user_role` VALUES ('1', '总经理', 'test', null, null, null, null);
+INSERT INTO `user_role` VALUES ('2', '副总经理', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('3', '采购专员', null, '6', null, null, null);
+INSERT INTO `user_role` VALUES ('4', '交付专员', null, '5', null, null, null);
+INSERT INTO `user_role` VALUES ('5', '交付经理', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('6', '交付主管', null, '5', null, null, null);
+INSERT INTO `user_role` VALUES ('7', '研发专员', null, '17', null, null, null);
+INSERT INTO `user_role` VALUES ('8', '品控专员', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('9', '仓储专员', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('10', '人事专员', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('11', '信息管理', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('12', '出纳', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('13', '法务专员', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('14', '顾问', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('15', '运营会计', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('16', '总账会计', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('17', '研发主管', null, '1', null, null, null);
+INSERT INTO `user_role` VALUES ('18', '销售专员', null, '2', null, null, null);
+INSERT INTO `user_role` VALUES ('19', '销售助理', null, '2', null, null, null);
+
+-- ----------------------------
+-- Table structure for user_role_authority_relation
+-- ----------------------------
+DROP TABLE IF EXISTS `user_role_authority_relation`;
+CREATE TABLE `user_role_authority_relation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` varchar(255) DEFAULT NULL,
+  `authority_id` varchar(255) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_role_authority_relation
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for workflew
@@ -5432,6 +5432,23 @@ CREATE TABLE `workflew` (
 -- ----------------------------
 INSERT INTO `workflew` VALUES ('1', '采购支付申请流程', null, '5', null, null);
 INSERT INTO `workflew` VALUES ('2', '采购订单申请流程', null, '4', null, null);
+
+-- ----------------------------
+-- Table structure for workflew_branch_condition
+-- ----------------------------
+DROP TABLE IF EXISTS `workflew_branch_condition`;
+CREATE TABLE `workflew_branch_condition` (
+  `id` int(11) NOT NULL,
+  `workflew_branch_id` int(11) DEFAULT NULL,
+  `condition` varchar(255) DEFAULT NULL COMMENT '1->等于;2->不等于;3->大于;4->大于等于;5->小于;6->小于等于;7->包含;8->不包含;9->属于;10->不属于',
+  `parameter` varchar(255) DEFAULT NULL,
+  `target_value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of workflew_branch_condition
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for workflew_entity
@@ -5508,10 +5525,9 @@ INSERT INTO `workflew_node` VALUES ('6', '3', '分支节点', '1', '2', null, nu
 DROP TABLE IF EXISTS `workflow_branch`;
 CREATE TABLE `workflow_branch` (
   `id` int(11) NOT NULL,
-  `branch_name` varchar(255) DEFAULT NULL,
+  `branch_name` varchar(255) DEFAULT NULL COMMENT '分支条件节点名称',
   `workflow_id` int(11) DEFAULT NULL,
   `workflow_node_id` int(11) DEFAULT NULL,
-  `condition` varchar(255) DEFAULT NULL COMMENT '判定条件',
   `workflow_nextnode_id` int(11) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
@@ -5523,10 +5539,10 @@ CREATE TABLE `workflow_branch` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for workflow_table_field
+-- Table structure for workflow_field_authority
 -- ----------------------------
-DROP TABLE IF EXISTS `workflow_table_field`;
-CREATE TABLE `workflow_table_field` (
+DROP TABLE IF EXISTS `workflow_field_authority`;
+CREATE TABLE `workflow_field_authority` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `workflow_id` int(11) DEFAULT NULL,
   `workflow_node_id` int(11) DEFAULT NULL,
@@ -5536,5 +5552,5 @@ CREATE TABLE `workflow_table_field` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of workflow_table_field
+-- Records of workflow_field_authority
 -- ----------------------------

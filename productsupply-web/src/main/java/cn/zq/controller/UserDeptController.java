@@ -1,10 +1,8 @@
 package cn.zq.controller;
 
 
-import cn.zq.domain.UserDept;
-import cn.zq.domain.Message;
+import cn.zq.common.Message;
 import cn.zq.service.UserDeptService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,12 +25,7 @@ public class UserDeptController {
     UserDeptService userDeptService;
     @RequestMapping("/getList")
     public Message getList(){
-        Message<List> userDeptMessage = new Message<>();
-        //QueryWrapper<UserDept> queryWrapper = new QueryWrapper();
-        userDeptMessage.setData(userDeptService.getList());
-        userDeptMessage.setCode("200");
-        userDeptMessage.setInfo("测试mp接口");
-        return userDeptMessage;
+        return Message.success(userDeptService.getList());
     }
 }
 

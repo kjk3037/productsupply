@@ -29,7 +29,7 @@ import lombok.EqualsAndHashCode;
 
     private String desc;
 
-    private Integer sysModuleId;
+    private Integer subModuleId;
 
   private Date createTime;
 

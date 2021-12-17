@@ -1,7 +1,6 @@
 package cn.zq.controller;
 
-import cn.zq.domain.Message;
-import cn.zq.domain.SysModule;
+import cn.zq.common.Message;
 import cn.zq.service.SysModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +16,6 @@ public class SysModuleController {
     SysModuleService sysModuleService;
     @GetMapping("/getList")
     public Message getList(){
-        Message<List> listMessage = new Message<List>();
-        listMessage.setData(sysModuleService.getModule());
-        return listMessage;
+        return Message.success(sysModuleService.getModule());
     }
 }

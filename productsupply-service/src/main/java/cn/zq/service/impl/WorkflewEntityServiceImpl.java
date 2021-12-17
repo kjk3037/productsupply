@@ -1,7 +1,9 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.WorkflewExecutorMapper;
+import cn.zq.dao.WorkflewMapper;
 import cn.zq.dao.WorkflewNodeMapper;
+import cn.zq.domain.Workflew;
 import cn.zq.domain.WorkflewEntity;
 import cn.zq.dao.WorkflewEntityMapper;
 import cn.zq.domain.WorkflewNode;
@@ -33,6 +35,8 @@ public class WorkflewEntityServiceImpl extends ServiceImpl<WorkflewEntityMapper,
     WorkflewNodeService workflewNodeService;
     @Autowired
     WorkflewExecutorMapper workflewExecutorMapper;
+    @Autowired
+    WorkflewMapper workflewMapper;
     @Override
     public List<WorkflewNode> getLink(Integer eid) {
         //获取数据所属流程所有节点
@@ -65,9 +69,12 @@ public class WorkflewEntityServiceImpl extends ServiceImpl<WorkflewEntityMapper,
     @Transactional
     public int addNextEntity(Integer wId,Integer nId,String eid){
         WorkflewNode nextNode = workflewNodeMapper.getNextNodeById(nId);
+        if (nextNode.equals(null)){
+            return 0;
+        }
         //填充节点数据
         WorkflewEntity workflewEntity = new WorkflewEntity();
-        workflewEntity.setSubModuleId(1);
+        workflewEntity.setSubModuleId(workflewMapper.selectById(nextNode.getWorkflewId()).getSubModuleId());
         //如果此节点是填写或者审批节点，节点初始状态为进行中(1)，其他为已结束
         if (nextNode.getNodeType()==2 || nextNode.getNodeType()==1){
             workflewEntity.setStatus(1);
@@ -80,7 +87,6 @@ public class WorkflewEntityServiceImpl extends ServiceImpl<WorkflewEntityMapper,
         workflewEntity.setCreateTime(new Date());
         workflewEntity.setUpdateTime(new Date());
         workflewEntity.setExecutorId("");
-        workflewEntityMapper.insert(workflewEntity);
-        return 1;
+        return workflewEntityMapper.insert(workflewEntity);
     }
 }

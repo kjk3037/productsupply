@@ -2,137 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1deffe58-0233-4cd0-8f21-eb1567d1f047" name="Default Changelist" comment="产品供销结构确定 version 1.1">
-      <change afterPath="$PROJECT_DIR$/productsupply-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_4_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/PurchaseOrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/SupplierAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/SupplierContactInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierContactInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/SysModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/UserAuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/UserDeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/WorkflewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/WorkflewEntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewEntityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/WorkflewExecutorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewExecutorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/WorkflewNodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewNodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/DictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DictMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/DictTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DictTypeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/DistrictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DistrictMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/PurchaseOrderDetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/PurchaseOrderDetailMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/PurchaseOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/PurchaseOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/SupplierAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SupplierAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/SupplierContactInformationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SupplierContactInformationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/SupplierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SupplierMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/SysModuleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SysModuleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/SysSubModuleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SysSubModuleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/UserAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/UserAuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserAuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/UserDeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserDeptMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/WorkflewEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/WorkflewEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/WorkflewExecutorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/WorkflewExecutorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/WorkflewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/WorkflewMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/WorkflewNodeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/WorkflewNodeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/Dict.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Dict.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/DictType.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DictType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/PurchaseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/PurchaseOrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/PurchaseOrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/SupplierAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SupplierAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/SupplierContactInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SupplierContactInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/SysModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SysModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/SysSubModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SysSubModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/UserAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/UserAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/UserDept.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/UserDept.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/Workflew.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Workflew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/WorkflewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/WorkflewEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/WorkflewExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/WorkflewExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/WorkflewNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/WorkflewNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/DictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/DictTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DictTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/DistrictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DistrictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/PurchaseOrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/PurchaseOrderDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/PurchaseOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/PurchaseOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/SupplierAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SupplierAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/SupplierContactInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SupplierContactInformationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/SysModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SysModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/SysSubModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SysSubModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/UserAuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAuthorityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/UserDeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserDeptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/WorkflewEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/WorkflewEntityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/WorkflewExecutorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/WorkflewExecutorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/WorkflewNodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/WorkflewNodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/WorkflewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/WorkflewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/DictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DictServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/DictTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DictTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/DistrictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DistrictServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/PurchaseOrderDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/PurchaseOrderDetailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/PurchaseOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/PurchaseOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/SupplierAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/SupplierContactInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierContactInformationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/SupplierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/SysModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SysModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/SysSubModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SysSubModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/UserAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/UserAuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAuthorityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/UserDeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserDeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewExecutorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewExecutorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewNodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewNodeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/config/DruidConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/config/DruidConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/utils/FormatUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zq/utils/MybatisGenerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DictMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DictTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DictTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DistrictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DistrictMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseOrderDetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/PurchaseOrderDetailMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/PurchaseOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SupplierAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SupplierAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SupplierMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SupplierMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SysModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysSubModuleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SysSubModuleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserAuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserAuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserDeptMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkflewEntityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewEntityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkflewExecutorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewExecutorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkflewMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkflewNodeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewNodeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/gener/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/product_supply.sql" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/sql/product_supply.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/product_supply2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/sql/product_supply2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/workflew.sql" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/sql/workflew.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/zq/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/zq/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zq/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/zq/backstage/service/UserDeptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zq/backstage/service/UserDeptService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/zq/backstage/service/impl/UserDeptServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zq/backstage/service/impl/UserDeptServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Workflew.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Workflew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/domain/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/UserAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/UserAccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/UserRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/UserAccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/UserAccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/UserRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/SysModuleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/SysModuleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserAuthorityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserAuthorityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserDeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserDeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/DictMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/DictTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/DistrictMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PurchaseOrderDetailMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PurchaseOrderMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SupplierAccountMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SupplierMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SysModuleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SysSubModuleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserAccountMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserAuthorityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserDeptMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkflewEntityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkflewExecutorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkflewMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkflewNodeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/gener/generatorConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/product_supply.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/product_supply2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/workflew.sql" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/productsupply-ums/target/" />
@@ -160,46 +83,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-web/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="509">
+              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -220,6 +108,7 @@
       <find>mybatis</find>
       <find>role_id</find>
       <find>approver</find>
+      <find>CommonResult</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -228,16 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/WorkflewEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/utils/MybatisGenerUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/WorkflewNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/controller/WorkflewEntityController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewNodeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/dao/WorkflewNodeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/WorkflewNodeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/WorkflewEntityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/service/impl/WorkflewEntityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/AccountDept.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/Authority.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/PurchaseOrder.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zq/backstage/domain/PurchaseOrderDetails.java" />
@@ -265,20 +144,30 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zq/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewEntityController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/pom.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/pom.xml" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewNodeController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DictMapper.xml" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAccountService.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/ResultCode.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/IErrorCode.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/Message.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/productsupply-web/pom.xml" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Workflew.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewMapper.xml" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -322,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,11 +254,58 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zq" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zq" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zq" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zq" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -379,7 +316,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1639641610098" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1639721191676" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -503,6 +440,8 @@
       <workItem from="1639548122644" duration="670000" />
       <workItem from="1639616743211" duration="6143000" />
       <workItem from="1639633422031" duration="8025000" />
+      <workItem from="1639704948805" duration="7700000" />
+      <workItem from="1639719222410" duration="2290000" />
     </task>
     <task id="LOCAL-00001" summary="产品供销结构确定 version 1.1">
       <created>1621757669842</created>
@@ -554,7 +493,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99581000" />
+    <option name="totallyTimeSpent" value="109571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,7 +507,7 @@
   <component name="ToolWindowManager">
     <frame x="184" y="67" width="1491" height="926" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25296995" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25995806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -612,255 +551,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="产品供销结构确定 version 1.1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewNodeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewExecutorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewEntityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="61" lean-forward="true" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserAccountMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/PurchaseOrderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/PurchaseOrderDetailMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.4.3/mybatis-plus-core-3.4.3.jar!/com/baomidou/mybatisplus/core/toolkit/Wrappers.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.4.1/mybatis-plus-extension-3.4.1.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="131" column="40" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
-          <folding>
-            <element signature="e#4545#4546#0" expanded="true" />
-            <element signature="e#4602#4603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserAuthorityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/UserDeptMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserDeptMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2106">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserDeptService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserDeptServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserAuthorityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newboot.log.2021-03-09.0.gz">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newboot.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14210" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9987" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-ums/src/main/java/cn/zq/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-ums/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-ums/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-ums/src/main/java/cn/zq/UmsApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DistrictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderDetailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierContactInformationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#666#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/config/DruidConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1323">
@@ -885,31 +575,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zq/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zq/App.java" />
     <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DictMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -941,20 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/WorkflewNodeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -972,42 +624,328 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAuthorityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="108">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewNodeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-949">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierContactInformationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SupplierAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/PurchaseOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/PurchaseOrderDetailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DistrictServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DictServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DictTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/PurchaseOrderDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierContactInformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="189">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SysModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SysSubModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserDeptServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserRoleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserDeptController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAuthorityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DistrictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/IErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1317">
+          <caret line="246" column="13" selection-start-line="246" selection-start-column="13" selection-end-line="246" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/common/ResultCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/Workflew.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/WorkflewEntityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
         </state>
       </provider>
     </entry>

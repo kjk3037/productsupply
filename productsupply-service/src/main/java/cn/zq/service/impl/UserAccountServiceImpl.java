@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.UserAccountMapper;
-import cn.zq.domain.Message;
+import cn.zq.common.Message;
 import cn.zq.domain.UserAccount;
 import cn.zq.service.UserAccountService;
 import cn.zq.service.WorkflewEntityService;
@@ -19,42 +19,34 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Autowired
     WorkflewEntityService workflewEntityService;
     @Override
-    public Message<UserAccount> login(UserAccount userAccount) {
-        Message<UserAccount> userMessage = new Message<>();
-        UserAccount u= userAccountMapper.loginCheck(userAccount);
-        if(!u.equals(null)){
-            if(u.getPassword().equals(userAccount.getPassword())){
-                userMessage.setCode("200");
-                userMessage.setData(u);
-                userMessage.setInfo("登录成功");
-                return userMessage;
-            }
-            userMessage.setCode("500");
-            userMessage.setInfo("账号或者密码错误");
-            return userMessage;
-        }
-        userMessage.setCode("500");
-        userMessage.setInfo("账号不存在");
-        return userMessage;
+    public UserAccount login(UserAccount userAccount) {
+        //旧编码
+        //Message<UserAccount> userMessage = new Message<>();
+//        if(!u.equals(null)){
+//            if(u.getPassword().equals(userAccount.getPassword())){
+//                userMessage.setCode(200);
+//                userMessage.setData(u);
+//                userMessage.setInfo("登录成功");
+//                return userMessage;
+//            }
+//            userMessage.setCode(500);
+//            userMessage.setInfo("账号或者密码错误");
+//            return userMessage;
+//        }
+//        userMessage.setCode(500);
+//        userMessage.setInfo("账号不存在");
+        return userAccountMapper.loginCheck(userAccount);
     }
 
     @Override
-    public Message<List> getUsers() {
-        Message<List> listMessage = new Message<>();
-        listMessage.setData(userAccountMapper.getUsers());
-        listMessage.setCode("200");
-        listMessage.setInfo("获取成功");
-        return listMessage;
+    public List getUsers() {
+        return userAccountMapper.getUsers();
     }
 
     @Override
-    public Message addUser(UserAccount userAccount) {
+    public int addUser(UserAccount userAccount) {
         userAccount.setId(FormatUtils.uuidFormat());
-        userAccountMapper.insertSelective(userAccount);
-        Message<UserAccount> message=new Message<>();
-        message.setCode("200");
-        message.setInfo("申请成功");
-        return message;
+        return userAccountMapper.insertSelective(userAccount);
     }
 
 }

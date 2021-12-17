@@ -1,33 +1,32 @@
 package cn.zq.controller;
 
 
-import cn.zq.domain.Message;
+import cn.zq.common.Message;
 import cn.zq.domain.UserAuthority;
 import cn.zq.service.UserAuthorityService;
+import com.alibaba.druid.sql.visitor.functions.If;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/account/authority")
+@RequestMapping("/user/authority")
 public class UserAuthorityController {
     @Autowired
     UserAuthorityService userAuthorityService;
     @GetMapping("/getList")
     public Message getList(){
-        Message<List> authorityMessage = new Message<>();
-        authorityMessage.setData(userAuthorityService.getList());
-        authorityMessage.setInfo("读取成功");
-        authorityMessage.setCode("200");
-        return authorityMessage;
+        return Message.success(userAuthorityService.getList());
     }
     @PostMapping("/selectByPrimaryKey")
     public Message selectByPrimaryKey(@RequestBody Integer id){
-        Message<UserAuthority> authorityMessage = new Message<>();
-        authorityMessage.setData(userAuthorityService.selectByPrimaryKey(id));
-        authorityMessage.setCode("200");
-        authorityMessage.setInfo("读取成功");
-        return authorityMessage;
+        UserAuthority userAuthority = userAuthorityService.selectByPrimaryKey(id);
+        if (!userAuthority.equals(null)) {
+            return Message.success(userAuthority);
+        }else {
+            return Message.failed("找不到相关权限!");
+        }
+
     }
 }
