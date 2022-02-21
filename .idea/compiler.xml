@@ -12,8 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="activiti-test" target="1.8" />
       <module name="product-supply" target="1.8" />
       <module name="productsupply" target="1.8" />
+      <module name="productsupply-activiti" target="1.8" />
       <module name="productsupply-service" target="1.8" />
       <module name="productsupply-web" target="1.8" />
       <module name="productsupplyums" target="1.8" />
@@ -21,7 +23,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="activiti-test" options="-parameters" />
       <module name="productsupply" options="-parameters" />
+      <module name="productsupply-activiti" options="-parameters" />
       <module name="productsupply-service" options="-parameters" />
       <module name="productsupply-web" options="-parameters" />
       <module name="productsupplyums" options="-parameters" />

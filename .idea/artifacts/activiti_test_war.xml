@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="activiti-test:war">
+    <output-path>$PROJECT_DIR$/activiti-test/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>activiti-test</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="activiti-test-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="activiti-test:war exploded" />
+    </root>
+  </artifact>
+</component>

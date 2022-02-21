@@ -7,12 +7,12 @@
         <id column="id" property="id" />
         <result column="wf_name" property="wfName" />
         <result column="desc" property="desc" />
-        <result column="sys_module_id" property="sysModuleId" />
+        <result column="sub_module_id" property="subModuleId" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, wf_name, desc, sys_module_id
+        id, wf_name, desc, sub_module_id
     </sql>
 
 </mapper>

@@ -3,6 +3,7 @@ package cn.zq.domain;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class UserRole {
@@ -18,5 +19,6 @@ public class UserRole {
     private Date createTime;
 
     private Date updateTime;
+    private List<UserPermission> permissions;
 
 }

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="productsupply-web:war">
+    <output-path>$PROJECT_DIR$/productsupply-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>productsupply-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="productsupply-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="productsupply-web:war exploded" />
+    </root>
+  </artifact>
+</component>

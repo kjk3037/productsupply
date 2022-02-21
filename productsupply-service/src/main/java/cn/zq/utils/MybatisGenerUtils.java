@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.junit.jupiter.api.Test;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,7 +27,7 @@ public class MybatisGenerUtils {
     //项目名
     private final String projectName = "productsupply";
     //指定包名
-    private final String packageName = "cn.zq.backstage";
+    private final String packageName = "cn.zq";
     //controller基础类
     //private final String superControllerClass = packageName + ".common.BaseController";
     //entity基础类
@@ -36,7 +37,7 @@ public class MybatisGenerUtils {
     //作者名
     private final String author = "kjk";
     //指定生成的表名
-    private final String[] tableNames = new String[]{"workflew_executor"};
+    private final String[] tableNames = new String[]{"user_permission"};
     @Test
     public void generateCode() {
         //serviceNameStartWithI：user -> UserAccountService, 设置成true: user -> IUserService
@@ -127,7 +128,7 @@ public class MybatisGenerUtils {
     private String getOutputDir(String projectName) {
 //        String path = this.getClass().getClassLoader().getResource("").getPath();
 //        int index = path.indexOf(projectName);
-        return "C:\\MyF\\project\\java\\" + projectName + "\\src\\main\\java\\";
+        return "C:\\MyF\\project\\java\\" + projectName + "\\productsupply-service\\src\\main\\java\\";
     }
     /**
      * 策略配置

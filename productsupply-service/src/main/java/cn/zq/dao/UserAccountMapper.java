@@ -22,4 +22,6 @@ public interface UserAccountMapper {
     UserAccount loginCheck(UserAccount userAccount);
 
     List<UserAccount> getUsers();
+
+    UserAccount findByUsername(String username);
 }
