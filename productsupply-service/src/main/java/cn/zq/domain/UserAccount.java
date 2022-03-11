@@ -19,6 +19,8 @@ public class UserAccount {
     private Date createTime;
 
     private Date updateTime;
+
+    private String salt;
     List<UserRole> roles;
     List<UserPermission> permissions;
 }

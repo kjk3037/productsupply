@@ -7,10 +7,13 @@ import cn.zq.domain.UserRole;
 import cn.zq.service.UserAccountService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -23,6 +26,7 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        System.out.println("授权方法被调用");
         UserAccount user = (UserAccount) SecurityUtils.getSubject().getPrincipal();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Set<String> stringSet = new HashSet<>();
@@ -43,14 +47,13 @@ public class CustomRealm extends AuthorizingRealm {
     }
 
     /**
-     * 这里可以注入userService,为了方便演示，我就写死了帐号了密码
      * private UserService userService;
      * <p>
      * 获取即将需要认证的信息
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        System.out.println("-------身份认证方法--------");
+        //System.out.println("-------身份认证方法--------");
         String userName = (String) authenticationToken.getPrincipal();
         String userPwd = new String((char[]) authenticationToken.getCredentials());
         UserAccount userAccount = new UserAccount();
@@ -61,9 +64,10 @@ public class CustomRealm extends AuthorizingRealm {
         String username=login.getUsername();
         if (username == null) {
             throw new AccountException("用户名不正确");
-        } else if (!userPwd.equals(password)) {
-            throw new AccountException("密码不正确");
         }
-        return new SimpleAuthenticationInfo(login, password,getName());
+//        } else if (!userPwd.equals(password)) {
+//            throw new AccountException("密码不正确");
+//        }
+        return new SimpleAuthenticationInfo(login, password, ByteSource.Util.bytes(login.getSalt()),getName());
     }
 }

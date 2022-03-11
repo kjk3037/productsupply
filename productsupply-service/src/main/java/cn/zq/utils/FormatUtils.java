@@ -1,6 +1,7 @@
 package cn.zq.utils;
 
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
@@ -16,5 +17,10 @@ public class FormatUtils {
     }
     public static String encodeSHA1(String password,String salt){
         return new SimpleHash(SHA1,password,salt,Iteration).toString();
+    }
+    @Test
+    public void generMD5P(){
+
+        System.out.println(encodeMD5("123","3b29896210744b3ca370bc8a84934425"));
     }
 }

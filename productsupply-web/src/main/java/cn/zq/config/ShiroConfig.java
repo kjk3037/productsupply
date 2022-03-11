@@ -1,5 +1,6 @@
 package cn.zq.config;
 
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -74,6 +75,11 @@ public class ShiroConfig {
     @Bean
     public CustomRealm customRealm() {
         CustomRealm customRealm = new CustomRealm();
+        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
+        matcher.setHashAlgorithmName("md5");
+        matcher.setHashIterations(512);
+        customRealm.setCredentialsMatcher(matcher);
         return customRealm;
     }
+
 }

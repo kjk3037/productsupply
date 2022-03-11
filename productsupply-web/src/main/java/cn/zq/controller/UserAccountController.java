@@ -3,6 +3,8 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.domain.UserAccount;
 import cn.zq.service.UserAccountService;
+import cn.zq.utils.FormatUtils;
+import org.apache.catalina.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -23,6 +25,7 @@ public class UserAccountController {
         Subject subject = SecurityUtils.getSubject();
         // 在认证提交前准备 token（令牌）
         UsernamePasswordToken token = new UsernamePasswordToken(userAccount.getUsername(), userAccount.getPassword());
+
         // 执行认证登陆
         try {
             subject.login(token);
@@ -38,7 +41,6 @@ public class UserAccountController {
             return  Message.failed("用户名或密码不正确！");
         }
         if (subject.isAuthenticated()) {
-            System.out.println(1);
             return  Message.success(subject.getSession(),"登录成功");
         } else {
             token.clear();
@@ -52,7 +54,10 @@ public class UserAccountController {
     }
     @PostMapping("/add")
     public Message add(@RequestBody UserAccount userAccount) {
-        int count = userAccountService.addUser(userAccount);
+        UserAccount newAccount=userAccount;
+        newAccount.setSalt(FormatUtils.uuidFormat());
+        newAccount.setPassword(FormatUtils.encodeMD5(newAccount.getPassword(),newAccount.getSalt()));
+        int count = userAccountService.addUser(newAccount);
         if (count > 0) {
             return Message.success(count, "注册成功!");
         } else {
