@@ -5,6 +5,7 @@ import cn.zq.domain.UserAccount;
 import cn.zq.domain.UserPermission;
 import cn.zq.domain.UserRole;
 import cn.zq.service.UserAccountService;
+import cn.zq.utils.MyByteSource;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -65,9 +66,8 @@ public class CustomRealm extends AuthorizingRealm {
         if (username == null) {
             throw new AccountException("用户名不正确");
         }
-//        } else if (!userPwd.equals(password)) {
-//            throw new AccountException("密码不正确");
-//        }
-        return new SimpleAuthenticationInfo(login, password, ByteSource.Util.bytes(login.getSalt()),getName());
+        return new SimpleAuthenticationInfo(login, password, new MyByteSource(login.getSalt()),getName());
     }
+
+
 }

@@ -1,6 +1,8 @@
 package cn.zq.domain;
 
-public class Dict {
+import java.io.Serializable;
+
+public class Dict implements Serializable {
     private Integer id;
 
     private Integer typeId;

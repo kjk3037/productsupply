@@ -2,11 +2,14 @@ package cn.zq.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
-public class UserAccount {
+public class UserAccount  implements Serializable {
+    private static long serialVersionUID=1L;
     private String id;
 
     private String username;

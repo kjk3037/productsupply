@@ -10,6 +10,8 @@ import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.List;
 @RequestMapping("/user/account")
 @RestController
 public class UserAccountController {
+    @Autowired
+    StringRedisTemplate redisTemplate;
     @Autowired
     UserAccountService userAccountService;
     @PostMapping("/login")
@@ -69,5 +73,11 @@ public class UserAccountController {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return Message.success("登出成功!");
+    }
+    @PostMapping("/test")
+    public Message test(){
+        //redisTemplate.opsForValue().set("name","kjk");
+        System.out.println(redisTemplate.opsForValue().get("name"));
+        return Message.success("1");
     }
 }
