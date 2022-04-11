@@ -40,7 +40,7 @@ public class MybatisGenerUtils {
     private final String[] tableNames = new String[]{"user_permission"};
     @Test
     public void generateCode() {
-        //serviceNameStartWithI：user -> UserAccountService, 设置成true: user -> IUserService
+        //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService
         generateByTables(false, packageName, tableNames);
     }
     /**

@@ -13,13 +13,12 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public class MyByteSource implements ByteSource , Serializable {
-    private static final long serialVersionUID = 1L;
+public class MyByteSource implements ByteSource,Serializable {
 
     private byte[] bytes;
     private String cachedHex;
     private String cachedBase64;
-
+    private boolean empty;
     public MyByteSource() {
     }
 
@@ -80,7 +79,8 @@ public class MyByteSource implements ByteSource , Serializable {
 
     @Override
     public boolean isEmpty() {
-        return this.bytes == null || this.bytes.length == 0;
+        this.empty=this.bytes == null || this.bytes.length == 0;
+        return this.empty;
     }
 
     @Override

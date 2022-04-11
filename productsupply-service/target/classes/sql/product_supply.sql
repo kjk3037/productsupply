@@ -5383,7 +5383,7 @@ CREATE TABLE `sys_sub_module` (
 -- ----------------------------
 -- Records of sys_sub_module
 -- ----------------------------
-INSERT INTO `sys_sub_module` VALUES ('1', '账号管理', '/userAccount', '1');
+INSERT INTO `sys_sub_module` VALUES ('1', '账号管理', '/user', '1');
 INSERT INTO `sys_sub_module` VALUES ('2', '角色管理', '/role', '1');
 INSERT INTO `sys_sub_module` VALUES ('3', '权限管理', '/authority', '1');
 INSERT INTO `sys_sub_module` VALUES ('4', '采购订单', '/order', '2');
