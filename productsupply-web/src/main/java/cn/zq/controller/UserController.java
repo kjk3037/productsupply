@@ -88,4 +88,8 @@ public class UserController {
         System.out.println(user);
         return Message.success(user,"success!");
     }
+    @GetMapping("/getMy")
+    public Message getMy(){
+        return Message.success(SecurityUtils.getSubject().getPrincipal());
+    }
 }

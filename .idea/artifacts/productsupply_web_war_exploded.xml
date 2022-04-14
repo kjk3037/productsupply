@@ -14,9 +14,6 @@
           <element id="module-output" name="productsupply-web" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="productsupply-web-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="productsupply-web" />
-          </element>
           <element id="archive" name="productsupply-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="productsupply-service" />
           </element>

@@ -3,6 +3,8 @@ package cn.zq.utils;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 public class FormatUtils {
@@ -11,6 +13,12 @@ public class FormatUtils {
     public static int Iteration=512;
     public static String uuidFormat(){
         return UUID.randomUUID().toString().replaceAll("-","");
+    }
+    public static String codeFormat(String prev,Integer id){
+        return new StringBuffer(prev+"-").append(timeFormat(new Date())).append("00"+id).toString();
+    }
+    public static String timeFormat(Date date){
+        return new SimpleDateFormat("YYYYMMDD").format(date);
     }
     public static String encodeMD5(String password,String salt){
         return new SimpleHash(MD5,password,salt,Iteration).toString();

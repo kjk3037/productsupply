@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.security.auth.Subject;
+import java.util.HashMap;
+import java.util.Map;
 
 @RequestMapping("/acti")
 @RestController
@@ -19,12 +21,12 @@ public class ActController {
     ActTaskService actTaskService;
     @RequestMapping("/create")
     public Message create(){
-        actProcessService.createInst("cc","5");
+        actProcessService.startProcess("cc","5",new HashMap());
         return Message.success("创建成功");
     }
     @RequestMapping("/execute")
     public void execute(String instId){
-        actTaskService.execute(instId);
+        actTaskService.execute(instId,"");
     }
     @RequestMapping("/deploy")
     public void deploy(){

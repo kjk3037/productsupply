@@ -37,20 +37,20 @@ public class ActProcessService {
         System.out.println("name: "+deploy.getName());
     }
     /*
-    *@describe 创建流程实例
+    *@describe 开启流程创建实例
     *@param String:processKey , String:bussinessKey
     **/
-    public void createInst(String processKey,String bussinessKey){
+    public void startProcess(String processKey,String bussinessKey,Map vars){
         String username= ShiroUtils.getUsername();
-        Map<String,Object> args=new HashMap<>();
+        Map<String,Object> args=vars;
         args.put("user",username);
-        args.put("leader","jack");
+        //args.put("leader","jack");
         ProcessInstance test = runtimeService.startProcessInstanceByKey(processKey,bussinessKey,args);
-        System.out.println("ProcessInstId:"+test.getProcessInstanceId());
-        System.out.println("ProcessDefId:"+test.getProcessDefinitionId());
-        System.out.println("Id:"+test.getId());
+//        System.out.println("ProcessInstId:"+test.getProcessInstanceId());
+//        System.out.println("ProcessDefId:"+test.getProcessDefinitionId());
+//        System.out.println("Id:"+test.getId());
         //执行申请节点
-        actTaskService.execute(test.getProcessInstanceId());
+        actTaskService.execute(test.getProcessInstanceId(),null);
         log.info("ProcessInstance is created");
     }
 
