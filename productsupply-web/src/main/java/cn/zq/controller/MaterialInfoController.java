@@ -1,8 +1,13 @@
 package cn.zq.controller;
 
 
+import cn.zq.common.Message;
+import cn.zq.service.MaterialInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,6 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/materialInfo")
 public class MaterialInfoController {
+    @Autowired
+    MaterialInfoService materialInfoService;
+    @GetMapping("/getAll")
+    public Message getAll(){
+        return Message.success(materialInfoService.getAllMaterial(),"获取成功");
+    }
+    @GetMapping("/getByCode")
+    public Message getByCode(@RequestParam String code){
+        return Message.success(materialInfoService.getByCode(code),"获取成功");
+    }
 
 }
 

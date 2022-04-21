@@ -2,29 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1deffe58-0233-4cd0-8f21-eb1567d1f047" name="Default Changelist" comment="产品供销结构确定 version 1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/productsupply_web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/productsupply_web_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_supply.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product_supply.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/productsupply-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/productsupply-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActProcessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/controller/SaleOrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/MaterialInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/MaterialInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/CustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/CustomerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/MaterialInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/MaterialInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderDetailMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/MaterialInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/MaterialInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/MaterialInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/MaterialInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/MaterialInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/MaterialInfoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/processes/cc.bpmn20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/application-servicedev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/application-servicedev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/activiti/ActProcessService.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/activiti/ActProcessService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/controller/SaleOrderDetailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/dao/MaterialInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/dao/MaterialInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/domain/MaterialInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/domain/MaterialInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/MaterialInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/MaterialInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/activiti/ActTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/activiti/ActTaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/MaterialInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/MaterialInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/SaleOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/service/impl/SaleOrderServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/utils/FormatUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/utils/FormatUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/utils/MybatisGenerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/target/classes/cn/zq/utils/MybatisGenerUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-service/target/classes/processes/cc.bpmn20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/productsupply-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/productsupply-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/META-INF/productsupply-web.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/ActController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/ActController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productsupply.iml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/MySessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/MySessionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/config/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/config/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/MaterialInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/MaterialInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/SysModuleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/controller/SysModuleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/shiro/MySessionDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-web/target/classes/cn/zq/shiro/MySessionDao.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/productsupply-ums/target/" />
@@ -58,61 +67,77 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/MaterialInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+            <state relative-caret-position="425">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SaleOrderServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/MaterialInfoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="401">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1000">
+              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DataFieldController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="38" column="35" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding>
-                <element signature="e#1882#1883#0" expanded="true" />
-                <element signature="e#1911#1912#0" expanded="true" />
-                <element signature="e#1993#1994#0" expanded="true" />
-                <element signature="e#2022#2023#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java">
+        <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderDetailController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderDetailMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActProcessService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -159,17 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/FastJsonRedisSerializer.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FastJsonRedisSerializer.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/SerializeUtil.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/config/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserAccountController.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/listener/ActivitiListener.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/process/test.bpmn20.xml" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/listener/AssigneListener.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/process/TaskUtil.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/process/ProcessUtil.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/process/TaskService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/process/ProcessService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/process/ActTaskService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/process/bx.bpmn" />
@@ -187,7 +201,6 @@
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserAccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/listener/CandidateListener.java" />
         <option value="$PROJECT_DIR$/productsupply-service/pom.xml" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java" />
@@ -196,12 +209,9 @@
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/controller/SaleOrderController.java" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/CustomerController.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActProcessService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/processes/sale_order.bpmn20.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderMapper.xml" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderDetailMapper.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderDetailMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SaleOrder.java" />
@@ -210,6 +220,21 @@
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SaleOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/MySessionDao.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/MaterialInfoMapper.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/MaterialInfoService.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/MaterialInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderDetailController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DataFieldController.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DataFieldService.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/MaterialInfo.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/MaterialInfoMapper.xml" />
       </list>
     </option>
   </component>
@@ -248,8 +273,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,18 +323,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zq" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
-              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
-              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zq" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="activiti" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
@@ -320,6 +332,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productsupply" type="462c0819:PsiDirectoryNode" />
+              <item name="productsupply-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="product-supply" type="b2602c69:ProjectViewProjectNode" />
@@ -379,6 +400,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +411,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1649837866637" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1650366320361" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/productsupply-activiti/src/main/java/cn/zq" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -399,19 +422,19 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\MyF\project\java\productsupply\productsupply-activiti\src\main\resources\diagrams" />
-      <recent name="C:\MyF\project\java\productsupply" />
-      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\resources\mapper\gener" />
-      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main" />
-      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\java\cn\zq" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\java\cn\zq\exception" />
+      <recent name="C:\MyF\project\java\productsupply\productsupply-web\src\main\java\cn\zq\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.zq.config" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\java\cn\zq\exception" />
-      <recent name="C:\MyF\project\java\productsupply\productsupply-web\src\main\java\cn\zq\config" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\resources\mapper" />
+      <recent name="C:\MyF\project\java\productsupply\productsupply-activiti\src\main\resources\diagrams" />
+      <recent name="C:\MyF\project\java\productsupply" />
+      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main\resources\mapper\gener" />
+      <recent name="C:\MyF\project\java\productsupply\productsupply-service\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -443,6 +466,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FormatUtils.printAllFields (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productsupply-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.zq.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.zq.utils" />
+      <option name="MAIN_CLASS_NAME" value="cn.zq.utils.FormatUtils" />
+      <option name="METHOD_NAME" value="printAllFields(java.lang.Object)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormatUtils.printAllFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="productsupply-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.zq.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.zq.utils" />
+      <option name="MAIN_CLASS_NAME" value="cn.zq.utils.FormatUtils" />
+      <option name="METHOD_NAME" value="printAllFields" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MybatisGenerUtils.generateCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="productsupply-service" />
       <extension name="coverage">
@@ -469,29 +524,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test1.gener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="productsupply-service" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test1" />
-      <option name="METHOD_NAME" value="gener" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ActivitiApp (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="activiti-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.zq.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.zq.ActivitiApp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="productsupply-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.zq.WebApp" />
@@ -501,11 +533,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FormatUtils.printAllFields" />
+        <item itemvalue="JUnit.FormatUtils.printAllFields (1)" />
         <item itemvalue="JUnit.MybatisGenerUtils.generateCode" />
         <item itemvalue="JUnit.NewTest.deploy" />
         <item itemvalue="JUnit.FormatUtils.generMD5P" />
-        <item itemvalue="JUnit.test1.gener" />
-        <item itemvalue="Spring Boot.ActivitiApp (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -620,6 +652,12 @@
       <workItem from="1649898458597" duration="839000" />
       <workItem from="1649924332181" duration="1553000" />
       <workItem from="1649928547387" duration="2731000" />
+      <workItem from="1650246579039" duration="6585000" />
+      <workItem from="1650260238627" duration="7629000" />
+      <workItem from="1650333265486" duration="641000" />
+      <workItem from="1650346602721" duration="12337000" />
+      <workItem from="1650415464289" duration="2553000" />
+      <workItem from="1650447295018" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="产品供销结构确定 version 1.1">
       <created>1621757669842</created>
@@ -639,27 +677,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NewTest_deploy - 2022.03.31 at 11h 34m 10s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewTest_deploy - 2022.03.31 at 11h 36m 05s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewTest_deploy - 2022.03.31 at 16h 28m 27s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewTest_deploy - 2022.03.31 at 16h 29m 46s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewTest_deploy - 2022.03.31 at 17h 16m 45s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewTest_deploy - 2022.03.31 at 17h 17m 19s.xml">
-      <configuration name="NewTest.deploy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MybatisGenerUtils_generateCode - 2022.04.13 at 10h 26m 03s.xml">
-      <configuration name="MybatisGenerUtils.generateCode" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MybatisGenerUtils_generateCode - 2022.04.13 at 10h 32m 41s.xml">
       <configuration name="MybatisGenerUtils.generateCode" configurationId="JUnit" />
     </history-entry>
@@ -669,9 +686,30 @@
     <history-entry file="MybatisGenerUtils_generateCode - 2022.04.13 at 16h 17m 01s.xml">
       <configuration name="MybatisGenerUtils.generateCode" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FormatUtils_printAllFields - 2022.04.19 at 17h 04m 54s.xml">
+      <configuration name="FormatUtils.printAllFields" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MybatisGenerUtils_generateCode - 2022.04.19 at 17h 05m 57s.xml">
+      <configuration name="MybatisGenerUtils.generateCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormatUtils_printAllFields_(1) - 2022.04.19 at 17h 24m 24s.xml">
+      <configuration name="FormatUtils.printAllFields (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormatUtils_printAllFields - 2022.04.19 at 17h 24m 47s.xml">
+      <configuration name="FormatUtils.printAllFields" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormatUtils_printAllFields - 2022.04.19 at 17h 32m 51s.xml">
+      <configuration name="FormatUtils.printAllFields" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormatUtils_printAllFields - 2022.04.19 at 17h 33m 04s.xml">
+      <configuration name="FormatUtils.printAllFields" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormatUtils_printAllFields - 2022.04.19 at 17h 33m 19s.xml">
+      <configuration name="FormatUtils.printAllFields" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344876000" />
+    <option name="totallyTimeSpent" value="375226000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,7 +723,7 @@
   <component name="ToolWindowManager">
     <frame x="205" y="82" width="1491" height="926" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2921034" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2739343" />
       <window_info id="Structure" order="1" sideWeight="0.5012626" side_tool="true" weight="0.19287212" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -770,164 +808,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$MAVEN_REPOSITORY$/org/activiti/activiti-spring-boot-starters/5.21.0/activiti-spring-boot-starters-5.21.0.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/activiti/activiti-spring-boot/5.21.0/activiti-spring-boot-5.21.0.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/activiti/activiti-root/5.21.0/activiti-root-5.21.0.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java" />
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/ServiceApp.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/impl/RuntimeServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="361" column="63" lean-forward="true" selection-start-line="361" selection-start-column="52" selection-end-line="361" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/RuntimeService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/impl/TaskQueryImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="241" column="29" selection-start-line="241" selection-start-column="23" selection-end-line="241" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/task/TaskQuery.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/task/TaskInfoQuery.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/CustomRealm.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-bpmn-model/6.0.0/activiti-bpmn-model-6.0.0.jar!/org/activiti/bpmn/model/FlowNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/processes/cc.bpmn20.xml" />
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1034">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/ShiroUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="534" column="5" lean-forward="true" selection-start-line="534" selection-start-column="5" selection-end-line="534" selection-end-column="5" />
-          <folding>
-            <element signature="e#21303#21304#0" expanded="true" />
-            <element signature="e#21335#21336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="622" column="33" lean-forward="true" selection-start-line="622" selection-start-column="33" selection-end-line="622" selection-end-column="33" />
-          <folding>
-            <element signature="e#22736#22737#0" expanded="true" />
-            <element signature="e#22776#22777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/impl/TaskServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="119" column="61" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/activiti/activiti-engine/6.0.0/activiti-engine-6.0.0.jar!/org/activiti/engine/TaskService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/exception/MyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserRoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserPermissionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -942,13 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.4.1/mybatis-plus-extension-3.4.1.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -984,47 +861,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/MaterialInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding>
-            <element signature="e#635#636#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/UserPermissionMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderMapper.xml">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,7 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderDetailMapper.xml">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderDetailMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
@@ -1064,10 +907,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderDetailMapper.java">
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="100">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1078,51 +928,251 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SupplierController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.16.18/lombok-1.16.18.jar!/lombok/extern/slf4j/Slf4j.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="454">
           <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java">
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/WebApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="225">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/activiti/ActTaskService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.6/spring-web-5.3.6.jar!/org/springframework/web/filter/CorsFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+        <state relative-caret-position="-57">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/UserRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.4.3/mybatis-plus-core-3.4.3.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.7.1/shiro-web-1.7.1.jar!/org/apache/shiro/web/servlet/ShiroHttpSession.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="28" column="58" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="58" />
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.7.1/shiro-web-1.7.1.jar!/org/apache/shiro/web/servlet/SimpleCookie.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1334">
+          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SaleOrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+        <state relative-caret-position="1925">
+          <caret line="98" column="26" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/CustomRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/cache/RedisCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.7.1/shiro-core-1.7.1.jar!/org/apache/shiro/session/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.7.1/shiro-core-1.7.1.jar!/org/apache/shiro/session/mgt/SimpleSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/MySessionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SysModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/MaterialInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
-            <element signature="e#1882#1883#0" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/MaterialInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.4.3/mybatis-plus-core-3.4.3.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/MybatisGenerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.4.1/mybatis-plus-extension-3.4.1.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="114" column="30" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DataFieldService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/MaterialInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/MaterialInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DataFieldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SysModuleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/MaterialInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
         </state>
       </provider>
     </entry>

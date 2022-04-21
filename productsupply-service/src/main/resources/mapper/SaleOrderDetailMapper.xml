@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zq.dao.SaleOrderDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zq.domain.SaleOrderDetail">
+        <id column="id" property="id" />
+        <result column="order_id" property="orderId" />
+        <result column="order_code" property="orderCode" />
+        <result column="material_code" property="materialCode" />
+        <result column="count" property="count" />
+        <result column="price_including_tax" property="priceIncludingTax" />
+        <result column="amount_including_tax" property="amountIncludingTax" />
+        <result column="tax_rate" property="taxRate" />
+        <result column="packing_specification" property="packingSpecification" />
+        <result column="packing_requirement" property="packingRequirement" />
+        <result column="remark" property="remark" />
+        <result column="delivered_count" property="deliveredCount" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_id, order_code, material_code, count, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time
+    </sql>
+    <select id="selectByOrderCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sale_order_detail
+        where order_code=#{orderCode}
+    </select>
+    <select id="selectByOrderId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sale_order_detail
+        where order_code=#{orderId}
+    </select>
+    <insert id="insertBatch">
+        insert into sale_order_detail (id, order_id, order_code, material_code, `count`, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time) values
+        <foreach collection="details" item="item" open="(" close=")" separator=",">
+            #{item.id}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
+            #{item.count}, #{item.priceIncludingTax},#{item.amountIncludingTax},
+            #{item.taxRate}, #{item.packingSpecification}, #{item.packingRequirement},
+            #{item.remark}, #{item.deliveredCount}, #{item.createTime}, #{item.updateTime}
+        </foreach>
+    </insert>
+</mapper>

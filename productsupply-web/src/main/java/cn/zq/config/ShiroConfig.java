@@ -8,6 +8,7 @@ import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.ShiroHttpSession;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.slf4j.Logger;
@@ -34,6 +35,7 @@ public class ShiroConfig {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // <!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
         filterChainDefinitionMap.put("/user/login", "anon");
+        //filterChainDefinitionMap.put("/module/getList", "anon");
         filterChainDefinitionMap.put("/user/register", "anon");
 //        filterChainDefinitionMap.put("/user/account/test", "anon");
         filterChainDefinitionMap.put("/user/**", "authc");
@@ -58,7 +60,7 @@ public class ShiroConfig {
         DefaultWebSessionManager defaultWebSessionManager=new DefaultWebSessionManager();
         defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         defaultWebSessionManager.setSessionDAO(new MySessionDao());
-        defaultWebSessionManager.setSessionIdCookie(new SimpleCookie("JSESSIONID"));
+        defaultWebSessionManager.setSessionIdCookie(new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME));
         return defaultWebSessionManager;
     }
 

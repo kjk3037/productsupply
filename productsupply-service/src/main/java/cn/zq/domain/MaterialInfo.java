@@ -62,7 +62,13 @@ import lombok.EqualsAndHashCode;
      */
       private String field;
 
-    private String desc;
+    private String descr;
+    //物料类型
+    private Integer type;
+    //成品类型
+    private Integer productType;
+    //型号
+    private String model;
 
     private Date createTime;
 

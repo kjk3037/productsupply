@@ -28,8 +28,8 @@ public class MySessionDao extends AbstractSessionDAO {
     private static final String CACHE_NAME="shiro-activeSessionCache";
     @Override
     protected Serializable doCreate(Session session) {
-        //System.out.println("sessionDAO -> 生成id");
         Serializable sessionId=generateSessionId(session);
+        //System.out.println("sessionDAO -> 生成id:"+sessionId.toString());
         this.assignSessionId(session, sessionId);
         getRedisTemplate().opsForHash().put(CACHE_NAME,sessionId,session);
         return sessionId;
@@ -39,12 +39,13 @@ public class MySessionDao extends AbstractSessionDAO {
     protected Session doReadSession(Serializable serializable) {
         //System.out.println("sessionDAO -> 执行读取 :"+serializable.toString());
         Session session = (Session) getRedisTemplate().opsForHash().get(CACHE_NAME,serializable.toString());
+        //System.out.println(session);
         return session;
     }
 
     @Override
     public void update(Session session) throws UnknownSessionException {
-        //System.out.println("sessionDAO -> 执行修改");
+        //System.out.println("sessionDAO -> 执行修改:"+session.getId());
         Session s = (Session) getRedisTemplate().opsForHash().get(CACHE_NAME, session.getId());
         if (s!=null){
             getRedisTemplate().opsForHash().put(CACHE_NAME,session.getId(),session);
@@ -53,7 +54,7 @@ public class MySessionDao extends AbstractSessionDAO {
 
     @Override
     public void delete(Session session) {
-        //System.out.println("sessionDAO -> 执行删除");
+        //System.out.println("sessionDAO -> 执行删除:"+session.getId());
         getRedisTemplate().opsForHash().delete(CACHE_NAME,session.getId());
     }
 
