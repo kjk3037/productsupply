@@ -9,6 +9,7 @@
         <result column="customer_id" property="customerId" />
         <result column="order_type" property="orderType" />
         <result column="input_require_date" property="inputRequireDate" />
+        <result column="out_require_date" property="outRequireDate" />
         <result column="order_date" property="orderDate" />
         <result column="settlement_method" property="settlementMethod" />
         <result column="attachment" property="attachment" />
@@ -24,7 +25,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, code, customer_id, order_type, input_require_date, order_date, settlement_method, attachment, amount, tax_rate, discount, delivery_status, receipt_status, create_time, update_time
+        id, code, customer_id, order_type, input_require_date,out_require_date, order_date, settlement_method, attachment, amount, tax_rate, discount, delivery_status, receipt_status, create_time, update_time
     </sql>
     <select id="maxId" resultType="java.lang.Integer" >
         select max(id) from sale_order

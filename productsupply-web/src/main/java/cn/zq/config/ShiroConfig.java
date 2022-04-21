@@ -38,6 +38,7 @@ public class ShiroConfig {
         //filterChainDefinitionMap.put("/module/getList", "anon");
         filterChainDefinitionMap.put("/user/register", "anon");
 //        filterChainDefinitionMap.put("/user/account/test", "anon");
+        filterChainDefinitionMap.put("/acti/uploadByOne", "anon");
         filterChainDefinitionMap.put("/user/**", "authc");
         //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截 剩余的都需要认证
         filterChainDefinitionMap.put("/**", "authc");
@@ -61,6 +62,18 @@ public class ShiroConfig {
         defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         defaultWebSessionManager.setSessionDAO(new MySessionDao());
         defaultWebSessionManager.setSessionIdCookie(new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME));
+        //全局会话超时时间（单位毫秒），默认30分钟  暂时设置为10秒钟 用来测试
+        defaultWebSessionManager.setGlobalSessionTimeout(86400000);
+        //是否开启删除无效的session对象  默认为true
+        defaultWebSessionManager.setDeleteInvalidSessions(true);
+        //是否开启定时调度器进行检测过时session 默认为true
+        defaultWebSessionManager.setSessionValidationSchedulerEnabled(true);
+        //设置session失效的扫描时间, 清理用户直接关闭浏览器形成的孤立会话 默认为 1个小时
+        //设置该属性 就不须要设置 ExecutorServiceSessionValidationScheduler 底层也是默认自动调用ExecutorServiceSessionValidationScheduler
+        //暂时设置为 5秒 用来测试
+        defaultWebSessionManager.setSessionValidationInterval(3600000);
+        //取消url 后面的 JSESSIONID
+        //defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         return defaultWebSessionManager;
     }
 

@@ -8,11 +8,13 @@
         <result column="bussiness_key" property="bussinessKey" />
         <result column="prop" property="prop" />
         <result column="label" property="label" />
+        <result column="field_type" property="fieldType" />
+        <result column="width" property="width" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, bussiness_key, prop, label
+        id, bussiness_key, prop, label,field_type,width
     </sql>
 
 </mapper>

@@ -36,7 +36,7 @@ public class FormatUtils {
 //    public void generMD5P() {
 //        System.out.println(encodeMD5("123", "3b29896210744b3ca370bc8a84934425"));
 //    }
-    public static List<DataField> printAllFields(Object o){
+    public static List<DataField> printAllFields(Object o,int type){
         Class cls= o.getClass();
         Field[] fields=cls.getDeclaredFields();
         String name = cls.getName();
@@ -52,6 +52,8 @@ public class FormatUtils {
             DataField dataField = new DataField();
             dataField.setBussinessKey(className);
             dataField.setProp(field.getName());
+            dataField.setFieldType(type);
+            dataField.setWidth(150);
             dataFields.add(dataField);
         }
         return dataFields;

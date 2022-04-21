@@ -45,6 +45,11 @@ import lombok.EqualsAndHashCode;
       private Date inputRequireDate;
 
       /**
+       * 要求入库日期
+       */
+      private Date outRequireDate;
+
+      /**
      * 下单日期
      */
       private Date orderDate;

@@ -48,12 +48,12 @@ public class RedisCache<k,v> implements Cache<k,v> {
 
     @Override
     public int size() {
-        return 0;
+        return getRedisTemplate().opsForHash().size(cacheName).intValue();
     }
 
     @Override
     public Set<k> keys() {
-        return null;
+        return getRedisTemplate().opsForHash().keys(cacheName);
     }
 
     @Override

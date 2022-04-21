@@ -29,5 +29,8 @@ import lombok.EqualsAndHashCode;
 
     private String label;
 
+  private int fieldType;
+
+  private int width;
 
 }

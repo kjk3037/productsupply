@@ -4,6 +4,8 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.domain.DataField;
 import cn.zq.domain.MaterialInfo;
+import cn.zq.domain.SaleOrder;
+import cn.zq.domain.SaleOrderDetail;
 import cn.zq.service.DataFieldService;
 import cn.zq.utils.FormatUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -32,7 +34,7 @@ public class DataFieldController {
     DataFieldService dataFieldService;
     @PostMapping("/addFields")
     public Message addFields(){
-        List<DataField> dataFields = FormatUtils.printAllFields(new MaterialInfo());
+        List<DataField> dataFields = FormatUtils.printAllFields(new SaleOrderDetail(),2);
         dataFieldService.saveBatch(dataFields);
         return Message.success("OK");
     }

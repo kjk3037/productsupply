@@ -3,16 +3,21 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
+import com.baomidou.mybatisplus.extension.api.R;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.security.auth.Subject;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
 @RequestMapping("/acti")
+@Slf4j
 @RestController
 public class ActController {
     @Autowired
@@ -36,4 +41,22 @@ public class ActController {
     public void rollback(String instId,String currentTaskId,String targetTaskId) throws Exception {
         actTaskService.rollback(instId,currentTaskId, targetTaskId);
     }
+    @CrossOrigin
+    @PostMapping("/uploadByOne")
+    public Message uploadByOne(MultipartFile file) {
+        try (InputStream is = file.getInputStream();
+             ByteArrayOutputStream os = new ByteArrayOutputStream()) {
+            IOUtils.copy(is, os);
+            byte[] bytes = os.toByteArray();
+            File file1=new File("C:/MyF");
+            OutputStream outputStream = new FileOutputStream(file1);
+            outputStream.write(bytes);
+            return Message.success("111");
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.error("文件上传发生异常 -> {}", e.getMessage());
+            return Message.failed("文件上传失败");
+        }
+    }
+
 }
