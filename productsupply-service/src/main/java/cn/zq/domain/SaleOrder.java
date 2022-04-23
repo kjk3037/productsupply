@@ -9,6 +9,7 @@ import java.util.List;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * <p>
@@ -99,4 +100,5 @@ import lombok.EqualsAndHashCode;
     private Date updateTime;
 
     private List<SaleOrderDetail> saleOrderDetails;
+    private MultipartFile[] files;
 }

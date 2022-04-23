@@ -34,7 +34,7 @@ public class DataFieldController {
     DataFieldService dataFieldService;
     @PostMapping("/addFields")
     public Message addFields(){
-        List<DataField> dataFields = FormatUtils.printAllFields(new SaleOrderDetail(),2);
+        List<DataField> dataFields = FormatUtils.printAllFields(new SaleOrder(),1);
         dataFieldService.saveBatch(dataFields);
         return Message.success("OK");
     }

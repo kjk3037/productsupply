@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zq.dao.AttachmentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zq.domain.Attachment">
+        <id column="id" property="id" />
+        <result column="bussiness" property="bussiness" />
+        <result column="bussiness_key" property="bussinessKey" />
+        <result column="path" property="path" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, bussiness, bussiness_key, path
+    </sql>
+
+</mapper>

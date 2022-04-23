@@ -3,15 +3,18 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
+import cn.zq.utils.FileUtils;
 import com.baomidou.mybatisplus.extension.api.R;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
+
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.security.auth.Subject;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,22 +44,30 @@ public class ActController {
     public void rollback(String instId,String currentTaskId,String targetTaskId) throws Exception {
         actTaskService.rollback(instId,currentTaskId, targetTaskId);
     }
-    @CrossOrigin
-    @PostMapping("/uploadByOne")
-    public Message uploadByOne(MultipartFile file) {
-        try (InputStream is = file.getInputStream();
-             ByteArrayOutputStream os = new ByteArrayOutputStream()) {
-            IOUtils.copy(is, os);
-            byte[] bytes = os.toByteArray();
-            File file1=new File("C:/MyF");
-            OutputStream outputStream = new FileOutputStream(file1);
-            outputStream.write(bytes);
-            return Message.success("111");
-        } catch (IOException e) {
-            e.printStackTrace();
-            log.error("文件上传发生异常 -> {}", e.getMessage());
-            return Message.failed("文件上传失败");
+    @PostMapping("/upload")
+    public Message uploadByOne(MultipartFile[] files,HttpServletResponse response) {
+        System.out.println(files);
+        for (MultipartFile file : files) {
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            response.setHeader("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+            try {
+                InputStream is = file.getInputStream();
+                ByteArrayOutputStream os = new ByteArrayOutputStream();
+                IOUtils.copy(is, os);
+                byte[] bytes = os.toByteArray();
+                String end = "";
+                System.out.println(file.getContentType());
+                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
+                File finalFile=FileUtils.createFile(newFile,0);
+                OutputStream outputStream = new FileOutputStream(finalFile);
+                outputStream.write(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
+                log.error("文件上传发生异常 -> {}", e.getMessage());
+                return Message.failed("文件上传失败");
+            }
         }
+        return Message.success("上传成功");
     }
-
 }

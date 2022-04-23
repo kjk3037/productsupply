@@ -42,7 +42,7 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     *@param SaleOrder:订单内容实例
     **/
     @Transactional
-    public int createOrder(SaleOrder order){
+    public String createOrder(SaleOrder order){
         Integer id=saleOrderMapper.maxId()+1;
         order.setCode(FormatUtils.codeFormat("sale",id));
         order.setOrderStatus(3);
@@ -53,7 +53,7 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         actProcessService.startProcess("sale_order",order.getCode(),vars);
         saleOrderMapper.insert(order);
         saleOrderDetailMapper.insertBatch(order.getSaleOrderDetails());
-        return 1;
+        return order.getCode();
     }
     /*
     *@describe 确认订单(审批通过)

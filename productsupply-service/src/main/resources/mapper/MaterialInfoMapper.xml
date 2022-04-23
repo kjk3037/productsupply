@@ -12,7 +12,7 @@
         <result column="brand" property="brand" />
         <result column="importance" property="importance" />
         <result column="field" property="field" />
-        <result column="desc" property="desc" />
+        <result column="descr" property="descr" />
         <result column="model" property="model" />
         <result column="type" property="type" />
         <result column="product_type" property="productType" />

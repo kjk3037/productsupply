@@ -12,5 +12,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-04-13
  */
 public interface SaleOrderService extends IService<SaleOrder> {
-
+    public String createOrder(SaleOrder order);
+    void confirmOrder(String orderCode,String comment);
+    void finishOrder(String orderCode,String comment,Integer status);
+    Integer updateOrderStatus(String orderCode,Integer status);
+    Integer updateOrder(SaleOrder saleOrder);
 }
