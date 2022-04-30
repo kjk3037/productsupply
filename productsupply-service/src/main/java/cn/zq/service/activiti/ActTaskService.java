@@ -53,7 +53,7 @@ public class ActTaskService {
                 .processInstanceId(instId)
                 .singleResult();
         if (task!=null){
-            if (!comment.isEmpty()&&!comment.equals("")){
+            if (!comment.isEmpty()&&!comment.equals("")&&comment!=null){
                 taskService.addComment(task.getId(),instId,comment);
             }
             if (args.isEmpty()){

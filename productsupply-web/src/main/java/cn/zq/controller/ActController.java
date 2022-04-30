@@ -17,6 +17,7 @@ import javax.security.auth.Subject;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/acti")
@@ -45,12 +46,9 @@ public class ActController {
         actTaskService.rollback(instId,currentTaskId, targetTaskId);
     }
     @PostMapping("/upload")
-    public Message uploadByOne(MultipartFile[] files,HttpServletResponse response) {
+    public Message upload(@RequestBody List<MultipartFile> files) {
         System.out.println(files);
         for (MultipartFile file : files) {
-            response.setHeader("Access-Control-Allow-Origin", "*");
-            response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-            response.setHeader("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
             try {
                 InputStream is = file.getInputStream();
                 ByteArrayOutputStream os = new ByteArrayOutputStream();

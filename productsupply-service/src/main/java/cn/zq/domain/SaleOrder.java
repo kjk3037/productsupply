@@ -91,7 +91,6 @@ import org.springframework.web.multipart.MultipartFile;
       private Integer receiptStatus;
       /*
       *@describe 1、进行中；2、已完成；3、流程中；4、作废
-      *@param
       **/
       private Integer orderStatus;
 

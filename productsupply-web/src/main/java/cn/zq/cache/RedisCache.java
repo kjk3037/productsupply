@@ -32,18 +32,22 @@ public class RedisCache<k,v> implements Cache<k,v> {
         System.out.println("进入缓存 v-> "+v.getClass());
         //getRestTemplate().opsForHash().put(cacheName,k.toString(),v);
         getRedisTemplate().opsForHash().put(cacheName,k.toString(),v);
-        return null;
+        return v;
     }
 
     @Override
     public v remove(k k) throws CacheException {
+        v o = (v) getRedisTemplate().opsForHash().get(cacheName, k.toString());
         getRedisTemplate().opsForHash().delete(cacheName,k.toString());
-        return null;
+        return o;
     }
 
     @Override
     public void clear() throws CacheException {
-        //Boolean expire = getRedisTemplate().expire(cacheName, Duration.withSeconds(1));
+        Set keys = getRedisTemplate().opsForHash().keys(cacheName);
+        if (null!=keys ||keys.size()>0){
+            getRedisTemplate().opsForHash().delete(cacheName);
+        }
     }
 
     @Override

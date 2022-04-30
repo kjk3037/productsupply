@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.zq.domain.SaleOrderDetail">
         <id column="id" property="id" />
+        <result column="code" property="code" />
         <result column="order_id" property="orderId" />
         <result column="order_code" property="orderCode" />
         <result column="material_code" property="materialCode" />
@@ -22,7 +23,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, order_id, order_code, material_code, count, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time
+        id,code, order_id, order_code, material_code, count, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time
     </sql>
     <select id="selectByOrderCode" parameterType="java.lang.String" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/>
@@ -37,7 +38,7 @@
     <insert id="insertBatch">
         insert into sale_order_detail (id, order_id, order_code, material_code, `count`, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time) values
         <foreach collection="details" item="item" open="(" close=")" separator=",">
-            #{item.id}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
+            #{item.id},#{item.code}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
             #{item.count}, #{item.priceIncludingTax},#{item.amountIncludingTax},
             #{item.taxRate}, #{item.packingSpecification}, #{item.packingRequirement},
             #{item.remark}, #{item.deliveredCount}, #{item.createTime}, #{item.updateTime}

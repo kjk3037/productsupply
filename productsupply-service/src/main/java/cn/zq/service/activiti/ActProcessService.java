@@ -50,7 +50,7 @@ public class ActProcessService {
 //        System.out.println("ProcessDefId:"+test.getProcessDefinitionId());
 //        System.out.println("Id:"+test.getId());
         //执行申请节点
-        actTaskService.execute(test.getProcessInstanceId(),null);
+        actTaskService.execute(test.getProcessInstanceId(),"");
         log.info("ProcessInstance is created");
     }
 

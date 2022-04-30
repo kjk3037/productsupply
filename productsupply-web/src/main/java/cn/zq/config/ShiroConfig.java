@@ -1,8 +1,10 @@
 package cn.zq.config;
 
+import cn.zq.cache.NewRedisCacheManager;
 import cn.zq.cache.RedisCacheManager;
 import cn.zq.shiro.CustomRealm;
 import cn.zq.shiro.MySessionDao;
+import cn.zq.shiro.NewSessionDao;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -14,11 +16,14 @@ import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.shiro.mgt.SecurityManager;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,6 +31,9 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
+    @Qualifier("shiroRedisTemplate")
+    @Autowired
+    RedisTemplate redisTemplate;
     @Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
@@ -38,7 +46,8 @@ public class ShiroConfig {
         //filterChainDefinitionMap.put("/module/getList", "anon");
         filterChainDefinitionMap.put("/user/register", "anon");
 //        filterChainDefinitionMap.put("/user/account/test", "anon");
-        filterChainDefinitionMap.put("/acti/uploadByOne", "anon");
+        filterChainDefinitionMap.put("/acti/upload", "anon");
+        filterChainDefinitionMap.put("/sale/order/createOrder", "anon");
         filterChainDefinitionMap.put("/user/**", "authc");
         //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截 剩余的都需要认证
         filterChainDefinitionMap.put("/**", "authc");

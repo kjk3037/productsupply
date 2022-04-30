@@ -43,14 +43,17 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     **/
     @Transactional
     public String createOrder(SaleOrder order){
-        Integer id=saleOrderMapper.maxId()+1;
+        if (saleOrderMapper.maxId()!=null){
+            Integer id=saleOrderMapper.maxId()+1;
+        }
+        Integer id=1;
         order.setCode(FormatUtils.codeFormat("sale",id));
         order.setOrderStatus(3);
         order.setReceiptStatus(1);
         order.setDeliveryStatus(1);
         HashMap vars = new HashMap();
         vars.put("saleManager","吴军平");
-        actProcessService.startProcess("sale_order",order.getCode(),vars);
+        actProcessService.startProcess("saleOrder",order.getCode(),vars);
         saleOrderMapper.insert(order);
         saleOrderDetailMapper.insertBatch(order.getSaleOrderDetails());
         return order.getCode();
