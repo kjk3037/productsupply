@@ -45,27 +45,5 @@ public class ActController {
     public void rollback(String instId,String currentTaskId,String targetTaskId) throws Exception {
         actTaskService.rollback(instId,currentTaskId, targetTaskId);
     }
-    @PostMapping("/upload")
-    public Message upload(@RequestBody List<MultipartFile> files) {
-        System.out.println(files);
-        for (MultipartFile file : files) {
-            try {
-                InputStream is = file.getInputStream();
-                ByteArrayOutputStream os = new ByteArrayOutputStream();
-                IOUtils.copy(is, os);
-                byte[] bytes = os.toByteArray();
-                String end = "";
-                System.out.println(file.getContentType());
-                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
-                File finalFile=FileUtils.createFile(newFile,0);
-                OutputStream outputStream = new FileOutputStream(finalFile);
-                outputStream.write(bytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-                log.error("文件上传发生异常 -> {}", e.getMessage());
-                return Message.failed("文件上传失败");
-            }
-        }
-        return Message.success("上传成功");
-    }
+
 }

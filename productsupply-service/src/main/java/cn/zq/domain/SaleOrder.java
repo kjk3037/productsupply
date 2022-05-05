@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,16 +44,19 @@ import org.springframework.web.multipart.MultipartFile;
       /**
      * 要求入库日期
      */
+      @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
       private Date inputRequireDate;
 
       /**
        * 要求入库日期
        */
+      @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
       private Date outRequireDate;
 
       /**
      * 下单日期
      */
+      @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
       private Date orderDate;
 
       /**
@@ -93,9 +97,9 @@ import org.springframework.web.multipart.MultipartFile;
       *@describe 1、进行中；2、已完成；3、流程中；4、作废
       **/
       private Integer orderStatus;
-
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date createTime;
-
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date updateTime;
 
     private List<SaleOrderDetail> saleOrderDetails;
