@@ -38,10 +38,13 @@
     <insert id="insertBatch">
         insert into sale_order_detail (id, order_id, order_code, material_code, `count`, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time) values
         <foreach collection="details" item="item" open="(" close=")" separator=",">
-            #{item.id},#{item.code}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
+            #{item.id,jdbcType=INTEGER},#{item.code}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
             #{item.count}, #{item.priceIncludingTax},#{item.amountIncludingTax},
             #{item.taxRate}, #{item.packingSpecification}, #{item.packingRequirement},
             #{item.remark}, #{item.deliveredCount}, #{item.createTime}, #{item.updateTime}
         </foreach>
     </insert>
+    <select id="maxId" resultType="java.lang.Integer" >
+        select max(id) from sale_order_detail
+    </select>
 </mapper>

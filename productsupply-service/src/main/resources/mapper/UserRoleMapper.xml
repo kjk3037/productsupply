@@ -81,5 +81,8 @@
   <select id="getRoles" resultMap="BaseResultMap">
     select * from user_role
   </select>
-
+  <select id="selectByUsername"  resultMap="BaseResultMap">
+    select ur.*,urr.* from user_role_relation urr left join user_role ur on ur.id=urr.role_id
+    where urr.username=#{username}
+  </select>
 </mapper>

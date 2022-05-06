@@ -17,4 +17,5 @@ public interface SaleOrderDetailMapper extends BaseMapper<SaleOrderDetail> {
     List<SaleOrderDetail> selectByOrderId(String orderId);
     List<SaleOrderDetail> selectByOrderCode(String orderCode);
     Integer insertBatch(List<SaleOrderDetail> details);
+    Integer maxId();
 }

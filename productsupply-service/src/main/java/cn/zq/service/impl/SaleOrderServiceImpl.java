@@ -4,6 +4,7 @@ import cn.zq.dao.SaleOrderDetailMapper;
 import cn.zq.domain.SaleOrder;
 import cn.zq.dao.SaleOrderMapper;
 import cn.zq.domain.SaleOrderDetail;
+import cn.zq.service.SaleOrderDetailService;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Wrapper;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -33,6 +35,8 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     SaleOrderMapper saleOrderMapper;
     @Autowired
     SaleOrderDetailMapper saleOrderDetailMapper;
+    @Autowired
+    SaleOrderDetailService saleOrderDetailService;
     @Autowired
     ActProcessService actProcessService;
     @Autowired
@@ -51,11 +55,15 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         order.setOrderStatus(3);
         order.setReceiptStatus(1);
         order.setDeliveryStatus(1);
+        Date date = new Date();
+        order.setCreateTime(date);
+        order.setUpdateTime(date);
+
         HashMap vars = new HashMap();
         vars.put("saleManager","吴军平");
         actProcessService.startProcess("saleOrder",order.getCode(),vars);
-        saleOrderMapper.insert(order);
-        saleOrderDetailMapper.insertBatch(order.getSaleOrderDetails());
+        saleOrderMapper.insertSaleOrder(order);
+        saleOrderDetailService.saveBatch(order.getSaleOrderDetails());
         return order.getCode();
     }
     /*

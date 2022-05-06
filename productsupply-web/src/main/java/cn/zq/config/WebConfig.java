@@ -21,6 +21,8 @@ public class WebConfig implements WebMvcConfigurer {
     private static String[] originsVal = new String[]{
             "127.0.0.1:8080",
             "localhost:8080",
+            "localhost:8081",
+            "127.0.0.1:8081",
             "*",
     };
 

@@ -12,7 +12,6 @@
         <result column="out_require_date" property="outRequireDate" />
         <result column="order_date" property="orderDate" />
         <result column="settlement_method" property="settlementMethod" />
-        <result column="attachment" property="attachment" />
         <result column="amount" property="amount" />
         <result column="tax_rate" property="taxRate" />
         <result column="discount" property="discount" />
@@ -36,4 +35,107 @@
         from sale_order
         where code=#{code}
     </select>
+    <insert id="insertSaleOrder" parameterType="cn.zq.domain.SaleOrder">
+        insert into sale_order
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="code!=null">
+              code,
+            </if>
+            <if test="customerId!=null">
+                customer_id,
+            </if>
+            <if test="orderType!=null">
+                order_type,
+            </if>
+            <if test="inputRequireDate!=null">
+                input_require_date,
+            </if>
+            <if test="outRequireDate!=null">
+                out_require_date,
+            </if>
+            <if test="orderDate!=null">
+                order_date,
+            </if>
+            <if test="settlementMethod!=null">
+                settlement_method,
+            </if>
+            <if test="amount!=null">
+                amount,
+            </if>
+            <if test="taxRate!=null">
+                tax_rate,
+            </if>
+            <if test="discount!=null">
+                discount,
+            </if>
+            <if test="deliveryStatus!=null">
+                delivery_status,
+            </if>
+            <if test="receiptStatus!=null">
+                receipt_status,
+            </if>
+            <if test="orderStatus!=null">
+                order_status,
+            </if>
+            <if test="createTime!=null">
+                create_time,
+            </if>
+            <if test="updateTime!=null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="code!=null">
+                #{code},
+            </if>
+            <if test="customerId!=null">
+                #{customerId},
+            </if>
+            <if test="orderType!=null">
+                #{orderType},
+            </if>
+            <if test="inputRequireDate!=null">
+                #{inputRequireDate},
+            </if>
+            <if test="outRequireDate!=null">
+                #{outRequireDate},
+            </if>
+            <if test="orderDate!=null">
+                #{orderDate},
+            </if>
+            <if test="settlementMethod!=null">
+                #{settlementMethod},
+            </if>
+            <if test="amount!=null">
+                #{amount},
+            </if>
+            <if test="taxRate!=null">
+                #{taxRate},
+            </if>
+            <if test="discount!=null">
+                #{discount},
+            </if>
+            <if test="deliveryStatus!=null">
+                #{deliveryStatus},
+            </if>
+            <if test="receiptStatus!=null">
+                #{receiptStatus},
+            </if>
+            <if test="orderStatus!=null">
+                #{orderStatus},
+            </if>
+            <if test="createTime!=null">
+                #{createTime},
+            </if>
+            <if test="updateTime!=null">
+                #{updateTime},
+            </if>
+        </trim>
+    </insert>
 </mapper>

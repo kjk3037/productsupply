@@ -9,4 +9,5 @@ public interface UserRoleService {
     List getRoles();
     UserRole selectByPrimaryKey(Integer id);
     List getList();
+    List getByUsername(String username);
 }

@@ -17,8 +17,8 @@ public class FileUtils {
             return file;
         }else {
             Integer count =++num;
-            StringBuilder s = new StringBuilder(file.getName().split(".")[0]);
-            File newFile = new File(s.append("(" + count + ")"+"." + file.getName().split(".")[1]).toString());
+            StringBuilder s = new StringBuilder(file.getPath().split("\\.")[0]);
+            File newFile = new File(s.append("(" + count + ")"+"." + file.getPath().split("\\.")[1]).toString());
             return createFile(newFile,count);
         }
     }

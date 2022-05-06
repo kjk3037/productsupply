@@ -65,11 +65,6 @@ import org.springframework.web.multipart.MultipartFile;
       private Integer settlementMethod;
 
       /**
-     * 附件(多为合同)
-     */
-      private String attachment;
-
-      /**
      * 订单金额(含税)
      */
       private BigDecimal amount;

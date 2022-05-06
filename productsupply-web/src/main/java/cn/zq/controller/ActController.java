@@ -6,6 +6,7 @@ import cn.zq.service.activiti.ActTaskService;
 import cn.zq.utils.FileUtils;
 import com.baomidou.mybatisplus.extension.api.R;
 import lombok.extern.slf4j.Slf4j;
+import org.activiti.engine.task.Task;
 import org.apache.shiro.SecurityUtils;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -28,22 +29,41 @@ public class ActController {
     ActProcessService actProcessService;
     @Autowired
     ActTaskService actTaskService;
+    /*
+    * 开启流程接口
+    * */
     @RequestMapping("/create")
     public Message create(){
         actProcessService.startProcess("cc","5",new HashMap());
         return Message.success("创建成功");
     }
+    /*
+    * 执行接口
+    * */
     @RequestMapping("/execute")
     public void execute(String instId){
         actTaskService.execute(instId,"");
     }
+    /*
+    * 流程部署接口
+    * */
     @RequestMapping("/deploy")
     public void deploy(){
         actProcessService.deployProcess();
     }
+    /*
+    * 退回接口
+    * */
     @RequestMapping("/rollback")
     public void rollback(String instId,String currentTaskId,String targetTaskId) throws Exception {
         actTaskService.rollback(instId,currentTaskId, targetTaskId);
     }
-
+    /*
+    * 获取当前用户所有待办任务数据
+    * */
+    @RequestMapping("getTodolist")
+    public Message getTodolist(){
+        List<Task> tasksByAss = actTaskService.getTasksByAss();
+        return Message.success(tasksByAss);
+    }
 }

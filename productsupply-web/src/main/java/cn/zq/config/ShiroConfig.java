@@ -47,7 +47,8 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/user/register", "anon");
 //        filterChainDefinitionMap.put("/user/account/test", "anon");
         filterChainDefinitionMap.put("/attachment/upload", "anon");
-        filterChainDefinitionMap.put("/sale/order/createOrder", "anon");
+        filterChainDefinitionMap.put("/attachment/uploads", "anon");
+        //filterChainDefinitionMap.put("/sale/order/createOrder", "anon");
         filterChainDefinitionMap.put("/user/**", "authc");
         //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截 剩余的都需要认证
         filterChainDefinitionMap.put("/**", "authc");

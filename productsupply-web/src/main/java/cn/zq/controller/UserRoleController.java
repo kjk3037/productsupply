@@ -19,4 +19,8 @@ public class UserRoleController {
     public Message getList(){
         return Message.success(userRoleService.getRoles());
     }
+    @GetMapping("/getByUsername")
+    public Message getByUsername(String username){
+        return Message.success(userRoleService.getByUsername(username));
+    }
 }

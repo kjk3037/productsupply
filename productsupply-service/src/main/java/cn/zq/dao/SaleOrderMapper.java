@@ -14,5 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 public interface SaleOrderMapper extends BaseMapper<SaleOrder> {
     Integer maxId();
     SaleOrder selectByCode(String code);
-
+    Integer insertSaleOrder(SaleOrder saleOrder);
 }

@@ -32,35 +32,40 @@ public class AttachmentController {
     @Autowired
     AttachmentService attachmentService;
     /*
-    * 多附件上传 (暂定弃用)
+    * 多附件上传
     * */
-//    @PostMapping("/uploads")
-//    public Message uploads(@RequestBody List<MultipartFile> files) {
-//        System.out.println(files);
-//        for (MultipartFile file : files) {
-//            try {
-//                InputStream is = file.getInputStream();
-//                ByteArrayOutputStream os = new ByteArrayOutputStream();
-//                IOUtils.copy(is, os);
-//                byte[] bytes = os.toByteArray();
-//                String end = "";
-//                System.out.println(file.getContentType());
-//                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
-//                File finalFile= FileUtils.createFile(newFile,0);
-//                OutputStream outputStream = new FileOutputStream(finalFile);
-//                outputStream.write(bytes);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                log.error("文件上传发生异常 -> {}", e.getMessage());
-//                return Message.failed("文件上传失败");
-//            }
-//        }
-//        return Message.success("上传成功");
-//    }
+    @PostMapping("/uploads")
+    public Message uploads(@RequestParam("files") List<MultipartFile> files, @RequestParam String bussinessKey, @RequestParam String bussiness) {
+        for (MultipartFile file : files) {
+            try {
+                InputStream is = file.getInputStream();
+                ByteArrayOutputStream os = new ByteArrayOutputStream();
+                IOUtils.copy(is, os);
+                byte[] bytes = os.toByteArray();
+                String end = "";
+                System.out.println(file.getContentType());
+                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
+                File finalFile= FileUtils.createFile(newFile,0);
+                OutputStream outputStream = new FileOutputStream(finalFile);
+                outputStream.write(bytes);
+                //附件信息插入数据库
+                Attachment attachment = new Attachment();
+                attachment.setPath(newFile.getPath());
+                attachment.setBussinessKey(bussinessKey);
+                attachment.setBussiness(bussiness);
+                attachmentService.save(attachment);
+            } catch (IOException e) {
+                e.printStackTrace();
+                log.error("文件上传发生异常 -> {}", e.getMessage());
+                return Message.failed("文件上传失败");
+            }
+        }
+        return Message.success("上传成功");
+    }
     /*
-    * 单附件上传
+    * 单附件上传（暂定弃用）
     * */
-    @PostMapping("/upload")
+    /*@PostMapping("/upload")
     public Message upload(@RequestParam("file") MultipartFile file, @RequestParam String bussinessKey, @RequestParam String bussiness) {
         System.out.println(bussinessKey);
         System.out.println(bussiness);
@@ -88,6 +93,6 @@ public class AttachmentController {
             return Message.failed("文件上传失败");
         }
         return Message.success("上传成功");
-    }
+    }*/
 }
 
