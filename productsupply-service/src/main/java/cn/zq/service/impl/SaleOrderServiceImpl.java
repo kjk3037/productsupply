@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.Wrapper;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>
@@ -114,4 +115,10 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         wrapper.eq("code",saleOrder.getCode());
         return saleOrderMapper.update(saleOrder,wrapper);
     }
+
+    @Override
+    public List<SaleOrder> getAll() {
+        return null;
+    }
+
 }

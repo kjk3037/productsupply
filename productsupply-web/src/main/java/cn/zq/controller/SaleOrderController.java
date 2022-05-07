@@ -46,12 +46,12 @@ public class SaleOrderController {
 //            }
 //            attachmentService.saveBatch(attachments);
 //        }
-        return Message.success("下单成功");
+        return Message.success(resultCode,"下单成功");
     }
-    @PostMapping("/test")
-    public Message test(SaleOrder order){
-        System.out.println("触发！"+order);
-        return Message.success("测试");
+    @GetMapping("/getList")
+    public Message getList(){
+        List<SaleOrder> all = saleOrderService.getAll();
+        return Message.success(all);
     }
 }
 

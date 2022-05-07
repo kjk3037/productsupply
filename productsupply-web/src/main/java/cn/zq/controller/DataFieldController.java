@@ -45,5 +45,9 @@ public class DataFieldController {
         List<DataField> list = dataFieldService.list(dataFieldQueryWrapper);
         return Message.success(list,"字段集合获取成功");
     }
+    @GetMapping("/getChilds")
+    public Message getChilds(String parentKey){
+        return Message.success(dataFieldService.getChilds(parentKey));
+    }
 }
 

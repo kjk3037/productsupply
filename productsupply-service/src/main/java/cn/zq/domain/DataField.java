@@ -33,4 +33,9 @@ import lombok.EqualsAndHashCode;
 
   private int width;
 
+  private String parentKey;
+
+  private String parentId;
+
+  private Integer isList;
 }

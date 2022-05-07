@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50736
 File Encoding         : 65001
 
-Date: 2022-05-06 15:34:17
+Date: 2022-05-07 17:23:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -812,17 +812,11 @@ CREATE TABLE `attachment` (
   `bussiness_key` varchar(255) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of attachment
 -- ----------------------------
-INSERT INTO `attachment` VALUES ('1', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\叶绿体产品SKU.pdf');
-INSERT INTO `attachment` VALUES ('2', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\智勤科技软著登记证1.jpg');
-INSERT INTO `attachment` VALUES ('3', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\叶绿体产品SKU.pdf');
-INSERT INTO `attachment` VALUES ('4', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\智勤科技软著登记证1.jpg');
-INSERT INTO `attachment` VALUES ('5', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\叶绿体产品SKU.pdf');
-INSERT INTO `attachment` VALUES ('6', 'saleOrder', '123', 'E:\\kjk\\project\\java\\productsupply\\file\\智勤科技软著登记证1.jpg');
 
 -- ----------------------------
 -- Table structure for customer
@@ -941,58 +935,61 @@ CREATE TABLE `data_field` (
   `label` varchar(255) DEFAULT NULL,
   `field_type` int(11) DEFAULT NULL COMMENT '1、主表字段；2子表字段',
   `width` int(11) DEFAULT NULL COMMENT '宽度',
+  `parent_key` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `is_list` int(11) DEFAULT NULL COMMENT '是否表格：1、是，0、否',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of data_field
 -- ----------------------------
-INSERT INTO `data_field` VALUES ('20', 'materialInfo', 'atid', 'id', '1', '70');
-INSERT INTO `data_field` VALUES ('21', 'materialInfo', 'code', '物料编码', '1', '150');
-INSERT INTO `data_field` VALUES ('22', 'materialInfo', 'name', '物料名称', '1', '250');
-INSERT INTO `data_field` VALUES ('23', 'materialInfo', 'standard', '物料规格', '1', '250');
-INSERT INTO `data_field` VALUES ('24', 'materialInfo', 'technology', '工艺', '1', '150');
-INSERT INTO `data_field` VALUES ('25', 'materialInfo', 'brand', '品牌', '1', '150');
-INSERT INTO `data_field` VALUES ('26', 'materialInfo', 'importance', '重要性', '1', '150');
-INSERT INTO `data_field` VALUES ('27', 'materialInfo', 'field', '属性', '1', '150');
-INSERT INTO `data_field` VALUES ('28', 'materialInfo', 'descr', '描述', '1', '150');
-INSERT INTO `data_field` VALUES ('29', 'materialInfo', 'type', '物料类型', '1', '110');
-INSERT INTO `data_field` VALUES ('30', 'materialInfo', 'productType', '成品类型', '1', '110');
-INSERT INTO `data_field` VALUES ('31', 'materialInfo', 'model', '型号', '1', '150');
-INSERT INTO `data_field` VALUES ('32', 'materialInfo', 'createTime', '创建时间', '1', '150');
-INSERT INTO `data_field` VALUES ('33', 'materialInfo', 'updateTime', '更新时间', '1', '150');
-INSERT INTO `data_field` VALUES ('34', 'saleOrderDetail', 'id', 'id', '2', '150');
-INSERT INTO `data_field` VALUES ('35', 'saleOrderDetail', 'orderId', '订单id', '2', '150');
-INSERT INTO `data_field` VALUES ('36', 'saleOrderDetail', 'orderCode', '订单流码', '2', '150');
-INSERT INTO `data_field` VALUES ('37', 'saleOrderDetail', 'materialCode', '物料编码', '2', '150');
-INSERT INTO `data_field` VALUES ('38', 'saleOrderDetail', 'count', '数量', '2', '150');
-INSERT INTO `data_field` VALUES ('39', 'saleOrderDetail', 'priceIncludingTax', '含税单价', '2', '150');
-INSERT INTO `data_field` VALUES ('40', 'saleOrderDetail', 'amountIncludingTax', '含税金额', '2', '150');
-INSERT INTO `data_field` VALUES ('41', 'saleOrderDetail', 'taxRate', '税率', '2', '150');
-INSERT INTO `data_field` VALUES ('42', 'saleOrderDetail', 'packingSpecification', '箱规', '2', '150');
-INSERT INTO `data_field` VALUES ('43', 'saleOrderDetail', 'packingRequirement', '包装要求', '2', '150');
-INSERT INTO `data_field` VALUES ('44', 'saleOrderDetail', 'remark', '备注', '2', '150');
-INSERT INTO `data_field` VALUES ('45', 'saleOrderDetail', 'deliveredCount', '已发货数量', '2', '150');
-INSERT INTO `data_field` VALUES ('46', 'saleOrderDetail', 'createTime', '创建时间', '2', '150');
-INSERT INTO `data_field` VALUES ('47', 'saleOrderDetail', 'updateTime', '更新时间', '2', '150');
-INSERT INTO `data_field` VALUES ('48', 'saleOrder', 'id', 'id', '1', '150');
-INSERT INTO `data_field` VALUES ('49', 'saleOrder', 'code', '订单流码', '1', '150');
-INSERT INTO `data_field` VALUES ('50', 'saleOrder', 'customerId', '客户id', '1', '150');
-INSERT INTO `data_field` VALUES ('51', 'saleOrder', 'orderType', '订单类型', '1', '150');
-INSERT INTO `data_field` VALUES ('52', 'saleOrder', 'inputRequireDate', '备货完成时间', '1', '150');
-INSERT INTO `data_field` VALUES ('53', 'saleOrder', 'outRequireDate', '发货时间', '1', '150');
-INSERT INTO `data_field` VALUES ('54', 'saleOrder', 'orderDate', '下单日期', '1', '150');
-INSERT INTO `data_field` VALUES ('55', 'saleOrder', 'settlementMethod', '结算方式', '1', '150');
-INSERT INTO `data_field` VALUES ('56', 'saleOrder', 'attachment', '附件', '1', '150');
-INSERT INTO `data_field` VALUES ('57', 'saleOrder', 'amount', '订单金额', '1', '150');
-INSERT INTO `data_field` VALUES ('58', 'saleOrder', 'taxRate', '税率', '1', '150');
-INSERT INTO `data_field` VALUES ('59', 'saleOrder', 'discount', '折扣', '1', '150');
-INSERT INTO `data_field` VALUES ('60', 'saleOrder', 'deliveryStatus', '发货状态', '1', '150');
-INSERT INTO `data_field` VALUES ('61', 'saleOrder', 'receiptStatus', '回款状态', '1', '150');
-INSERT INTO `data_field` VALUES ('62', 'saleOrder', 'orderStatus', '订单状态', '1', '150');
-INSERT INTO `data_field` VALUES ('63', 'saleOrder', 'createTime', '创建时间', '1', '150');
-INSERT INTO `data_field` VALUES ('64', 'saleOrder', 'updateTime', '更新时间', '1', '150');
-INSERT INTO `data_field` VALUES ('65', 'saleOrder', 'saleOrderDetails', '订单清单', '1', '150');
+INSERT INTO `data_field` VALUES ('20', 'materialInfo', 'atid', 'id', '1', '70', null, null, '0');
+INSERT INTO `data_field` VALUES ('21', 'materialInfo', 'code', '物料编码', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('22', 'materialInfo', 'name', '物料名称', '1', '250', null, null, '0');
+INSERT INTO `data_field` VALUES ('23', 'materialInfo', 'standard', '物料规格', '1', '250', null, null, '0');
+INSERT INTO `data_field` VALUES ('24', 'materialInfo', 'technology', '工艺', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('25', 'materialInfo', 'brand', '品牌', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('26', 'materialInfo', 'importance', '重要性', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('27', 'materialInfo', 'field', '属性', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('28', 'materialInfo', 'descr', '描述', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('29', 'materialInfo', 'type', '物料类型', '1', '110', null, null, '0');
+INSERT INTO `data_field` VALUES ('30', 'materialInfo', 'productType', '成品类型', '1', '110', null, null, '0');
+INSERT INTO `data_field` VALUES ('31', 'materialInfo', 'model', '型号', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('32', 'materialInfo', 'createTime', '创建时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('33', 'materialInfo', 'updateTime', '更新时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('34', 'saleOrderDetail', 'id', 'id', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('35', 'saleOrderDetail', 'orderId', '订单id', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('36', 'saleOrderDetail', 'orderCode', '订单流码', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('37', 'saleOrderDetail', 'materialCode', '物料编码', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('38', 'saleOrderDetail', 'count', '数量', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('39', 'saleOrderDetail', 'priceIncludingTax', '含税单价', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('40', 'saleOrderDetail', 'amountIncludingTax', '含税金额', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('41', 'saleOrderDetail', 'taxRate', '税率', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('42', 'saleOrderDetail', 'packingSpecification', '箱规', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('43', 'saleOrderDetail', 'packingRequirement', '包装要求', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('44', 'saleOrderDetail', 'remark', '备注', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('45', 'saleOrderDetail', 'deliveredCount', '已发货数量', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('46', 'saleOrderDetail', 'createTime', '创建时间', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('47', 'saleOrderDetail', 'updateTime', '更新时间', '2', '150', 'saleOrder', '65', '0');
+INSERT INTO `data_field` VALUES ('48', 'saleOrder', 'id', 'id', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('49', 'saleOrder', 'code', '订单流码', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('50', 'saleOrder', 'customerId', '客户id', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('51', 'saleOrder', 'orderType', '订单类型', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('52', 'saleOrder', 'inputRequireDate', '备货完成时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('53', 'saleOrder', 'outRequireDate', '发货时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('54', 'saleOrder', 'orderDate', '下单日期', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('55', 'saleOrder', 'settlementMethod', '结算方式', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('56', 'saleOrder', 'attachment', '附件', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('57', 'saleOrder', 'amount', '订单金额', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('58', 'saleOrder', 'taxRate', '税率', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('59', 'saleOrder', 'discount', '折扣', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('60', 'saleOrder', 'deliveryStatus', '发货状态', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('61', 'saleOrder', 'receiptStatus', '回款状态', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('62', 'saleOrder', 'orderStatus', '订单状态', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('63', 'saleOrder', 'createTime', '创建时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('64', 'saleOrder', 'updateTime', '更新时间', '1', '150', null, null, '0');
+INSERT INTO `data_field` VALUES ('65', 'saleOrder', 'saleOrderDetails', '订单清单', '1', '150', null, null, '1');
 
 -- ----------------------------
 -- Table structure for dict
@@ -6313,22 +6310,20 @@ CREATE TABLE `sale_order` (
   `order_date` datetime DEFAULT NULL COMMENT '下单日期',
   `settlement_method` int(2) unsigned zerofill DEFAULT NULL COMMENT '结算方式:1、月结；2、现结；',
   `attachment` varchar(255) DEFAULT NULL COMMENT '附件(多为合同)',
-  `amount` decimal(65,0) DEFAULT NULL COMMENT '订单金额(含税)',
+  `amount` decimal(65,2) DEFAULT NULL COMMENT '订单金额(含税)',
   `tax_rate` float DEFAULT NULL COMMENT '税率',
-  `discount` decimal(65,0) DEFAULT NULL COMMENT '折扣金额',
+  `discount` decimal(65,2) DEFAULT NULL COMMENT '折扣金额',
   `delivery_status` int(2) DEFAULT NULL COMMENT '发货状态：1、已完成；0、未完成',
   `receipt_status` int(2) DEFAULT NULL COMMENT '收款状态：1、已完成；0、未完成',
   `order_status` int(2) DEFAULT NULL COMMENT '1、进行中；2、已完成；3、流程中；4、作废；',
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sale_order
 -- ----------------------------
-INSERT INTO `sale_order` VALUES ('1', 'sale-202205126001', '2', '1', '2022-05-07 16:00:00', '2022-05-08 16:00:00', '2022-05-04 16:00:00', '01', null, null, null, null, '1', '1', '3', '2022-05-06 06:23:10', '2022-05-06 06:23:10');
-INSERT INTO `sale_order` VALUES ('3', '1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for sale_order_detail
@@ -6341,50 +6336,20 @@ CREATE TABLE `sale_order_detail` (
   `order_code` varchar(255) DEFAULT NULL,
   `material_code` varchar(255) DEFAULT NULL,
   `count` int(8) DEFAULT NULL COMMENT '数量',
-  `price_including_tax` decimal(12,0) DEFAULT NULL COMMENT '含税单价',
-  `amount_including_tax` decimal(12,0) DEFAULT NULL COMMENT '含税金额',
+  `price_including_tax` decimal(12,4) DEFAULT NULL COMMENT '含税单价',
+  `amount_including_tax` decimal(12,2) DEFAULT NULL COMMENT '含税金额',
   `tax_rate` float DEFAULT NULL COMMENT '税率',
   `packing_specification` varchar(255) DEFAULT NULL COMMENT '箱规',
   `packing_requirement` varchar(255) DEFAULT NULL COMMENT '包装要求',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `delivered_count` int(255) DEFAULT NULL COMMENT '已发货数量',
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1522461953599168516 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sale_order_detail
--- ----------------------------
-INSERT INTO `sale_order_detail` VALUES ('1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `sale_order_detail` VALUES ('1522461953599168514', 'l2u1k3hkqtk8lurpr7', null, null, '1.01.02.0004', '1', null, null, '0', '1', null, null, null, null, null);
-INSERT INTO `sale_order_detail` VALUES ('1522461953599168515', 'l2u1k3hkqom538p5me', null, null, '1.01.02.0006', '2', null, null, '0', '1', null, null, null, null, null);
-
--- ----------------------------
--- Table structure for sale_order_detail_copy
--- ----------------------------
-DROP TABLE IF EXISTS `sale_order_detail_copy`;
-CREATE TABLE `sale_order_detail_copy` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(255) DEFAULT NULL,
-  `order_id` int(11) DEFAULT NULL,
-  `order_code` varchar(255) DEFAULT NULL,
-  `material_code` varchar(255) DEFAULT NULL,
-  `count` int(8) DEFAULT NULL COMMENT '数量',
-  `price_including_tax` decimal(12,0) DEFAULT NULL COMMENT '含税单价',
-  `amount_including_tax` decimal(12,0) DEFAULT NULL COMMENT '含税金额',
-  `tax_rate` float DEFAULT NULL COMMENT '税率',
-  `packing_specification` varchar(255) DEFAULT NULL COMMENT '箱规',
-  `packing_requirement` varchar(255) DEFAULT NULL COMMENT '包装要求',
-  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `delivered_count` int(255) DEFAULT NULL COMMENT '已发货数量',
+  `delivered_count` int(8) DEFAULT NULL COMMENT '已发货数量',
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of sale_order_detail_copy
+-- Records of sale_order_detail
 -- ----------------------------
 
 -- ----------------------------
@@ -6628,7 +6593,7 @@ INSERT INTO `user_role_permission_relation` VALUES ('7', '11', '5', null, null);
 DROP TABLE IF EXISTS `user_role_relation`;
 CREATE TABLE `user_role_relation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `account_id` char(32) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
   `role_id` int(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
@@ -6638,9 +6603,9 @@ CREATE TABLE `user_role_relation` (
 -- ----------------------------
 -- Records of user_role_relation
 -- ----------------------------
-INSERT INTO `user_role_relation` VALUES ('1', '1', '20', null, null);
-INSERT INTO `user_role_relation` VALUES ('2', '2', '11', null, null);
-INSERT INTO `user_role_relation` VALUES ('3', '2', '7', null, null);
+INSERT INTO `user_role_relation` VALUES ('1', 'root', '20', null, null);
+INSERT INTO `user_role_relation` VALUES ('2', 'kjk', '11', null, null);
+INSERT INTO `user_role_relation` VALUES ('3', 'kjk', '7', null, null);
 
 -- ----------------------------
 -- Table structure for warehouse_info

@@ -98,5 +98,5 @@ import org.springframework.web.multipart.MultipartFile;
     private Date updateTime;
 
     private List<SaleOrderDetail> saleOrderDetails;
-    private MultipartFile[] files;
+    private List<MultipartFile> attachment;
 }

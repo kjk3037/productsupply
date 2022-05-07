@@ -3,6 +3,8 @@ package cn.zq.dao;
 import cn.zq.domain.SaleOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -15,4 +17,5 @@ public interface SaleOrderMapper extends BaseMapper<SaleOrder> {
     Integer maxId();
     SaleOrder selectByCode(String code);
     Integer insertSaleOrder(SaleOrder saleOrder);
+    List selectAll();
 }

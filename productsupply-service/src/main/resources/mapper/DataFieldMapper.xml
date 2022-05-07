@@ -16,5 +16,6 @@
     <sql id="Base_Column_List">
         id, bussiness_key, prop, label,field_type,width
     </sql>
+    <select id="getByBussinessKey" resultMap="BaseResultMap" parameterType="java.lang.String"></select>
 
 </mapper>
