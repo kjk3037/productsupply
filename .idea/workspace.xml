@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1deffe58-0233-4cd0-8f21-eb1567d1f047" name="Default Changelist" comment="产品供销结构确定 version 1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_supply.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product_supply.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/SaleOrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DataField.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DataField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SaleOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SaleOrder.java" afterDir="false" />
@@ -14,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SaleOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/SaleOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SaleOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/SaleOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewEntityMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/WorkflewExecutorMapper.xml" beforeDir="false" />
@@ -80,20 +83,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DataFieldService.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1005#1006#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="25" column="42" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="279">
+              <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -176,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/processes/sale_order.bpmn20.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/xml/SaleOrderDetailMapper.xml" />
@@ -188,7 +203,6 @@
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/MaterialInfoController.java" />
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderDetailController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/MaterialInfo.java" />
-        <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/utils/FormatUtils.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/MaterialInfoMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/application-servicedev.properties" />
@@ -223,10 +237,12 @@
         <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/SaleOrderController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/SaleOrderMapper.xml" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/SaleOrder.java" />
+        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DataFieldController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DataFieldService.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java" />
-        <option value="$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/DataFieldController.java" />
         <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DataField.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java" />
+        <option value="$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml" />
       </list>
     </option>
   </component>
@@ -403,7 +419,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1651911768151" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1651911820698" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/productsupply-activiti/src/main/java/cn/zq" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -663,7 +679,7 @@
       <workItem from="1651711573440" duration="12478000" />
       <workItem from="1651796512628" duration="17168000" />
       <workItem from="1651822311257" duration="6778000" />
-      <workItem from="1651883268550" duration="5480000" />
+      <workItem from="1651883268550" duration="6279000" />
     </task>
     <task id="LOCAL-00001" summary="产品供销结构确定 version 1.1">
       <created>1621757669842</created>
@@ -715,7 +731,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470763000" />
+    <option name="totallyTimeSpent" value="471562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,7 +744,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="172" width="1226" height="857" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981203" visible="true" weight="0.3053173" />
       <window_info id="Structure" order="1" sideWeight="0.5018797" side_tool="true" weight="0.28232005" />
@@ -741,14 +756,14 @@
       <window_info id="BPMN Editor" order="8" sideWeight="0.49873737" weight="0.19287212" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.568833" visible="true" weight="0.29737207" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.568833" weight="0.29737207" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989339" weight="0.39834026" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989518" weight="0.33459595" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989518" weight="0.32780084" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989518" visible="true" weight="0.32780084" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49825296" weight="0.32828283" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010482" side_tool="true" weight="0.32828283" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32954547" />
@@ -861,26 +876,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/cache/NewRedisCacheManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#2401#2402#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/shiro/NewSessionDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1225,13 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-web/src/main/java/cn/zq/controller/ActController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
@@ -1239,20 +1227,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DataField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1269,8 +1243,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/DataFieldService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="252">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/domain/DataField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_05/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/service/impl/DataFieldServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/java/cn/zq/dao/DataFieldMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productsupply-service/src/main/resources/mapper/DataFieldMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
