@@ -17,4 +17,5 @@ import java.util.List;
 public interface DataFieldService extends IService<DataField> {
     List getChilds(String parentKey);
     List getByBussinessKey(String bussinessKey);
+    List getByBussinessKeyAll(String bussinessKey);
 }

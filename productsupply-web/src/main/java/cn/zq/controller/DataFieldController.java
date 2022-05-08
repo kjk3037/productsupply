@@ -40,9 +40,12 @@ public class DataFieldController {
     }
     @GetMapping("/getByBussinessKey")
     public Message getByBussinessKey(String key){
-        QueryWrapper<DataField> dataFieldQueryWrapper = new QueryWrapper<>();
-        dataFieldQueryWrapper.eq("bussiness_key",key);
-        List<DataField> list = dataFieldService.list(dataFieldQueryWrapper);
+        List list = dataFieldService.getByBussinessKey(key);
+        return Message.success(list,"字段集合获取成功");
+    }
+    @GetMapping("/getByBussinessKeyAll")
+    public Message getByBussinessKeyAll(String key){
+        List list = dataFieldService.getByBussinessKeyAll(key);
         return Message.success(list,"字段集合获取成功");
     }
     @GetMapping("/getChilds")

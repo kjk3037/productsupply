@@ -10,12 +10,38 @@
         <result column="label" property="label" />
         <result column="field_type" property="fieldType" />
         <result column="width" property="width" />
+        <result column="parent_key" property="parentKey" />
+        <result column="parent_id" property="parentId" />
+        <result column="is_list" property="isList" />
+        <collection property="childs" ofType="cn.zq.domain.DataField" javaType="java.util.List" select="selectChild" column="id">
+        </collection>
+    </resultMap>
+    <resultMap id="newResultMap" type="cn.zq.domain.DataField">
+        <id column="id" property="id" />
+        <result column="bussiness_key" property="bussinessKey" />
+        <result column="prop" property="prop" />
+        <result column="label" property="label" />
+        <result column="field_type" property="fieldType" />
+        <result column="width" property="width" />
+        <result column="parent_key" property="parentKey" />
+        <result column="parent_id" property="parentId" />
+        <result column="is_list" property="isList" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, bussiness_key, prop, label,field_type,width
+        id, bussiness_key, prop, label,field_type,width,parent_key,parent_id,is_list
     </sql>
-    <select id="getByBussinessKey" resultMap="BaseResultMap" parameterType="java.lang.String"></select>
+    <select id="selectChild" resultMap="BaseResultMap" >
+        select * from data_field where parent_id=#{id}
+    </select>
+    <select id="getByBussinessKey" resultMap="newResultMap" parameterType="java.lang.String">
+        select * from data_field
+        where bussiness_key=#{bussinessKey}
+    </select>
+    <select id="getByBussinessKeyAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from data_field
+        where bussiness_key=#{bussinessKey}
+    </select>
 
 </mapper>

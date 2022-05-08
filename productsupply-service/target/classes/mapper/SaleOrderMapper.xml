@@ -21,7 +21,7 @@
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
         <collection property="saleOrderDetails" ofType="cn.zq.domain.SaleOrderDetail" javaType="java.util.List">
-            <id column="did" property="id" />
+            <id column="id" property="id" />
             <result column="code" property="code" />
             <result column="order_id" property="orderId" />
             <result column="order_code" property="orderCode" />

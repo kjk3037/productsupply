@@ -15,4 +15,6 @@ import java.util.List;
  */
 public interface DataFieldMapper extends BaseMapper<DataField> {
     List getByBussinessKey(String bussinessKey);
+    List getByBussinessKeyAll(String bussinessKey);
+    List selectChild(String pid);
 }

@@ -22,15 +22,22 @@ import java.util.List;
 public class DataFieldServiceImpl extends ServiceImpl<DataFieldMapper, DataField> implements DataFieldService {
     @Autowired
     DataFieldMapper dataFieldMapper;
-    @Override
+
     public List getChilds(String parentKey) {
-        QueryWrapper<DataField> objectQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<DataField> objectQueryWrapper = new QueryWrapper<DataField>();
         objectQueryWrapper.eq("parent_key",parentKey);
         return dataFieldMapper.selectList(objectQueryWrapper);
     }
-
-    @Override
+    /*
+    * 精简视图字段
+    * */
     public List getByBussinessKey(String bussinessKey) {
-        return null;
+        return dataFieldMapper.getByBussinessKey(bussinessKey);
+    }
+    /*
+    * 详细视图字段
+    * */
+    public List getByBussinessKeyAll(String bussinessKey) {
+        return dataFieldMapper.getByBussinessKeyAll(bussinessKey);
     }
 }

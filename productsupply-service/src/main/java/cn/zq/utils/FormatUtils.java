@@ -43,7 +43,7 @@ public class FormatUtils {
         int i = name.lastIndexOf(".");
         String className=name.substring(i+1,i+2).toLowerCase()+ name.substring(i+2);
 
-        ArrayList<DataField> dataFields = new ArrayList<>();
+        ArrayList<DataField> dataFields = new ArrayList<DataField>();
         for (Field field:fields) {
             if(field.getName().equals("serialVersionUID")){
                 continue;
