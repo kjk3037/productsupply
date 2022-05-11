@@ -4,6 +4,7 @@ import cn.zq.cache.RedisCacheManager;
 import cn.zq.shiro.CustomRealm;
 import cn.zq.shiro.MySessionDao;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -67,6 +68,7 @@ public class ShiroConfig {
         DefaultWebSessionManager defaultWebSessionManager=new DefaultWebSessionManager();
         defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         defaultWebSessionManager.setSessionDAO(new MySessionDao());
+        //defaultWebSessionManager.setSessionDAO(new EnterpriseCacheSessionDAO());
         defaultWebSessionManager.setSessionIdCookie(new SimpleCookie(ShiroHttpSession.DEFAULT_SESSION_ID_NAME));
         //全局会话超时时间（单位毫秒），默认30分钟  暂时设置为10秒钟 用来测试
         defaultWebSessionManager.setGlobalSessionTimeout(86400000);

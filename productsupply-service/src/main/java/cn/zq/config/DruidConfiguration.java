@@ -37,7 +37,7 @@ public class DruidConfiguration {
         servletRegistrationBean.addInitParameter("resetEnable", "false");
         return servletRegistrationBean;
     }
-    @Bean
+    @Bean("druidFilterRegistrationBean")
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");

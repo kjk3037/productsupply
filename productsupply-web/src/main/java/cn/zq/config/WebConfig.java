@@ -3,6 +3,7 @@ package cn.zq.config;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -23,7 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
             "localhost:8080",
             "localhost:8081",
             "127.0.0.1:8081",
-            "*",
+
     };
 
 
@@ -43,18 +44,28 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration());
+        logger.info("init corsFilter");
+        return new CorsFilter(source);
+    }
+    @Bean
+    public FilterRegistrationBean filterRegistrationBean() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration());
+        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+        bean.setOrder(0);//提升优先级
+        return bean;
+    }
+    @Bean
+    public CorsConfiguration corsConfiguration(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
         //corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.setAllowCredentials(true);
         this.addAllowedOrigins(corsConfiguration);
-        source.registerCorsConfiguration("/**", corsConfiguration);
-        logger.info("init corsFilter");
-        return new CorsFilter(source);
+        return corsConfiguration;
     }
-
     private void addAllowedOrigins(CorsConfiguration corsConfiguration) {
         for (String origin : originsVal) {
             corsConfiguration.addAllowedOrigin("http://" + origin);
