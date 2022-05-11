@@ -9,6 +9,7 @@ import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
 import cn.zq.utils.FormatUtils;
+import cn.zq.utils.ShiroUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.activiti.engine.task.Task;
@@ -119,6 +120,13 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     @Override
     public List<SaleOrder> getAll() {
         return null;
+    }
+
+    @Override
+    public void agree(String orderCode, String comment) {
+            Task taskByBusKey = actTaskService.getTaskByBusKey(orderCode);
+            taskByBusKey.setAssignee(ShiroUtils.getUsername());
+            actTaskService.execute(taskByBusKey.getId(),comment);
     }
 
 }

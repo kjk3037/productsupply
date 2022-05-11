@@ -41,7 +41,7 @@ public class ActTaskService {
     **/
     public void execute(String instId,String comment){
         //System.out.println("执行"+instId+"节点");
-       execute(instId, new HashMap(), comment);
+        execute(instId, new HashMap(), comment);
     }
 
     /*
@@ -102,14 +102,13 @@ public class ActTaskService {
         return task;
     }
     /*
-    *@describe
-    *@param
+    *@describe 根据bussinessKey获取任务信息
+    *@param String bussinessKey
     **/
     public Task getTaskByBusKey(String key){
         System.out.println("执行getInstById");
         Task task = taskService.createTaskQuery()
                 .processInstanceBusinessKey(key).singleResult();
-
         if (task!=null){
             System.out.println("task:"+task.toString());
             System.out.println("taskName:"+task.getName());
@@ -119,7 +118,13 @@ public class ActTaskService {
         log.info("not find task by bussinessKey:" +key);
         return task;
     }
-
+    /*
+    * 根据业务key增加代办人员
+    * */
+    public void addCandidateUserByBussinessKey(String bussinessKey,String username){
+        Task task = getTaskByBusKey(bussinessKey);
+        taskService.addCandidateUser(task.getId(),username);
+    }
     /*
     *@describe 节点退回
     *@param String:流程实例Id;String:当前任务Id；String:目标任务Id

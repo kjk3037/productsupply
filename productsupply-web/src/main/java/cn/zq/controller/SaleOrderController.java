@@ -6,7 +6,12 @@ import cn.zq.domain.Attachment;
 import cn.zq.domain.SaleOrder;
 import cn.zq.service.AttachmentService;
 import cn.zq.service.SaleOrderService;
+import cn.zq.service.activiti.ActTaskService;
 import cn.zq.utils.FileUtils;
+import cn.zq.utils.ShiroUtils;
+import org.activiti.engine.task.Task;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,24 +34,17 @@ public class SaleOrderController {
     @Autowired
     SaleOrderService saleOrderService;
     @Autowired
-    AttachmentService attachmentService;
+    ActTaskService actTaskService;
     @PostMapping("/createOrder")
     public Message createOrder(@RequestBody SaleOrder order){
-        System.out.println(order);
         String resultCode = saleOrderService.createOrder(order);
-//        if (order.getFiles()!=null) {
-//            List<String> strings = FileUtils.uploadFiles(order.getFiles());
-//            List<Attachment> attachments=new ArrayList<>();
-//            for (String s:strings){
-//                Attachment attachment = new Attachment();
-//                attachment.setBussiness("saleOrder");
-//                attachment.setBussinessKey(resultCode);
-//                attachment.setPath(s);
-//                attachments.add(attachment);
-//            }
-//            attachmentService.saveBatch(attachments);
-//        }
         return Message.success(resultCode,"下单成功");
+    }
+    @PostMapping("/agree")
+    @RequiresRoles("销售经理")
+    public Message agree(String orderCode,String comment){
+        saleOrderService.agree(orderCode,comment);
+        return Message.success("1");
     }
     @GetMapping("/getList")
     public Message getList(){
