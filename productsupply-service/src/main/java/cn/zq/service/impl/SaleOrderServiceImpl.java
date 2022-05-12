@@ -49,10 +49,10 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     **/
     @Transactional
     public String createOrder(SaleOrder order){
-        if (saleOrderMapper.maxId()!=null){
-            Integer id=saleOrderMapper.maxId()+1;
-        }
         Integer id=1;
+        if (saleOrderMapper.maxId()!=null){
+            id=saleOrderMapper.maxId()+1;
+        }
         order.setCode(FormatUtils.codeFormat("sale",id));
         order.setOrderStatus(3);
         order.setReceiptStatus(1);
@@ -60,10 +60,7 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         Date date = new Date();
         order.setCreateTime(date);
         order.setUpdateTime(date);
-
-        HashMap vars = new HashMap();
-        vars.put("saleManager","吴军平");
-        actProcessService.startProcess("saleOrder",order.getCode(),vars);
+        actProcessService.startProcess("saleOrder",order.getCode());
         saleOrderMapper.insertSaleOrder(order);
         saleOrderDetailService.saveBatch(order.getSaleOrderDetails());
         return order.getCode();
@@ -124,9 +121,9 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
 
     @Override
     public void agree(String orderCode, String comment) {
-            Task taskByBusKey = actTaskService.getTaskByBusKey(orderCode);
-            taskByBusKey.setAssignee(ShiroUtils.getUsername());
-            actTaskService.execute(taskByBusKey.getId(),comment);
+        Task taskByBusKey = actTaskService.getTaskByBusKey(orderCode);
+        actTaskService.claimTask(orderCode,ShiroUtils.getUsername());
+        actTaskService.execute(taskByBusKey.getProcessInstanceId(),comment);
     }
 
 }

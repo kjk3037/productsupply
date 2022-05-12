@@ -11,6 +11,7 @@ import org.activiti.engine.history.HistoricActivityInstance;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.impl.identity.Authentication;
 import org.activiti.engine.runtime.Execution;
+import org.activiti.engine.task.IdentityLink;
 import org.activiti.engine.task.Task;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,9 +111,9 @@ public class ActTaskService {
         Task task = taskService.createTaskQuery()
                 .processInstanceBusinessKey(key).singleResult();
         if (task!=null){
-            System.out.println("task:"+task.toString());
-            System.out.println("taskName:"+task.getName());
-            System.out.println("taskAssignee:"+task.getAssignee());
+//            System.out.println("task:"+task.toString());
+//            System.out.println("taskName:"+task.getName());
+//            System.out.println("taskAssignee:"+task.getAssignee());
             return task;
         }
         log.info("not find task by bussinessKey:" +key);
@@ -124,6 +125,22 @@ public class ActTaskService {
     public void addCandidateUserByBussinessKey(String bussinessKey,String username){
         Task task = getTaskByBusKey(bussinessKey);
         taskService.addCandidateUser(task.getId(),username);
+    }
+    /*
+    * 根据业务key领取任务
+    * */
+    public void claimTask(String bussinessKey,String username){
+        Task taskByBusKey = getTaskByBusKey(bussinessKey);
+        taskService.claim(taskByBusKey.getId(),username);
+
+    }
+    /*
+    * 根据业务key获取代办
+    * */
+    public void getIdentify(String bussinessKey){
+        Task taskByBusKey = getTaskByBusKey(bussinessKey);
+        List<IdentityLink> identityLinksForTask = taskService.getIdentityLinksForTask(taskByBusKey.getId());
+
     }
     /*
     *@describe 节点退回

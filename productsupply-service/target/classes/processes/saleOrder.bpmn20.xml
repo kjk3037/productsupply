@@ -4,7 +4,7 @@
     <startEvent id="sid-3d117b27-ad78-4d7a-9719-c5555f7a3d05"/>
     <userTask id="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459" name="提交节点" activiti:assignee="${user}"/>
     <sequenceFlow id="sid-22c52280-c0cd-4b43-ac04-17604fad28d3" sourceRef="sid-3d117b27-ad78-4d7a-9719-c5555f7a3d05" targetRef="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459"/>
-    <userTask id="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" name="经理审批" activiti:assignee="${saleManager}"/>
+    <userTask id="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" name="经理审批"/>
     <sequenceFlow id="sid-18145ca0-93be-445d-8609-2d9b61d36262" sourceRef="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459" targetRef="sid-ea74e1f9-738b-4a42-93e5-052844c63df7"/>
     <endEvent id="sid-03cceeac-c13b-472e-a5b7-152f3f10c5c2"/>
     <sequenceFlow id="sid-40ef6148-6215-4337-aafa-046683c3e6d0" sourceRef="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" targetRef="sid-03cceeac-c13b-472e-a5b7-152f3f10c5c2"/>

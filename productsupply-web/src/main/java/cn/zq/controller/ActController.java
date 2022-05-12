@@ -32,11 +32,11 @@ public class ActController {
     /*
     * 开启流程接口
     * */
-    @RequestMapping("/create")
-    public Message create(){
-        actProcessService.startProcess("cc","5",new HashMap());
-        return Message.success("创建成功");
-    }
+//    @RequestMapping("/create")
+//    public Message create(){
+//        actProcessService.startProcess("","5");
+//        return Message.success("创建成功");
+//    }
     /*
     * 执行接口
     * */
@@ -65,5 +65,13 @@ public class ActController {
     public Message getTodolist(){
         List<Task> tasksByAss = actTaskService.getTasksByAss();
         return Message.success(tasksByAss);
+    }
+    /*
+     * 获取当前用户所有待办任务数据
+     * */
+    @RequestMapping("/test")
+    public Message test(String bussinessKey){
+        actTaskService.getIdentify(bussinessKey);
+        return Message.success(1);
     }
 }

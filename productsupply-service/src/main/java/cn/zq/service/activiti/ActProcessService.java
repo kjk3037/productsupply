@@ -6,6 +6,7 @@ import org.activiti.engine.*;
 import org.activiti.engine.history.HistoricIdentityLink;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,13 +27,11 @@ public class ActProcessService {
     HistoryService historyService;
     @Autowired
     RuntimeService runtimeService;
-    @Autowired
-    ActTaskService actTaskService;
     /*
     * @describe部署流程
     * */
     public void deployProcess(){
-        Deployment deploy = repositoryService.createDeployment().addClasspathResource("processes/cc.bpmn20.xml").name("cc").deploy();
+        Deployment deploy = repositoryService.createDeployment().addClasspathResource("processes/saleOrder.bpmn20.xml").name("saleOrder").deploy();
         System.out.println("id: "+deploy.getId());
         System.out.println("name: "+deploy.getName());
     }
@@ -40,9 +39,9 @@ public class ActProcessService {
     *@describe 开启流程创建实例
     *@param String:processKey , String:bussinessKey
     **/
-    public void startProcess(String processKey,String bussinessKey,Map vars){
+    public void startProcess(String processKey,String bussinessKey){
         String username= ShiroUtils.getUsername();
-        Map<String,Object> args=vars;
+        Map<String,Object> args=new HashMap<>();
         args.put("user",username);
         //args.put("leader","jack");
         ProcessInstance test = runtimeService.startProcessInstanceByKey(processKey,bussinessKey,args);
@@ -50,7 +49,9 @@ public class ActProcessService {
 //        System.out.println("ProcessDefId:"+test.getProcessDefinitionId());
 //        System.out.println("Id:"+test.getId());
         //执行申请节点
-        actTaskService.execute(test.getProcessInstanceId(),"");
+        taskService.execute(test.getProcessInstanceId(),"");
+        taskService.addCandidateUserByBussinessKey(bussinessKey,"kjk");
+        taskService.addCandidateUserByBussinessKey(bussinessKey,"root");
         log.info("ProcessInstance is created");
     }
 

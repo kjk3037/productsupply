@@ -41,7 +41,6 @@ public class SaleOrderController {
         return Message.success(resultCode,"下单成功");
     }
     @PostMapping("/agree")
-    @RequiresRoles("销售经理")
     public Message agree(String orderCode,String comment){
         saleOrderService.agree(orderCode,comment);
         return Message.success("1");
