@@ -3,7 +3,7 @@
 <mapper namespace="cn.zq.dao.UserPermissionMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.zq.domain.UserPermission">
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.UserPermission">
         <id column="id" property="id" />
         <result column="describe" property="describe" />
         <result column="status" property="status" />

@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.SaleOrderDetail;
+import cn.zq.pojo.SaleOrderDetail;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

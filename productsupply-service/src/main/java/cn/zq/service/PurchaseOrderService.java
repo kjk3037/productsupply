@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.PurchaseOrder;
+import cn.zq.pojo.PurchaseOrder;
 
 import java.util.List;
 

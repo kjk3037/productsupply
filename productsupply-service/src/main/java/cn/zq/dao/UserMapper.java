@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.User;
+import cn.zq.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

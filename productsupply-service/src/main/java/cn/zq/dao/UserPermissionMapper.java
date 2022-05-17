@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.UserPermission;
+import cn.zq.pojo.UserPermission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -3,7 +3,7 @@
 <mapper namespace="cn.zq.dao.DataFieldMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.zq.domain.DataField">
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.DataField">
         <id column="id" property="id" />
         <result column="bussiness_key" property="bussinessKey" />
         <result column="prop" property="prop" />
@@ -13,10 +13,10 @@
         <result column="parent_key" property="parentKey" />
         <result column="parent_id" property="parentId" />
         <result column="is_list" property="isList" />
-        <collection property="childs" ofType="cn.zq.domain.DataField" javaType="java.util.List" select="selectChild" column="id">
+        <collection property="childs" ofType="cn.zq.pojo.DataField" javaType="java.util.List" select="selectChild" column="id">
         </collection>
     </resultMap>
-    <resultMap id="newResultMap" type="cn.zq.domain.DataField">
+    <resultMap id="newResultMap" type="cn.zq.pojo.DataField">
         <id column="id" property="id" />
         <result column="bussiness_key" property="bussinessKey" />
         <result column="prop" property="prop" />

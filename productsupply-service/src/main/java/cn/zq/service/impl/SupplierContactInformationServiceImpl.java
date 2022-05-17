@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.SupplierContactInformationMapper;
-import cn.zq.domain.SupplierContactInformation;
+import cn.zq.pojo.SupplierContactInformation;
 import cn.zq.service.SupplierContactInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

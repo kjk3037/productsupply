@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.dao.DistrictMapper" >
-  <resultMap id="BaseResultMap" type="cn.zq.domain.District" >
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.District" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="pid" property="pid" jdbcType="INTEGER" />
     <result column="district_name" property="districtName" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
     delete from district
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.District" >
+  <insert id="insert" parameterType="cn.zq.pojo.District" >
     insert into district (id, pid, district_name, 
       type, hierarchy, district_sqe
       )
@@ -30,7 +30,7 @@
       #{type,jdbcType=INTEGER}, #{hierarchy,jdbcType=INTEGER}, #{districtSqe,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.District" >
+  <insert id="insertSelective" parameterType="cn.zq.pojo.District" >
     insert into district
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.District" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.District" >
     update district
     <set >
       <if test="pid != null" >
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.District" >
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.District" >
     update district
     set pid = #{pid,jdbcType=INTEGER},
       district_name = #{districtName,jdbcType=VARCHAR},

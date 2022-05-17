@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.DictTypeMapper;
-import cn.zq.domain.DictType;
+import cn.zq.pojo.DictType;
 import cn.zq.service.DictTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

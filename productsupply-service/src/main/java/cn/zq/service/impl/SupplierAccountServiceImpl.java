@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.SupplierAccountMapper;
-import cn.zq.domain.SupplierAccount;
+import cn.zq.pojo.SupplierAccount;
 import cn.zq.service.SupplierAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

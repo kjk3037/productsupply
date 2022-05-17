@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.UserDept;
+import cn.zq.pojo.UserDept;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.DataField;
+import cn.zq.pojo.DataField;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

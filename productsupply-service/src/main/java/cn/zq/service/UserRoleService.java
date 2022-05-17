@@ -1,7 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.common.Message;
-import cn.zq.domain.UserRole;
+import cn.zq.pojo.UserRole;
 
 import java.util.List;
 

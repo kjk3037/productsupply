@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.dao.PurchaseOrderMapper" >
-  <resultMap id="BaseResultMap" type="cn.zq.domain.PurchaseOrder" >
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.PurchaseOrder" >
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="purchase_content" property="purchaseContent" jdbcType="VARCHAR" />
@@ -45,7 +45,7 @@
     delete from purchase_order
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.PurchaseOrder" >
+  <insert id="insert" parameterType="cn.zq.pojo.PurchaseOrder" >
     insert into purchase_order (id, title, purchase_content, 
       order_amount, supplier_id, order_number, 
       order_date, out_standing_amount, remark, 
@@ -65,7 +65,7 @@
       #{otherPaymentMethodReason,jdbcType=VARCHAR}, #{fullPaymentStatus,jdbcType=INTEGER}, 
       #{allMaterialQuantity,jdbcType=INTEGER}, #{updateDate,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.PurchaseOrder" >
+  <insert id="insertSelective" parameterType="cn.zq.pojo.PurchaseOrder" >
     insert into purchase_order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -222,7 +222,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.PurchaseOrder" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.PurchaseOrder" >
     update purchase_order
     <set >
       <if test="title != null" >
@@ -300,7 +300,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.PurchaseOrder" >
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.PurchaseOrder" >
     update purchase_order
     set title = #{title,jdbcType=VARCHAR},
       purchase_content = #{purchaseContent,jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.SupplierAccount;
+import cn.zq.pojo.SupplierAccount;
 
 import java.util.List;
 

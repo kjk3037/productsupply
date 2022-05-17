@@ -2,8 +2,8 @@ package cn.zq.service.impl;
 
 import cn.zq.dao.SysModuleMapper;
 import cn.zq.dao.SysSubModuleMapper;
-import cn.zq.domain.SysModule;
-import cn.zq.domain.SysSubModule;
+import cn.zq.pojo.SysModule;
+import cn.zq.pojo.SysSubModule;
 import cn.zq.service.SysModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

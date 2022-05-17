@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.MaterialInfo;
+import cn.zq.pojo.MaterialInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

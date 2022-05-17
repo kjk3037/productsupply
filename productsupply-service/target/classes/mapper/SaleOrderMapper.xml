@@ -3,7 +3,7 @@
 <mapper namespace="cn.zq.dao.SaleOrderMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.zq.domain.SaleOrder">
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.SaleOrder">
         <id column="id" property="id" />
         <result column="code" property="code" />
         <result column="customer_id" property="customerId" />
@@ -20,7 +20,7 @@
         <result column="order_status" property="orderStatus" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
-        <collection property="saleOrderDetails" ofType="cn.zq.domain.SaleOrderDetail" javaType="java.util.List">
+        <collection property="saleOrderDetails" ofType="cn.zq.pojo.SaleOrderDetail" javaType="java.util.List">
             <id column="id" property="id" />
             <result column="code" property="code" />
             <result column="order_id" property="orderId" />
@@ -52,7 +52,7 @@
         from sale_order
         where code=#{code}
     </select>
-    <insert id="insertSaleOrder" parameterType="cn.zq.domain.SaleOrder">
+    <insert id="insertSaleOrder" parameterType="cn.zq.pojo.SaleOrder">
         insert into sale_order
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id!=null">

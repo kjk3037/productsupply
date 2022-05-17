@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.District;
+import cn.zq.pojo.District;
 
 import java.util.List;
 

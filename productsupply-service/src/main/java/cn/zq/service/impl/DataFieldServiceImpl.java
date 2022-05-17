@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.DataField;
+import cn.zq.pojo.DataField;
 import cn.zq.dao.DataFieldMapper;
 import cn.zq.service.DataFieldService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

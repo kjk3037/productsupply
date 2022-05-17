@@ -71,7 +71,7 @@ public class ActController {
      * */
     @RequestMapping("/test")
     public Message test(String bussinessKey){
-        actTaskService.getIdentify(bussinessKey);
-        return Message.success(1);
+        List identify = actTaskService.getIdentify();
+        return Message.success(identify,"待办列表获取成功");
     }
 }

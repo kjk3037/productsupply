@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.SupplierContactInformation;
+import cn.zq.pojo.SupplierContactInformation;
 
 import java.util.List;
 

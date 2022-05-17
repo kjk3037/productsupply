@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.SysSubModule;
+import cn.zq.pojo.SysSubModule;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

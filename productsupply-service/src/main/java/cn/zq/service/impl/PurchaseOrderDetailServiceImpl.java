@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.PurchaseOrderDetailMapper;
-import cn.zq.domain.PurchaseOrderDetail;
+import cn.zq.pojo.PurchaseOrderDetail;
 import cn.zq.service.PurchaseOrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

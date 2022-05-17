@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zq.dao.DictTypeMapper">
-  <resultMap id="BaseResultMap" type="cn.zq.domain.DictType">
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.DictType">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type_name" jdbcType="VARCHAR" property="typeName" />
     <result column="desc" jdbcType="VARCHAR" property="desc" />
@@ -19,13 +19,13 @@
     delete from dict_type
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.DictType">
+  <insert id="insert" parameterType="cn.zq.pojo.DictType">
     insert into dict_type (id, type_name, desc
       )
     values (#{id,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.DictType">
+  <insert id="insertSelective" parameterType="cn.zq.pojo.DictType">
     insert into dict_type
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.DictType">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.DictType">
     update dict_type
     <set>
       <if test="typeName != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.DictType">
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.DictType">
     update dict_type
     set type_name = #{typeName,jdbcType=VARCHAR},
       desc = #{desc,jdbcType=VARCHAR}

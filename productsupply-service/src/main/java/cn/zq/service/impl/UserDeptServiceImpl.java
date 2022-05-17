@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.UserDept;
+import cn.zq.pojo.UserDept;
 import cn.zq.dao.UserDeptMapper;
 import cn.zq.service.UserDeptService;
 import org.springframework.beans.factory.annotation.Autowired;

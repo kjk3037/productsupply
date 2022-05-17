@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.Dict;
+import cn.zq.pojo.Dict;
 
 import java.util.List;
 

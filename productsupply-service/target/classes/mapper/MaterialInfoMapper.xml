@@ -3,7 +3,7 @@
 <mapper namespace="cn.zq.dao.MaterialInfoMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.zq.domain.MaterialInfo">
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.MaterialInfo">
         <id column="atid" property="atid" />
         <result column="code" property="code" />
         <result column="material_name" property="materialName" />

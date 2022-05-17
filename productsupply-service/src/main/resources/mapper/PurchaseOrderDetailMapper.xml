@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.dao.PurchaseOrderDetailMapper" >
-  <resultMap id="BaseResultMap" type="cn.zq.domain.PurchaseOrderDetail" >
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.PurchaseOrderDetail" >
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="order_id" property="orderId" jdbcType="CHAR" />
     <result column="quantity" property="quantity" jdbcType="INTEGER" />
@@ -26,7 +26,7 @@
     delete from purchase_order_detail
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.PurchaseOrderDetail" >
+  <insert id="insert" parameterType="cn.zq.pojo.PurchaseOrderDetail" >
     insert into purchase_order_detail (id, order_id, quantity,
       name, price, total_price, 
       quantity_received, material_number, update_date
@@ -36,7 +36,7 @@
       #{quantityReceived,jdbcType=INTEGER}, #{materialNumber,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.PurchaseOrderDetail" >
+  <insert id="insertSelective" parameterType="cn.zq.pojo.PurchaseOrderDetail" >
     insert into purchase_order_detail
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.PurchaseOrderDetail" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.PurchaseOrderDetail" >
     update purchase_order_detail
     <set >
       <if test="orderId != null" >
@@ -127,7 +127,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.PurchaseOrderDetail" >
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.PurchaseOrderDetail" >
     update purchase_order_detail
     set order_id = #{orderId,jdbcType=CHAR},
       quantity = #{quantity,jdbcType=INTEGER},

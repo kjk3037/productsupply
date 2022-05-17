@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="cn.zq.domain.User" >
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.User" >
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="salt" property="salt" jdbcType="CHAR" />
     <result column="nickname" property="nickname" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
-    <collection property="roles" ofType="cn.zq.domain.UserRole" javaType="java.util.List">
+    <collection property="roles" ofType="cn.zq.pojo.UserRole" javaType="java.util.List">
       <id column="rid" property="id" />
       <result property="name" column="name"/>
-      <collection property="permissions" ofType="cn.zq.domain.UserPermission" javaType="java.util.List">
+      <collection property="permissions" ofType="cn.zq.pojo.UserPermission" javaType="java.util.List">
         <id column="pid" property="id"/>
         <result column="permission" property="permission"/>
       </collection>
@@ -30,13 +30,13 @@
     delete from user
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.User" >
+  <insert id="insert" parameterType="cn.zq.pojo.User" >
     insert into user (id, username, password,
       nickname, status)
     values (#{id,jdbcType=CHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{nickname,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.User" >
+  <insert id="insertSelective" parameterType="cn.zq.pojo.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.User" >
     update user
     <set >
       <if test="username != null" >
@@ -91,7 +91,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.User" >
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.User" >
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
@@ -99,7 +99,7 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=CHAR}
   </update>
-  <select id="loginCheck" parameterType="cn.zq.domain.User" resultMap="BaseResultMap">
+  <select id="loginCheck" parameterType="cn.zq.pojo.User" resultMap="BaseResultMap">
     select * from user where username=#{username}
   </select>
   <select id="getUsers" resultMap="BaseResultMap">

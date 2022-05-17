@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.MaterialInfo;
+import cn.zq.pojo.MaterialInfo;
 import cn.zq.dao.MaterialInfoMapper;
 import cn.zq.service.MaterialInfoService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

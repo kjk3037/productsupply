@@ -1,5 +1,7 @@
 package cn.zq.service.activiti;
 
+import cn.zq.pojo.ActRuIdentitylink;
+import cn.zq.service.ActRuIdentitylinkService;
 import cn.zq.utils.FormatUtils;
 import cn.zq.utils.ShiroUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +35,8 @@ public class ActTaskService {
     HistoryService historyService;
     @Autowired
     RuntimeService runtimeService;
+    @Autowired
+    ActRuIdentitylinkService actRuIdentitylinkService;
     /*
      *
      * */
@@ -132,15 +136,12 @@ public class ActTaskService {
     public void claimTask(String bussinessKey,String username){
         Task taskByBusKey = getTaskByBusKey(bussinessKey);
         taskService.claim(taskByBusKey.getId(),username);
-
     }
     /*
-    * 根据业务key获取代办
+    * 根据用户账号获取待办任务信息
     * */
-    public void getIdentify(String bussinessKey){
-        Task taskByBusKey = getTaskByBusKey(bussinessKey);
-        List<IdentityLink> identityLinksForTask = taskService.getIdentityLinksForTask(taskByBusKey.getId());
-
+    public List getIdentify(){
+        return actRuIdentitylinkService.getByUsername(ShiroUtils.getUsername());
     }
     /*
     *@describe 节点退回

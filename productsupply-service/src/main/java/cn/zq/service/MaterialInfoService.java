@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.MaterialInfo;
+import cn.zq.pojo.MaterialInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

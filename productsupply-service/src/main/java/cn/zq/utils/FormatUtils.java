@@ -1,11 +1,8 @@
 package cn.zq.utils;
 
-import cn.zq.domain.DataField;
-import cn.zq.domain.MaterialInfo;
+import cn.zq.pojo.DataField;
 import org.apache.shiro.crypto.hash.SimpleHash;
-import org.junit.jupiter.api.Test;
 
-import javax.xml.crypto.Data;
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

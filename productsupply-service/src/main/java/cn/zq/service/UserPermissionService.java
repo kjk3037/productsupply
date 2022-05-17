@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.UserPermission;
+import cn.zq.pojo.UserPermission;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

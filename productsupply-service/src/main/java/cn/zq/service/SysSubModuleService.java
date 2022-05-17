@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.SysSubModule;
+import cn.zq.pojo.SysSubModule;
 
 public interface SysSubModuleService {
     SysSubModuleService getSubModule();

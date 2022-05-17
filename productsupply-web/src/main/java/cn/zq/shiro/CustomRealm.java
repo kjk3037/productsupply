@@ -1,9 +1,9 @@
 package cn.zq.shiro;
 
-import cn.zq.domain.User;
-//import cn.zq.domain.UserPermission;
-import cn.zq.domain.UserPermission;
-import cn.zq.domain.UserRole;
+import cn.zq.pojo.User;
+//import cn.zq.pojo.UserPermission;
+import cn.zq.pojo.UserPermission;
+import cn.zq.pojo.UserRole;
 import cn.zq.service.UserService;
 import cn.zq.utils.MyByteSource;
 import org.apache.shiro.SecurityUtils;

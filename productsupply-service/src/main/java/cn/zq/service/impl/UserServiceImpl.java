@@ -2,9 +2,9 @@ package cn.zq.service.impl;
 
 
 import cn.zq.dao.UserMapper;
-import cn.zq.domain.User;
-import cn.zq.domain.UserPermission;
-import cn.zq.domain.UserRole;
+import cn.zq.pojo.User;
+import cn.zq.pojo.UserPermission;
+import cn.zq.pojo.UserRole;
 import cn.zq.service.UserService;
 import cn.zq.utils.FormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;

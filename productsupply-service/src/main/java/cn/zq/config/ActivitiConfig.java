@@ -44,4 +44,5 @@ public class ActivitiConfig extends AbstractProcessEngineAutoConfiguration {
     public HistoryService getHistoryService() {
         return processEngine.getHistoryService();
     }
+
 }

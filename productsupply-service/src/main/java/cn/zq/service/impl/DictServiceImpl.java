@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.DictMapper;
-import cn.zq.domain.Dict;
+import cn.zq.pojo.Dict;
 import cn.zq.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

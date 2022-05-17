@@ -1,6 +1,6 @@
 package cn.zq.dao;
 
-import cn.zq.domain.DictType;
+import cn.zq.pojo.DictType;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

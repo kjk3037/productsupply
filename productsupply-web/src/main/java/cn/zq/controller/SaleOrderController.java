@@ -2,22 +2,12 @@ package cn.zq.controller;
 
 
 import cn.zq.common.Message;
-import cn.zq.domain.Attachment;
-import cn.zq.domain.SaleOrder;
-import cn.zq.service.AttachmentService;
+import cn.zq.pojo.SaleOrder;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActTaskService;
-import cn.zq.utils.FileUtils;
-import cn.zq.utils.ShiroUtils;
-import org.activiti.engine.task.Task;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**

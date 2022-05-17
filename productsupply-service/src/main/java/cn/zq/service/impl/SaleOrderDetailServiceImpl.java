@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.SaleOrderDetail;
+import cn.zq.pojo.SaleOrderDetail;
 import cn.zq.dao.SaleOrderDetailMapper;
 import cn.zq.service.SaleOrderDetailService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

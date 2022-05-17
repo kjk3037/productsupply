@@ -37,7 +37,7 @@ public class MybatisGenerUtils {
     //作者名
     private final String author = "kjk";
     //指定生成的表名
-    private final String[] tableNames = new String[]{"attachment"};
+    private final String[] tableNames = new String[]{"act_ru_identitylink"};
     @Test
     public void generateCode() {
         //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService
@@ -91,7 +91,7 @@ public class MybatisGenerUtils {
                 .setXml("dao.xml")
                 .setMapper("dao")
                 .setController("controller")
-                .setEntity("domain")
+                .setEntity("pojo")
                 .setService("service")
                 .setServiceImpl("service.impl");
     }

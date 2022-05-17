@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.SysModule;
+import cn.zq.pojo.SysModule;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package cn.zq.controller;
 
 import cn.zq.common.Message;
-import cn.zq.domain.User;
+import cn.zq.pojo.User;
 import cn.zq.service.UserService;
 import cn.zq.utils.FormatUtils;
 import org.apache.shiro.SecurityUtils;

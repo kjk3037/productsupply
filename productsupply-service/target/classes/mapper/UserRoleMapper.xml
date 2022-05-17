@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zq.dao.UserRoleMapper" >
-  <resultMap id="BaseResultMap" type="cn.zq.domain.UserRole" >
+  <resultMap id="BaseResultMap" type="cn.zq.pojo.UserRole" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="desc" property="desc" jdbcType="VARCHAR" />
@@ -19,13 +19,13 @@
     delete from user_role
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.zq.domain.UserRole" >
+  <insert id="insert" parameterType="cn.zq.pojo.UserRole" >
     insert into user_role (id, name, authority,
       desc)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{authority,jdbcType=VARCHAR}, 
       #{desc,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zq.domain.UserRole" >
+  <insert id="insertSelective" parameterType="cn.zq.pojo.UserRole" >
     insert into user_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -56,7 +56,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.domain.UserRole" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zq.pojo.UserRole" >
     update user_role
     <set >
       <if test="name != null" >
@@ -71,7 +71,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zq.domain.UserRole" >
+  <update id="updateByPrimaryKey" parameterType="cn.zq.pojo.UserRole" >
     update user_role
     set name = #{name,jdbcType=VARCHAR},
       authority = #{authority,jdbcType=VARCHAR},

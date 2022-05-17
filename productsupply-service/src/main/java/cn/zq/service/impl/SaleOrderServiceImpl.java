@@ -1,9 +1,8 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.SaleOrderDetailMapper;
-import cn.zq.domain.SaleOrder;
+import cn.zq.pojo.SaleOrder;
 import cn.zq.dao.SaleOrderMapper;
-import cn.zq.domain.SaleOrderDetail;
 import cn.zq.service.SaleOrderDetailService;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActProcessService;
@@ -18,9 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Wrapper;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 /**

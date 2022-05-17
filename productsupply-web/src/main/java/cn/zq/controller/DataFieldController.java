@@ -2,13 +2,10 @@ package cn.zq.controller;
 
 
 import cn.zq.common.Message;
-import cn.zq.domain.DataField;
-import cn.zq.domain.MaterialInfo;
-import cn.zq.domain.SaleOrder;
-import cn.zq.domain.SaleOrderDetail;
+import cn.zq.pojo.DataField;
+import cn.zq.pojo.SaleOrder;
 import cn.zq.service.DataFieldService;
 import cn.zq.utils.FormatUtils;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**

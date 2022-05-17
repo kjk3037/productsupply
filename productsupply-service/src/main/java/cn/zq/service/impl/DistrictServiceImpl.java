@@ -1,7 +1,7 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.DistrictMapper;
-import cn.zq.domain.District;
+import cn.zq.pojo.District;
 import cn.zq.service.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

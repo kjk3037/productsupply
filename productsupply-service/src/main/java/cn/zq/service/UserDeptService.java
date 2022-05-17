@@ -1,6 +1,6 @@
 package cn.zq.service;
 
-import cn.zq.domain.UserDept;
+import cn.zq.pojo.UserDept;
 
 import java.util.List;
 

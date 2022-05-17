@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.Attachment;
+import cn.zq.pojo.Attachment;
 import cn.zq.dao.AttachmentMapper;
 import cn.zq.service.AttachmentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.Customer;
+import cn.zq.pojo.Customer;
 import cn.zq.dao.CustomerMapper;
 import cn.zq.service.CustomerService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

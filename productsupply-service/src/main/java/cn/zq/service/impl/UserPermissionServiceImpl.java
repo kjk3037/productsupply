@@ -1,6 +1,6 @@
 package cn.zq.service.impl;
 
-import cn.zq.domain.UserPermission;
+import cn.zq.pojo.UserPermission;
 import cn.zq.dao.UserPermissionMapper;
 import cn.zq.service.UserPermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
