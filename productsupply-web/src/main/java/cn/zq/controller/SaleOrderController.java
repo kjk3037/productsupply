@@ -5,6 +5,7 @@ import cn.zq.common.Message;
 import cn.zq.pojo.SaleOrder;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActTaskService;
+import org.activiti.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +40,7 @@ public class SaleOrderController {
     public Message getList(){
         List<SaleOrder> all = saleOrderService.getAll();
         return Message.success(all);
+
     }
 }
 

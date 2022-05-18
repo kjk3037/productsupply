@@ -37,7 +37,7 @@ public class MybatisGenerUtils {
     //作者名
     private final String author = "kjk";
     //指定生成的表名
-    private final String[] tableNames = new String[]{"act_ru_identitylink"};
+    private final String[] tableNames = new String[]{"act_re_procdef"};
     @Test
     public void generateCode() {
         //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService
@@ -128,7 +128,7 @@ public class MybatisGenerUtils {
     private String getOutputDir(String projectName) {
 //        String path = this.getClass().getClassLoader().getResource("").getPath();
 //        int index = path.indexOf(projectName);
-        return "E:\\kjk\\project\\java\\" + projectName + "\\productsupply-service\\src\\main\\java\\";
+        return "C:\\MyDocument\\myJavaProject\\" + projectName + "\\productsupply-service\\src\\main\\java\\";
     }
     /**
      * 策略配置

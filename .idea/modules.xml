@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/productsupply.iml" filepath="$PROJECT_DIR$/productsupply.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/productsupply.iml" filepath="$PROJECT_DIR$/.idea/productsupply.iml" />
       <module fileurl="file://$PROJECT_DIR$/productsupply-service/productsupply-service.iml" filepath="$PROJECT_DIR$/productsupply-service/productsupply-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/productsupply-web/productsupply-web.iml" filepath="$PROJECT_DIR$/productsupply-web/productsupply-web.iml" />
     </modules>

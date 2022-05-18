@@ -69,8 +69,8 @@ public class ActController {
     /*
      * 获取当前用户所有待办任务数据
      * */
-    @RequestMapping("/test")
-    public Message test(String bussinessKey){
+    @GetMapping("/test")
+    public Message test(){
         List identify = actTaskService.getIdentify();
         return Message.success(identify,"待办列表获取成功");
     }

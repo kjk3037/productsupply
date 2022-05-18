@@ -11,9 +11,8 @@ import java.util.List;
  * </p>
  *
  * @author kjk
- * @since 2022-05-13
+ * @since 2022-05-18
  */
-
 public interface ActRuIdentitylinkMapper extends BaseMapper<ActRuIdentitylink> {
-    List selectByUser(String userId);
+    List selectByUserId(String userId);
 }

@@ -11,7 +11,7 @@ import java.util.List;
  * </p>
  *
  * @author kjk
- * @since 2022-05-13
+ * @since 2022-05-18
  */
 public interface ActRuIdentitylinkService extends IService<ActRuIdentitylink> {
     List getByUsername(String username);

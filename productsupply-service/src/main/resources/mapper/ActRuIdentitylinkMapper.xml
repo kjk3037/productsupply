@@ -12,13 +12,76 @@
         <result column="TASK_ID_" property="taskId" />
         <result column="PROC_INST_ID_" property="procInstId" />
         <result column="PROC_DEF_ID_" property="procDefId" />
+        <association property="actRuTask" javaType="cn.zq.pojo.ActRuTask">
+            <id column="RT_ID_" property="id" />
+            <result column="REV_" property="rev" />
+            <result column="EXECUTION_ID_" property="executionId" />
+            <result column="PROC_INST_ID_" property="procInstId" />
+            <result column="PROC_DEF_ID_" property="procDefId" />
+            <result column="RT_NAME_" property="name" />
+            <result column="PARENT_TASK_ID_" property="parentTaskId" />
+            <result column="DESCRIPTION_" property="description" />
+            <result column="TASK_DEF_KEY_" property="taskDefKey" />
+            <result column="OWNER_" property="owner" />
+            <result column="ASSIGNEE_" property="assignee" />
+            <result column="DELEGATION_" property="delegation" />
+            <result column="PRIORITY_" property="priority" />
+            <result column="CREATE_TIME_" property="createTime" />
+            <result column="DUE_DATE_" property="dueDate" />
+            <result column="CATEGORY_" property="category" />
+            <result column="SUSPENSION_STATE_" property="suspensionState" />
+            <result column="TENANT_ID_" property="tenantId" />
+            <result column="FORM_KEY_" property="formKey" />
+            <result column="CLAIM_TIME_" property="claimTime" />
+            <association property="actReProcdef" javaType="cn.zq.pojo.ActReProcdef" >
+                <id column="RP_ID_" property="id" />
+                <result column="REV_" property="rev" />
+                <result column="CATEGORY_" property="category" />
+                <result column="RP_NAME_" property="name" />
+                <result column="KEY_" property="key" />
+                <result column="VERSION_" property="version" />
+                <result column="DEPLOYMENT_ID_" property="deploymentId" />
+                <result column="RESOURCE_NAME_" property="resourceName" />
+                <result column="DGRM_RESOURCE_NAME_" property="dgrmResourceName" />
+                <result column="DESCRIPTION_" property="description" />
+                <result column="HAS_START_FORM_KEY_" property="hasStartFormKey" />
+                <result column="HAS_GRAPHICAL_NOTATION_" property="hasGraphicalNotation" />
+                <result column="SUSPENSION_STATE_" property="suspensionState" />
+                <result column="TENANT_ID_" property="tenantId" />
+                <result column="ENGINE_VERSION_" property="engineVersion" />
+            </association>
+            <association property="actHiProcinst" javaType="cn.zq.pojo.ActHiProcinst">
+                <id column="ID_" property="id" />
+                <result column="PROC_INST_ID_" property="procInstId" />
+                <result column="BUSINESS_KEY_" property="businessKey" />
+                <result column="PROC_DEF_ID_" property="procDefId" />
+                <result column="START_TIME_" property="startTime" />
+                <result column="END_TIME_" property="endTime" />
+                <result column="DURATION_" property="duration" />
+                <result column="START_USER_ID_" property="startUserId" />
+                <result column="START_ACT_ID_" property="startActId" />
+                <result column="END_ACT_ID_" property="endActId" />
+                <result column="SUPER_PROCESS_INSTANCE_ID_" property="superProcessInstanceId" />
+                <result column="DELETE_REASON_" property="deleteReason" />
+                <result column="TENANT_ID_" property="tenantId" />
+                <result column="NAME_" property="name" />
+            </association>
+        </association>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         ID_, REV_, GROUP_ID_, TYPE_, USER_ID_, TASK_ID_, PROC_INST_ID_, PROC_DEF_ID_
     </sql>
-    <select id="selectByUser" resultMap="BaseResultMap" parameterType="java.lang.String">
-        select * from  act_ru_identitylink where USER_ID_=#{userId}
+    <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select ari.ID_,ari.TASK_ID_,ari.PROC_INST_ID_,
+        art.ID_ as RT_ID_,art.PROC_DEF_ID_,art.NAME_ as RT_NAME_,
+        arp.NAME_ as RP_NAME_,arp.KEY_,
+        ahp.BUSINESS_KEY_
+        from  act_ru_identitylink ari
+        left join act_ru_task  art on art.ID_=ari.TASK_ID_
+        left join act_re_procdef arp on arp.ID_=art.PROC_DEF_ID_
+        left join act_hi_procinst ahp on ahp.ID_=art.PROC_INST_ID_
+        where USER_ID_=#{userId} and TYPE_='candidate'
     </select>
 </mapper>

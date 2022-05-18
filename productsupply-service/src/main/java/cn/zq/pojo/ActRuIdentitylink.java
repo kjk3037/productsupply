@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author kjk
- * @since 2022-05-13
+ * @since 2022-05-18
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
@@ -34,5 +34,5 @@ import lombok.EqualsAndHashCode;
 
     private String procDefId;
 
-
+    private ActRuTask actRuTask;
 }
