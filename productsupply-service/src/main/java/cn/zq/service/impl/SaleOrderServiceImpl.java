@@ -113,7 +113,7 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
 
     @Override
     public List<SaleOrder> getAll() {
-        return null;
+        return saleOrderMapper.selectAll();
     }
 
     @Override

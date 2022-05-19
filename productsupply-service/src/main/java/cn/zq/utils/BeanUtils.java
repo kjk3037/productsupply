@@ -12,6 +12,9 @@ public class BeanUtils implements ApplicationContextAware {
     public static Object getBean(String name){
         return context.getBean(name);
     }
+    public static Object getBean(Class clazz){
+        return context.getBean(clazz);
+    }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

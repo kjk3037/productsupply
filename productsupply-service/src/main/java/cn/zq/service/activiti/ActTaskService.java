@@ -96,7 +96,6 @@ public class ActTaskService {
         Task task = taskService.createTaskQuery()
                 .processInstanceId(id)
                 .singleResult();
-
         if (task!=null){
             System.out.println("task:"+task.toString());
             System.out.println("taskName:"+task.getName());
@@ -120,27 +119,31 @@ public class ActTaskService {
 //            System.out.println("taskAssignee:"+task.getAssignee());
             return task;
         }
-        log.info("not find task by bussinessKey:" +key);
+        log.info("not find task by businessKey:" +key);
         return task;
     }
     /*
     * 根据业务key增加代办人员
     * */
-    public void addCandidateUserByBussinessKey(String bussinessKey,String username){
-        Task task = getTaskByBusKey(bussinessKey);
+    public void addCandidateUserByBusinessKey(String businessKey,String username){
+        Task task = getTaskByBusKey(businessKey);
         taskService.addCandidateUser(task.getId(),username);
     }
     /*
     * 根据业务key领取任务
     * */
-    public void claimTask(String bussinessKey,String username){
-        Task taskByBusKey = getTaskByBusKey(bussinessKey);
+    public void claimTask(String businessKey,String username){
+        Task taskByBusKey = getTaskByBusKey(businessKey);
         taskService.claim(taskByBusKey.getId(),username);
     }
     /*
     * 根据用户账号获取待办任务信息
     * */
     public List getIdentify(){
+        List<IdentityLink> identityLinksForProcessInstance = runtimeService.getIdentityLinksForProcessInstance("100001");
+        for (IdentityLink identityLink:identityLinksForProcessInstance){
+            System.out.println(identityLink);
+        }
         return actRuIdentitylinkService.getByUsername(ShiroUtils.getUsername());
     }
     /*

@@ -34,13 +34,12 @@ public class SaleOrderController {
     @PostMapping("/agree")
     public Message agree(String orderCode,String comment){
         saleOrderService.agree(orderCode,comment);
-        return Message.success("1");
+        return Message.success("通过");
     }
     @GetMapping("/getList")
     public Message getList(){
         List<SaleOrder> all = saleOrderService.getAll();
         return Message.success(all);
-
     }
 }
 

@@ -72,6 +72,7 @@ public class ActController {
     @GetMapping("/test")
     public Message test(){
         List identify = actTaskService.getIdentify();
+        actProcessService.getHisActivities("80005");
         return Message.success(identify,"待办列表获取成功");
     }
 }
