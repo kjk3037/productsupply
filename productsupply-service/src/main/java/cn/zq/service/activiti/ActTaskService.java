@@ -13,8 +13,11 @@ import org.activiti.engine.history.HistoricActivityInstance;
 import org.activiti.engine.history.HistoricTaskInstance;
 import org.activiti.engine.impl.identity.Authentication;
 import org.activiti.engine.runtime.Execution;
+import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.runtime.ProcessInstanceQuery;
 import org.activiti.engine.task.IdentityLink;
 import org.activiti.engine.task.Task;
+import org.activiti.engine.task.TaskQuery;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -140,11 +143,15 @@ public class ActTaskService {
     * 根据用户账号获取待办任务信息
     * */
     public List getIdentify(){
-        List<IdentityLink> identityLinksForProcessInstance = runtimeService.getIdentityLinksForProcessInstance("100001");
-        for (IdentityLink identityLink:identityLinksForProcessInstance){
-            System.out.println(identityLink);
+        TaskQuery taskQuery = taskService.createTaskQuery();
+        ProcessInstanceQuery processInstanceQuery = runtimeService.createProcessInstanceQuery();
+        List<Task> tasks = taskQuery.taskCandidateUser("kjk").list();
+        for(Task task:tasks){
+            System.out.println(task.getProcessVariables());
+            ProcessInstance processInstance = processInstanceQuery.processInstanceId(task.getProcessInstanceId()).singleResult();
+            System.out.println(processInstance.getBusinessKey());
         }
-        return actRuIdentitylinkService.getByUsername(ShiroUtils.getUsername());
+        return tasks;
     }
     /*
     *@describe 节点退回

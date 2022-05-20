@@ -39,9 +39,8 @@ public class ActProcessService {
     *@describe 开启流程创建实例
     *@param String:processKey , String:bussinessKey
     **/
-    public void startProcess(String processKey,String businessKey){
+    public void startProcess(String processKey,String businessKey,Map args){
         String username= ShiroUtils.getUsername();
-        Map<String,Object> args=new HashMap<>();
         args.put("businessKey",businessKey);
         args.put("user",username);
         //args.put("leader","jack");
@@ -70,5 +69,17 @@ public class ActProcessService {
             System.out.println("userId:"+next.getUserId());
             System.out.println("type:"+next.getType());
         }
+    }
+    /*
+    * 添加流程变量
+    * */
+    public Map setFieldData(Object o1,Object o2,Object o3,Object o4){
+        HashMap<String, Object> var = new HashMap<>();
+        var.put("field1",o1);
+        var.put("field2",o2);
+        //以下参数待完善
+        var.put("field3",o3);
+        var.put("field4",o4);
+        return var;
     }
 }

@@ -33,6 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
      * 销售订单流码
      */
       private String code;
+      private String userId;
 
     private Integer customerId;
 

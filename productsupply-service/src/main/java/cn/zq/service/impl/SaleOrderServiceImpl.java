@@ -18,7 +18,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -57,7 +59,9 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         Date date = new Date();
         order.setCreateTime(date);
         order.setUpdateTime(date);
-        actProcessService.startProcess("saleOrder",order.getCode());
+        //设置待办信息头  待完善
+        Map map = actProcessService.setFieldData(order.getCode(),order.getOrderDate(),order.getCustomerId(),order.getUserId());
+        actProcessService.startProcess("saleOrder",order.getCode(),map);
         saleOrderMapper.insertSaleOrder(order);
         saleOrderDetailService.saveBatch(order.getSaleOrderDetails());
         return order.getCode();
