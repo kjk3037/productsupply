@@ -3,6 +3,8 @@ package cn.zq.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -41,6 +43,10 @@ import lombok.EqualsAndHashCode;
 
     private BigDecimal amountIncludingTax;
 
+    private BigDecimal price;
+
+    private BigDecimal amount;
+
     private Float taxRate;
 
       /**
@@ -66,6 +72,9 @@ import lombok.EqualsAndHashCode;
     private Date createTime;
 
     private Date updateTime;
-
+    @TableField(exist = false)
+    private String materialName;
+    @TableField(exist = false)
+    private String materialStandard;
 
 }

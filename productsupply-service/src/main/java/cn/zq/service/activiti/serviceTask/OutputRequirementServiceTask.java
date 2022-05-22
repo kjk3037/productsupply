@@ -21,7 +21,7 @@ public class OutputRequirementServiceTask implements JavaDelegate {
         String parentId = delegateExecution.getParentId();
         UserService userService = (UserService) BeanUtils.getBean(UserService.class);
         System.out.println("this is output serviceTask!");
-        System.out.println(userService.findByUsername("kjk"));
+        System.out.println(userService.getByUsername("kjk"));
         System.out.println("id:"+id);
         System.out.println("parentId:"+parentId);
     }

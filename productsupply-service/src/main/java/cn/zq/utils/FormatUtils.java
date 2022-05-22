@@ -18,7 +18,17 @@ public class FormatUtils {
         return UUID.randomUUID().toString().replaceAll("-","");
     }
     public static String codeFormat(String prev,Integer id){
-        return new StringBuffer(prev+"-").append(timeFormat(new Date())).append("00"+id).toString();
+        StringBuffer stringBuffer = new StringBuffer();
+        String num="000"+id;
+        if (num.length()>4){
+            num=num.substring(num.length()-4);
+        }
+        String date = timeFormat(new Date());
+        if (date.length()>8){
+            date=date.substring(0,8);
+        }
+        stringBuffer.append(prev).append("-").append(date).append(num);
+        return stringBuffer.toString();
     }
     public static String timeFormat(Date date){
         return new SimpleDateFormat("YYYYMMDD").format(date);

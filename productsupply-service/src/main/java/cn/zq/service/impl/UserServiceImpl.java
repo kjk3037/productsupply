@@ -23,22 +23,7 @@ public class UserServiceImpl implements UserService {
     //登录方法
     @Override
     public User login(User user) {
-        User account = userMapper.findByUsername(user.getUsername());
-//        if(account!=null){
-//            User byUsername = userAccountMapper.findByUsername(account.getUsername());
-//            account.setRoles(byUsername.getRoles());
-//            List<UserPermission> permissionList=new ArrayList<>();
-//            if(account.getRoles()!=null){
-//                for (UserRole role:account.getRoles()){
-//                    if (role.getPermissions()!=null){
-//                        for (UserPermission permission:role.getPermissions()){
-//                            permissionList.add(permission);
-//                        }
-//                    }
-//                }
-//            }
-//            account.setPermissions(permissionList);
-//        }
+        User account = userMapper.selectByUsername(user.getUsername());
         return account;
     }
 
@@ -52,8 +37,8 @@ public class UserServiceImpl implements UserService {
         user.setId(FormatUtils.uuidFormat());
         return userMapper.insertSelective(user);
     }
-    public User findByUsername(String username){
-        User byUsername = userMapper.findByUsername(username);
+    public User getByUsername(String username){
+        User byUsername = userMapper.selectByUsername(username);
         //account.setRoles(byUsername.getRoles());
         List<UserPermission> permissionList=new ArrayList<>();
         if(byUsername.getRoles()!=null){
@@ -67,5 +52,23 @@ public class UserServiceImpl implements UserService {
         }
         byUsername.setPermissions(permissionList);
         return byUsername;
+    }
+
+    @Override
+    public User getByUserId(String userId) {
+        User byUsername = userMapper.selectByUserId(userId);
+        //account.setRoles(byUsername.getRoles());
+        List<UserPermission> permissionList=new ArrayList<>();
+        if(byUsername.getRoles()!=null){
+            for (UserRole role:byUsername.getRoles()){
+                if (role.getPermissions()!=null){
+                    for (UserPermission permission:role.getPermissions()){
+                        permissionList.add(permission);
+                    }
+                }
+            }
+        }
+        byUsername.setPermissions(permissionList);
+        return null;
     }
 }

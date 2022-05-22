@@ -11,7 +11,7 @@ public class SysModule {
     private String name;
 
     private String path;
-
+    private String icon;
     private List<SysSubModule> child=new LinkedList();
 
     @Override

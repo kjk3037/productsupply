@@ -12,6 +12,8 @@
         <result column="count" property="count" />
         <result column="price_including_tax" property="priceIncludingTax" />
         <result column="amount_including_tax" property="amountIncludingTax" />
+        <result column="price" property="price" />
+        <result column="amount" property="amount" />
         <result column="tax_rate" property="taxRate" />
         <result column="packing_specification" property="packingSpecification" />
         <result column="packing_requirement" property="packingRequirement" />
@@ -23,7 +25,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,code, order_id, order_code, material_code, count, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time
+        id,code, order_id, order_code, material_code, count, price_including_tax, amount_including_tax,price,amount, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time
     </sql>
     <select id="selectByOrderCode" parameterType="java.lang.String" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/>
@@ -36,10 +38,10 @@
         where order_code=#{orderId}
     </select>
     <insert id="insertBatch">
-        insert into sale_order_detail (id, order_id, order_code, material_code, `count`, price_including_tax, amount_including_tax, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time) values
+        insert into sale_order_detail (id, order_id, order_code, material_code, `count`, price_including_tax, amount_including_tax,price,amount, tax_rate, packing_specification, packing_requirement, remark, delivered_count, create_time, update_time) values
         <foreach collection="details" item="item" open="(" close=")" separator=",">
             #{item.id,jdbcType=INTEGER},#{item.code}, #{item.orderId}, #{item.orderCode}, #{item.materialCode},
-            #{item.count}, #{item.priceIncludingTax},#{item.amountIncludingTax},
+            #{item.count}, #{item.priceIncludingTax},#{item.amountIncludingTax},#{item.price},#{item.amount},
             #{item.taxRate}, #{item.packingSpecification}, #{item.packingRequirement},
             #{item.remark}, #{item.deliveredCount}, #{item.createTime}, #{item.updateTime}
         </foreach>

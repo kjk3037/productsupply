@@ -20,6 +20,7 @@ import java.util.List;
  */
 @Service
 public class MaterialInfoServiceImpl extends ServiceImpl<MaterialInfoMapper, MaterialInfo> implements MaterialInfoService {
+    private static final String KEY = "code";
     @Autowired
     MaterialInfoMapper materialInfoMapper;
     @Override
@@ -33,4 +34,12 @@ public class MaterialInfoServiceImpl extends ServiceImpl<MaterialInfoMapper, Mat
         objectQueryWrapper.eq("code",code);
         return materialInfoMapper.selectOne(objectQueryWrapper);
     }
+
+    @Override
+    public MaterialInfo getByKey(String key) {
+        QueryWrapper<MaterialInfo> objectQueryWrapper = new QueryWrapper<>();
+        objectQueryWrapper.eq(KEY,key);
+        return materialInfoMapper.selectOne(objectQueryWrapper);
+    }
+
 }

@@ -23,4 +23,6 @@ public class UserRole implements Serializable{
     private Date updateTime;
     private List<UserPermission> permissions;
 
+    private List<User> users;
+
 }

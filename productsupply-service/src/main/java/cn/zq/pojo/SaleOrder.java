@@ -3,6 +3,8 @@ package cn.zq.pojo;
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.util.List;
@@ -68,7 +70,7 @@ import org.springframework.web.multipart.MultipartFile;
       /**
      * 订单金额(含税)
      */
-      private BigDecimal amount;
+      private BigDecimal listAmount;
 
       /**
      * 税率
@@ -79,6 +81,8 @@ import org.springframework.web.multipart.MultipartFile;
      * 折扣金额
      */
       private BigDecimal discount;
+
+      private BigDecimal orderAmount;
 
       /**
      * 发货状态：1、已完成；0、未完成
@@ -97,7 +101,8 @@ import org.springframework.web.multipart.MultipartFile;
     private Date createTime;
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date updateTime;
-
+    @TableField(exist = false)
     private List<SaleOrderDetail> saleOrderDetails;
+    @TableField(exist = false)
     private List<MultipartFile> attachment;
 }

@@ -8,5 +8,6 @@ public interface UserService {
     User login(User user);
     List getUsers();
     int addUser(User user);
-    User findByUsername(String username);
+    User getByUsername(String username);
+    User getByUserId(String userId);
 }

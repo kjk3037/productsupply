@@ -31,4 +31,11 @@ public class UserRoleServiceImpl implements UserRoleService {
     public List getByUsername(String username) {
         return userRoleMapper.selectByUsername(username);
     }
+
+    @Override
+    public UserRole getByName(String name) {
+        return userRoleMapper.selectByName(name);
+    }
+
+
 }

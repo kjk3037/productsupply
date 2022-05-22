@@ -1,5 +1,6 @@
 package cn.zq.common;
 
+import cn.zq.pojo.SaleOrder;
 import lombok.Data;
 
 @Data
@@ -7,8 +8,6 @@ public class Message<T> {
     private int code;
     private T data;
     private String info;
-    protected Message() {
-    }
 
     protected Message(int code, String info, T data) {
         this.code = code;

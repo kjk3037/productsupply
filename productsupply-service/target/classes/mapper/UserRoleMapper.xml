@@ -5,6 +5,10 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="desc" property="desc" jdbcType="VARCHAR" />
+    <collection property="users" ofType="cn.zq.pojo.User" javaType="java.util.List">
+      <result column="uid" property="id" jdbcType="VARCHAR" />
+      <result column="username" property="username" jdbcType="VARCHAR" />
+    </collection>
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, authority, desc
@@ -84,5 +88,11 @@
   <select id="selectByUsername"  resultMap="BaseResultMap">
     select ur.*,urr.* from user_role_relation urr left join user_role ur on ur.id=urr.role_id
     where urr.username=#{username}
+  </select>
+  <select id="selectByName" resultMap="BaseResultMap" >
+    select ur.*,u.id as uid, u.username from user_role ur
+    left join user_role_relation urr on urr.role_id=ur.id
+    left join user u on u.id=urr.user_id
+    where ur.name=#{name}
   </select>
 </mapper>

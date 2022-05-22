@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
   <process id="saleOrder" name="销售订单" isExecutable="true">
-    <startEvent id="sid-3d117b27-ad78-4d7a-9719-c5555f7a3d05"/>
+    <startEvent id="sid-3d117b27-ad78-4d7a-9719-c5555f7a3d05" name="开始节点"/>
     <userTask id="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459" name="提交节点" activiti:assignee="${user}"/>
     <sequenceFlow id="sid-22c52280-c0cd-4b43-ac04-17604fad28d3" sourceRef="sid-3d117b27-ad78-4d7a-9719-c5555f7a3d05" targetRef="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459"/>
-    <userTask id="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" name="经理审批"/>
+    <userTask id="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" name="经理审批" activiti:candidateUsers="role:销售经理">
+      <extensionElements>
+        <activiti:taskListener event="create" class="cn.zq.listener.CandidateListener"/>
+      </extensionElements>
+    </userTask>
     <sequenceFlow id="sid-18145ca0-93be-445d-8609-2d9b61d36262" sourceRef="sid-1a0e746c-eb35-48bf-aca4-bde3822cb459" targetRef="sid-ea74e1f9-738b-4a42-93e5-052844c63df7"/>
-    <endEvent id="sid-03cceeac-c13b-472e-a5b7-152f3f10c5c2"/>
+    <endEvent id="sid-03cceeac-c13b-472e-a5b7-152f3f10c5c2" name="结束节点"/>
     <sequenceFlow id="sid-40ef6148-6215-4337-aafa-046683c3e6d0" sourceRef="sid-ea74e1f9-738b-4a42-93e5-052844c63df7" targetRef="sid-065e4364-d1b7-4d73-b7e1-38969bb25b93"/>
     <serviceTask id="sid-065e4364-d1b7-4d73-b7e1-38969bb25b93" activiti:exclusive="true" activiti:class="cn.zq.service.activiti.serviceTask.OutputRequirementServiceTask" name="生成出库需求"/>
     <sequenceFlow id="sid-b9201425-7dc5-40b9-88bc-f8105b250f9a" sourceRef="sid-065e4364-d1b7-4d73-b7e1-38969bb25b93" targetRef="sid-965cd71c-5bd5-4131-a08e-f48dc9aa2e22"/>

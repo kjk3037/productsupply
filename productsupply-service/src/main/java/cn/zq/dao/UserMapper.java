@@ -23,5 +23,6 @@ public interface UserMapper {
 
     List<User> getUsers();
 
-    User findByUsername(String username);
+    User selectByUsername(String username);
+    User selectByUserId(String userId);
 }

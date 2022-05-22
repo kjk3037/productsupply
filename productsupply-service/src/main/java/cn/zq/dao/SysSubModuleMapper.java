@@ -19,4 +19,6 @@ public interface SysSubModuleMapper {
     int updateByPrimaryKey(SysSubModule record);
 
     List<SysSubModule> getSubModules();
+
+    SysSubModule selectByName(String name);
 }

@@ -21,4 +21,5 @@ public interface UserRoleMapper {
 
     List<UserRole> getRoles();
     List<UserRole> selectByUsername(String username);
+    UserRole selectByName(String name);
 }

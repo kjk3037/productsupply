@@ -20,5 +20,6 @@ public interface SaleOrderService extends IService<SaleOrder> {
     Integer updateOrderStatus(String orderCode,Integer status);
     Integer updateOrder(SaleOrder saleOrder);
     List<SaleOrder> getAll();
-    void agree(String orderCode,String comment);
+    SaleOrder getByKey(String key);
+
 }

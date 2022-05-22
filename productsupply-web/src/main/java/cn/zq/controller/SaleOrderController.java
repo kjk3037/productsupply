@@ -4,11 +4,13 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.pojo.SaleOrder;
 import cn.zq.service.SaleOrderService;
+import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -26,14 +28,23 @@ public class SaleOrderController {
     SaleOrderService saleOrderService;
     @Autowired
     ActTaskService actTaskService;
+    @Autowired
+    ActProcessService actProcessService;
+    @GetMapping("/getByKey")
+    public Message getByKey(String key){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("data",saleOrderService.getByKey(key));
+        map.put("process",actProcessService.getHisActivitiesByBusinessKey(key));
+        return Message.success(map);
+    }
     @PostMapping("/createOrder")
     public Message createOrder(@RequestBody SaleOrder order){
         String resultCode = saleOrderService.createOrder(order);
         return Message.success(resultCode,"下单成功");
     }
-    @PostMapping("/agree")
-    public Message agree(String orderCode,String comment){
-        saleOrderService.agree(orderCode,comment);
+    @PostMapping("/confirm")
+    public Message copnfirm(String orderCode,String comment){
+        saleOrderService.confirmOrder(orderCode,comment);
         return Message.success("通过");
     }
     @GetMapping("/getList")

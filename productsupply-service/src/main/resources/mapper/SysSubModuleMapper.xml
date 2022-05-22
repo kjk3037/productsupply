@@ -6,6 +6,7 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="parent_id" property="parentId" jdbcType="INTEGER" />
     <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="parent_path" property="parentPath" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, parent_id, path
@@ -82,4 +83,9 @@
       path = #{path,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select ssm.*,sm.path as parent_path from sys_sub_module ssm
+    left join sys_module sm on sm.id= ssm.parent_id
+    where ssm.name=#{name}
+  </select>
 </mapper>

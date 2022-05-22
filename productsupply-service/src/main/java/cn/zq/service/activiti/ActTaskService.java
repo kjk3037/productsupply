@@ -1,28 +1,26 @@
 package cn.zq.service.activiti;
 
-import cn.zq.pojo.ActRuIdentitylink;
-import cn.zq.service.ActRuIdentitylinkService;
-import cn.zq.utils.FormatUtils;
+import cn.zq.dao.SysSubModuleMapper;
+import cn.zq.pojo.SysSubModule;
+import cn.zq.service.UserService;
 import cn.zq.utils.ShiroUtils;
+import cn.zq.vo.TodoVo;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.bpmn.model.BpmnModel;
+import org.activiti.bpmn.model.EndEvent;
 import org.activiti.bpmn.model.FlowNode;
 import org.activiti.bpmn.model.SequenceFlow;
 import org.activiti.engine.*;
 import org.activiti.engine.history.HistoricActivityInstance;
 import org.activiti.engine.history.HistoricTaskInstance;
-import org.activiti.engine.impl.identity.Authentication;
 import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.runtime.ProcessInstanceQuery;
-import org.activiti.engine.task.IdentityLink;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.task.TaskQuery;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.security.auth.Subject;
 import java.util.*;
 
 @Slf4j
@@ -39,7 +37,9 @@ public class ActTaskService {
     @Autowired
     RuntimeService runtimeService;
     @Autowired
-    ActRuIdentitylinkService actRuIdentitylinkService;
+    SysSubModuleMapper subModuleMapper;
+    @Autowired
+    UserService userService;
     /*
      *
      * */
@@ -142,16 +142,23 @@ public class ActTaskService {
     /*
     * 根据用户账号获取待办任务信息
     * */
-    public List getIdentify(){
+    public List getAllTodoList(){
         TaskQuery taskQuery = taskService.createTaskQuery();
         ProcessInstanceQuery processInstanceQuery = runtimeService.createProcessInstanceQuery();
-        List<Task> tasks = taskQuery.taskCandidateUser("kjk").list();
+        List<Task> tasks = taskQuery.taskCandidateUser(userService.getByUsername(ShiroUtils.getUsername()).getId()).list();
+        List<TodoVo> todoList = new ArrayList<>();
         for(Task task:tasks){
-            System.out.println(task.getProcessVariables());
+            TodoVo todoVo = new TodoVo();
             ProcessInstance processInstance = processInstanceQuery.processInstanceId(task.getProcessInstanceId()).singleResult();
-            System.out.println(processInstance.getBusinessKey());
+            Map<String, Object> variables = taskService.getVariables(task.getId());
+            SysSubModule sysSubModule = subModuleMapper.selectByName(processInstance.getProcessDefinitionName());
+            todoVo.setProcessName(processInstance.getProcessDefinitionName());
+            todoVo.setActivityName(task.getName());
+            todoVo.setInfo(variables);
+            todoVo.setPath(sysSubModule.getParentPath()+sysSubModule.getPath());
+            todoList.add(todoVo);
         }
-        return tasks;
+        return todoList;
     }
     /*
     *@describe 节点退回
@@ -227,4 +234,39 @@ public class ActTaskService {
             rollback(processInstanceId,currentTaskId,targetTaskId);
         }
     }
+    /*
+    * 关闭流程
+    * */
+    public void endTask(String taskId) {
+        //  当前任务
+        Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
+
+        BpmnModel bpmnModel = repositoryService.getBpmnModel(task.getProcessDefinitionId());
+        List endEventList = bpmnModel.getMainProcess().findFlowElementsOfType(EndEvent.class);
+        FlowNode endFlowNode = (FlowNode) endEventList.get(0);
+        FlowNode currentFlowNode = (FlowNode) bpmnModel.getMainProcess().getFlowElement(task.getTaskDefinitionKey());
+
+        //  临时保存当前活动的原始方向
+        List originalSequenceFlowList = new ArrayList<>();
+        originalSequenceFlowList.addAll(currentFlowNode.getOutgoingFlows());
+        //  清理活动方向
+        currentFlowNode.getOutgoingFlows().clear();
+
+        //  建立新方向
+        SequenceFlow newSequenceFlow = new SequenceFlow();
+        newSequenceFlow.setId("newSequenceFlowId");
+        newSequenceFlow.setSourceFlowElement(currentFlowNode);
+        newSequenceFlow.setTargetFlowElement(endFlowNode);
+        List newSequenceFlowList = new ArrayList<>();
+        newSequenceFlowList.add(newSequenceFlow);
+        //  当前节点指向新的方向
+        currentFlowNode.setOutgoingFlows(newSequenceFlowList);
+
+        //  完成当前任务
+        taskService.complete(task.getId());
+
+        //  可以不用恢复原始方向，不影响其它的流程
+        currentFlowNode.setOutgoingFlows(originalSequenceFlowList);
+    }
+
 }

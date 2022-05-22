@@ -28,7 +28,7 @@ public class CustomRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         System.out.println("redis未命中，使用数据库执行授权");
-        User user = (User) userService.findByUsername(SecurityUtils.getSubject().getPrincipal().toString());
+        User user = (User) userService.getByUsername(SecurityUtils.getSubject().getPrincipal().toString());
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Set<String> stringSet = new HashSet<>();
         Set<String> roleSet = new HashSet<>();

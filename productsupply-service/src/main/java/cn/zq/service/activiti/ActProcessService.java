@@ -1,8 +1,13 @@
 package cn.zq.service.activiti;
 
+import cn.zq.pojo.User;
+import cn.zq.service.UserService;
+import cn.zq.utils.BeanUtils;
 import cn.zq.utils.ShiroUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.*;
+import org.activiti.engine.history.HistoricActivityInstance;
+import org.activiti.engine.history.HistoricActivityInstanceQuery;
 import org.activiti.engine.history.HistoricIdentityLink;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
@@ -10,10 +15,8 @@ import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 @Slf4j
 @Service
 public class ActProcessService {
@@ -40,40 +43,51 @@ public class ActProcessService {
     *@param String:processKey , String:bussinessKey
     **/
     public void startProcess(String processKey,String businessKey,Map args){
-        String username= ShiroUtils.getUsername();
+        UserService userService = (UserService) BeanUtils.getBean(UserService.class);
+        User user = userService.getByUsername(ShiroUtils.getUsername());
         args.put("businessKey",businessKey);
-        args.put("user",username);
+        args.put("user",user.getId());
         //args.put("leader","jack");
         ProcessInstance test = runtimeService.startProcessInstanceByKey(processKey,businessKey,args);
-//        System.out.println("ProcessInstId:"+test.getProcessInstanceId());
-//        System.out.println("ProcessDefId:"+test.getProcessDefinitionId());
-//        System.out.println("Id:"+test.getId());
         //执行申请节点
         taskService.execute(test.getProcessInstanceId(),"");
-        taskService.addCandidateUserByBusinessKey(businessKey,"kjk");
-        taskService.addCandidateUserByBusinessKey(businessKey,"root");
         log.info("ProcessInstance is created");
     }
-
+    public List getHisActivitiesByBusinessKey(String businessKey){
+      return getHisActivities(runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(businessKey).singleResult().getProcessInstanceId()) ;
+    }
     /*
     *@describe 获取流程实例历史节点
     *@param String:instId
     **/
-    public void getHisActivities(String instId){
-        List<HistoricIdentityLink> linkList = historyService.getHistoricIdentityLinksForProcessInstance(instId);
-        Iterator<HistoricIdentityLink> iterator = linkList.iterator();
-        while (iterator.hasNext()){
-            HistoricIdentityLink next = iterator.next();
-            System.out.println("taskId:"+next.getTaskId());
-            System.out.println("instId:"+next.getProcessInstanceId());
-            System.out.println("userId:"+next.getUserId());
-            System.out.println("type:"+next.getType());
-        }
+    public List getHisActivities(String instId){
+        HistoricActivityInstanceQuery historicActivityInstanceQuery = historyService.createHistoricActivityInstanceQuery();
+        List<HistoricActivityInstance> list = historicActivityInstanceQuery.processInstanceId(instId).activityType("userTask").list();
+        Collections.sort(list, new Comparator<HistoricActivityInstance>() {
+            @Override
+            public int compare(HistoricActivityInstance o1, HistoricActivityInstance o2) {
+                return Integer.valueOf(o1.getId())-Integer.valueOf(o2.getId());
+            }
+        });
+        return list;
+
     }
     /*
-    * 添加流程变量
+    * 添加流程变量(属性数据)
     * */
-    public Map setFieldData(Object o1,Object o2,Object o3,Object o4){
+    public Map setFieldValue(Object o1,Object o2,Object o3,Object o4){
+        HashMap<String, Object> var = new HashMap<>();
+        var.put("value1",o1);
+        var.put("value2",o2);
+        //以下参数待完善
+        var.put("value3",o3);
+        var.put("value4",o4);
+        return var;
+    }
+    /*
+    * 添加流程变量(属性名称)
+    * */
+    public Map setFieldName(Object o1,Object o2,Object o3,Object o4){
         HashMap<String, Object> var = new HashMap<>();
         var.put("field1",o1);
         var.put("field2",o2);
