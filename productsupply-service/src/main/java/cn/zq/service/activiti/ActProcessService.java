@@ -70,7 +70,6 @@ public class ActProcessService {
             }
         });
         return list;
-
     }
     /*
     * 添加流程变量(属性数据)
