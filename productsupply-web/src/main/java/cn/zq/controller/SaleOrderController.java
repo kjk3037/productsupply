@@ -31,7 +31,7 @@ public class SaleOrderController {
     @Autowired
     ActProcessService actProcessService;
     @GetMapping("/getByKey")
-    public Message getByKey(String key){
+    public Message getByKey(String key) throws Exception {
         HashMap<String, Object> map = new HashMap<>();
         map.put("data",saleOrderService.getByKey(key));
         map.put("process",actProcessService.getHisActivitiesByBusinessKey(key));
