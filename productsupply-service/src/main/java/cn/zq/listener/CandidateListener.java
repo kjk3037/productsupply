@@ -45,6 +45,7 @@ public class CandidateListener implements TaskListener {
                 }
                 //根据部门设置待办人员  -->  待完善
                 delegateTask.deleteCandidateUser(identityLink.getUserId());
+                delegateTask.deleteUserIdentityLink(identityLink.getUserId(),"participant");
             }
         }
 

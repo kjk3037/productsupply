@@ -13,4 +13,6 @@ public class TodoVo {
     private Map info;
     private String activityName;
     private String processName;
+    private String processDefKey;
+    private String bussinessKey;
 }

@@ -69,6 +69,6 @@ public class UserServiceImpl implements UserService {
             }
         }
         byUsername.setPermissions(permissionList);
-        return null;
+        return byUsername;
     }
 }

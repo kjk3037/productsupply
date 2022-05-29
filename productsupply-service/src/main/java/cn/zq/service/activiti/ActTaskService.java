@@ -156,6 +156,8 @@ public class ActTaskService {
             todoVo.setActivityName(task.getName());
             todoVo.setInfo(variables);
             todoVo.setPath(sysSubModule.getParentPath()+sysSubModule.getPath());
+            todoVo.setProcessDefKey(processInstance.getProcessDefinitionKey());
+            todoVo.setBussinessKey(processInstance.getBusinessKey());
             todoList.add(todoVo);
         }
         return todoList;

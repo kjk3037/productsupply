@@ -140,7 +140,6 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
 
     @Override
     public SaleOrder getByKey(String key) {
-        System.out.println(saleOrderMapper.selectByCode(key));
         return saleOrderMapper.selectByCode(key);
     }
 
