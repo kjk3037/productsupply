@@ -95,14 +95,10 @@ public class ActTaskService {
     *@param 流程实例Id;
     **/
     public Task getTaskById(String id){
-        System.out.println("执行getInstById");
         Task task = taskService.createTaskQuery()
                 .processInstanceId(id)
                 .singleResult();
         if (task!=null){
-            System.out.println("task:"+task.toString());
-            System.out.println("taskName:"+task.getName());
-            System.out.println("taskAssignee:"+task.getAssignee());
             return task;
         }
         log.info("not find task by taskId:" +id);
@@ -113,7 +109,6 @@ public class ActTaskService {
     *@param String bussinessKey
     **/
     public Task getTaskByBusKey(String key){
-        System.out.println("执行getInstById");
         Task task = taskService.createTaskQuery()
                 .processInstanceBusinessKey(key).singleResult();
         if (task!=null){

@@ -45,7 +45,6 @@ public class SaleOrderController {
         map.put("data",saleOrderService.getByKey(key));
         map.put("process",actProcessService.getHisActivitiesByBusinessKey(key));
         map.put("field",fieldStatusService.getMapByKey("saleOrder", taskDefinitionKey));
-        System.out.println(map.get("field"));
         return Message.success(map);
     }
     @PostMapping("/createOrder")

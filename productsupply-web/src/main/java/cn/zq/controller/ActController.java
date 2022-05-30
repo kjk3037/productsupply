@@ -5,6 +5,7 @@ import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
 import cn.zq.utils.FileUtils;
 import cn.zq.utils.FormatUtils;
+import cn.zq.utils.RedisUtils;
 import com.baomidou.mybatisplus.extension.api.R;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.task.Task;
@@ -74,6 +75,7 @@ public class ActController {
      * */
     @GetMapping("/test")
     public Message test(){
-        return Message.success(FormatUtils.timeFormat(new Date()));
+        RedisUtils.generFieldStatus();
+        return Message.success(111);
     }
 }
