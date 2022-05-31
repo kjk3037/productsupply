@@ -234,7 +234,7 @@ public class ActTaskService {
     /*
     * 关闭流程
     * */
-    public void endTask(String taskId) {
+    public void endProcess(String taskId) {
         //  当前任务
         Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
 

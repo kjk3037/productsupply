@@ -2,6 +2,8 @@ package cn.zq.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
@@ -23,12 +25,13 @@ import lombok.EqualsAndHashCode;
 
       @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
-
+    @TableField("`code`")
     private String code;
 
       /**
      * 客户名称
      */
+      @TableField("`name`")
       private String name;
 
       /**
@@ -63,6 +66,7 @@ import lombok.EqualsAndHashCode;
       /**
      * 描述
      */
+      @TableField("`describe`")
       private String describe;
 
       /**

@@ -1,9 +1,12 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.SaleOrderDetailMapper;
+import cn.zq.pojo.Customer;
 import cn.zq.pojo.SaleOrder;
 import cn.zq.dao.SaleOrderMapper;
 import cn.zq.pojo.SaleOrderDetail;
+import cn.zq.pojo.User;
+import cn.zq.service.CustomerService;
 import cn.zq.service.SaleOrderDetailService;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.UserService;
@@ -32,6 +35,7 @@ import java.util.*;
 @Service
 public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder> implements SaleOrderService {
     private static final String KEY="code";
+    private static final String[] FIELD={"订单流码","下单日期","客户名称","业务员"};
     @Autowired
     SaleOrderMapper saleOrderMapper;
     @Autowired
@@ -44,6 +48,8 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     ActTaskService actTaskService;
     @Autowired
     UserService userService;
+    @Autowired
+    CustomerService customerService;
     /*
     *@describe 新增销售订单流程
     *@param SaleOrder:订单内容实例
@@ -70,8 +76,10 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         }
 
         //设置待办信息头  待完善
-        Map name=actProcessService.setFieldName("订单流码","下单日期","客户名称","业务员");
-        Map value = actProcessService.setFieldValue(order.getCode(),order.getOrderDate(),order.getCustomerId(),order.getUserId());
+        Map name=actProcessService.setFieldNameByArray(FIELD);
+        Customer byId = customerService.getById(order.getCustomerId());
+        User byUserId = userService.getByUsername(ShiroUtils.getUsername());
+        Map value = actProcessService.setFieldValue(order.getCode(),order.getOrderDate(),byId.getName(),byUserId.getNickname());
         Map map=new HashMap();
         map.putAll(name);
         map.putAll(value);

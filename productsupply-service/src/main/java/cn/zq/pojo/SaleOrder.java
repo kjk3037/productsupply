@@ -105,4 +105,6 @@ import org.springframework.web.multipart.MultipartFile;
     private List<SaleOrderDetail> saleOrderDetails;
     @TableField(exist = false)
     private List<MultipartFile> attachment;
+    @TableField(exist = false)
+    private String customerName;
 }

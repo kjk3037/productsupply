@@ -22,6 +22,7 @@
         <result column="order_status" property="orderStatus" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
+        <result column="c_name" property="customerName" />
         <collection property="saleOrderDetails" ofType="cn.zq.pojo.SaleOrderDetail" javaType="java.util.List">
             <id column="did" property="id" />
             <result column="dcode" property="code" />
@@ -174,8 +175,8 @@
         </trim>
     </insert>
     <select id="selectAll" resultMap="BaseResultMap">
-        select so.*,sod.* from sale_order so
-         left join sale_order_detail sod
-         on sod.order_code=so.code
+        select so.*,sod.* ,c.name as c_name from sale_order so
+         left join sale_order_detail sod on sod.order_code=so.code
+         left join customer c on c.id=so.customer_id
     </select>
 </mapper>

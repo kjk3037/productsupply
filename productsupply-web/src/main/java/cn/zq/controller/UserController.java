@@ -4,6 +4,7 @@ import cn.zq.common.Message;
 import cn.zq.pojo.User;
 import cn.zq.service.UserService;
 import cn.zq.utils.FormatUtils;
+import cn.zq.vo.UserVo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -43,7 +44,9 @@ public class UserController {
             return  Message.failed("用户名或密码不正确！");
         }
         if (subject.isAuthenticated()) {
-            return  Message.success(subject.getSession(),"登录成功");
+            User byUsername = userService.getByUsername(subject.getPrincipals().toString());
+            UserVo userVo = new UserVo(byUsername);
+            return  Message.success(userVo,"登录成功");
         } else {
             token.clear();
             return Message.failed("登录失败");

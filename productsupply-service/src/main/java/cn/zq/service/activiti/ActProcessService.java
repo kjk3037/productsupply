@@ -120,8 +120,8 @@ public class ActProcessService {
         return var;
     }
     /*
-    * 添加流程变量(属性名称)
-    * */
+     * 添加流程变量(属性名称)
+     * */
     public Map setFieldName(Object o1,Object o2,Object o3,Object o4){
         HashMap<String, Object> var = new HashMap<>();
         var.put("field1",o1);
@@ -129,6 +129,18 @@ public class ActProcessService {
         //以下参数待完善
         var.put("field3",o3);
         var.put("field4",o4);
+        return var;
+    }
+    /*
+    * 添加流程变量(属性名称)
+    * */
+    public Map setFieldNameByArray(Object[] o){
+        HashMap<String, Object> var = new HashMap<>();
+        var.put("field1",o[0]);
+        var.put("field2",o[1]);
+        //以下参数待完善
+        var.put("field3",o[2]);
+        var.put("field4",o[3]);
         return var;
     }
 }
