@@ -8,6 +8,7 @@
         <result column="bussiness" property="bussiness" />
         <result column="bussiness_key" property="bussinessKey" />
         <result column="path" property="path" />
+        <result column="bussiness_field" property="bussinessField" />
     </resultMap>
 
     <!-- 通用查询结果列 -->

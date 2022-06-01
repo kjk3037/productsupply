@@ -34,7 +34,8 @@ public class FileUtils {
                 byte[] bytes = os.toByteArray();
                 String end = "";
                 System.out.println(file.getContentType());
-                String path ="E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename();
+//                String path ="E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename();
+                String path ="C:/MyDocument/myJavaProject/productsupply/file/" + file.getOriginalFilename();
                 File newFile = new File(path);
                 File finalFile=FileUtils.createFile(newFile,0);
                 filesName.add(finalFile.getName());

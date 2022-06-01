@@ -178,5 +178,6 @@
         select so.*,sod.* ,c.name as c_name from sale_order so
          left join sale_order_detail sod on sod.order_code=so.code
          left join customer c on c.id=so.customer_id
+         order by so.id desc
     </select>
 </mapper>

@@ -23,11 +23,11 @@ import lombok.EqualsAndHashCode;
       @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
 
-    private String bussiness;
+    private String business;
 
-    private String bussinessKey;
+    private String businessKey;
 
     private String path;
-
+    private String businessField;
 
 }

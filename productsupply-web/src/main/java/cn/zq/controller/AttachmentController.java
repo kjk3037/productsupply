@@ -3,6 +3,7 @@ package cn.zq.controller;
 
 import cn.zq.common.Message;
 import cn.zq.pojo.Attachment;
+import cn.zq.pojo.User;
 import cn.zq.service.AttachmentService;
 import cn.zq.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -43,15 +44,16 @@ public class AttachmentController {
                 byte[] bytes = os.toByteArray();
                 String end = "";
                 System.out.println(file.getContentType());
-                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
+//                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
+                File newFile = new File("C:/MyDocument/myJavaProject/productsupply/file/" + file.getOriginalFilename());
                 File finalFile= FileUtils.createFile(newFile,0);
                 OutputStream outputStream = new FileOutputStream(finalFile);
                 outputStream.write(bytes);
                 //附件信息插入数据库
                 Attachment attachment = new Attachment();
                 attachment.setPath(newFile.getPath());
-                attachment.setBussinessKey(bussinessKey);
-                attachment.setBussiness(bussiness);
+                attachment.setBusinessKey(bussinessKey);
+                attachment.setBusiness(bussiness);
                 attachmentService.save(attachment);
             } catch (IOException e) {
                 e.printStackTrace();

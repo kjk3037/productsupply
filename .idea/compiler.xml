@@ -13,7 +13,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="productsupply" target="1.8" />
-      <module name="productsupply-service" target="8" />
+      <module name="productsupply-service" target="1.8" />
       <module name="productsupply-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
