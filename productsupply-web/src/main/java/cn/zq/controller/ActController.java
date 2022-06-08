@@ -3,13 +3,11 @@ package cn.zq.controller;
 import cn.zq.common.Message;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
-import cn.zq.utils.FileUtils;
-import cn.zq.utils.FormatUtils;
+
 import cn.zq.utils.RedisUtils;
-import com.baomidou.mybatisplus.extension.api.R;
+
 import lombok.extern.slf4j.Slf4j;
-import org.activiti.engine.task.Task;
-import org.apache.shiro.SecurityUtils;
+
 
 import org.apache.shiro.crypto.hash.Hash;
 import org.apache.tomcat.util.http.fileupload.IOUtils;

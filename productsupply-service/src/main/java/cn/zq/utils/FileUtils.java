@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Slf4j
@@ -24,9 +25,7 @@ public class FileUtils {
     }
     public static List<String> uploadFiles(MultipartFile[] files){
         List<String> filesName=new ArrayList<>();
-        System.out.println(files);
-        for (
-                MultipartFile file : files) {
+        for (MultipartFile file : files) {
             try {
                 InputStream is = file.getInputStream();
                 ByteArrayOutputStream os = new ByteArrayOutputStream();

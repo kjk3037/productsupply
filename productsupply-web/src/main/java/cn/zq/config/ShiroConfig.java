@@ -20,12 +20,14 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.shiro.mgt.SecurityManager;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Configuration
+@DependsOn("shiroRedisTemplate")
 public class ShiroConfig {
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
     @Qualifier("shiroRedisTemplate")
@@ -43,7 +45,7 @@ public class ShiroConfig {
         //filterChainDefinitionMap.put("/module/getList", "anon");
         filterChainDefinitionMap.put("/user/register", "anon");
 //        filterChainDefinitionMap.put("/user/account/test", "anon");
-        filterChainDefinitionMap.put("/attachment/upload", "anon");
+        filterChainDefinitionMap.put("/attachment/getFile", "anon");
         filterChainDefinitionMap.put("/attachment/uploads", "anon");
         //filterChainDefinitionMap.put("/sale/order/createOrder", "anon");
         filterChainDefinitionMap.put("/user/**", "authc");

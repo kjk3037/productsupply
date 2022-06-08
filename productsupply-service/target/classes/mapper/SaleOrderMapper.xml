@@ -23,6 +23,11 @@
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
         <result column="c_name" property="customerName" />
+        <result column="order_type_name" property="orderTypeName"/>
+        <result column="order_status_name" property="orderStatusName"/>
+        <result column="delivery_status_name" property="deliveryStatusName"/>
+        <result column="receipt_status_name" property="receiptStatusName"/>
+        <result column="settlement_method_name" property="settlementMethodName" />
         <collection property="saleOrderDetails" ofType="cn.zq.pojo.SaleOrderDetail" javaType="java.util.List">
             <id column="did" property="id" />
             <result column="dcode" property="code" />
@@ -175,9 +180,15 @@
         </trim>
     </insert>
     <select id="selectAll" resultMap="BaseResultMap">
-        select so.*,sod.* ,c.name as c_name from sale_order so
-         left join sale_order_detail sod on sod.order_code=so.code
-         left join customer c on c.id=so.customer_id
+        select so.*,sod.* ,c.name as c_name,
+        (select d.name from dict d where d.type_id=4 and d.value=so.order_type) as order_type_name,
+        (select d.name from dict d where d.type_id=5 and d.value=so.delivery_status) as delivery_status_name,
+        (select d.name from dict d where d.type_id=6 and d.value=so.settlement_method) as settlement_method_name,
+        (select d.name from dict d where d.type_id=7 and d.value=so.order_status) as order_status_name,
+        (select d.name from dict d where d.type_id=8 and d.value=so.receipt_status) as receipt_status_name
+        from sale_order so
+        left join sale_order_detail sod on sod.order_code=so.code
+        left join customer c on c.id=so.customer_id
          order by so.id desc
     </select>
 </mapper>

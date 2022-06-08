@@ -1,15 +1,9 @@
 package cn.zq.service.impl;
 
 import cn.zq.dao.SaleOrderDetailMapper;
-import cn.zq.pojo.Customer;
-import cn.zq.pojo.SaleOrder;
+import cn.zq.pojo.*;
 import cn.zq.dao.SaleOrderMapper;
-import cn.zq.pojo.SaleOrderDetail;
-import cn.zq.pojo.User;
-import cn.zq.service.CustomerService;
-import cn.zq.service.SaleOrderDetailService;
-import cn.zq.service.SaleOrderService;
-import cn.zq.service.UserService;
+import cn.zq.service.*;
 import cn.zq.service.activiti.ActProcessService;
 import cn.zq.service.activiti.ActTaskService;
 import cn.zq.utils.FormatUtils;
@@ -50,6 +44,8 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     UserService userService;
     @Autowired
     CustomerService customerService;
+    @Autowired
+    AttachmentService attachmentService;
     /*
     *@describe 新增销售订单流程
     *@param SaleOrder:订单内容实例
@@ -62,8 +58,8 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
         }
         order.setCode(FormatUtils.codeFormat("sale",id));
         order.setOrderStatus(3);
-        order.setReceiptStatus(1);
-        order.setDeliveryStatus(1);
+        order.setReceiptStatus(0);
+        order.setDeliveryStatus(0);
         Date date = new Date();
         order.setCreateTime(date);
         order.setUpdateTime(date);
@@ -148,7 +144,8 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
 
     @Override
     public SaleOrder getByKey(String key) {
-        return saleOrderMapper.selectByCode(key);
+        SaleOrder saleOrder = saleOrderMapper.selectByCode(key);
+        return saleOrder;
     }
 
 

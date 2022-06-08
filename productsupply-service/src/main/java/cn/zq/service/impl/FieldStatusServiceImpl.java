@@ -48,7 +48,6 @@ public class FieldStatusServiceImpl extends ServiceImpl<FieldStatusMapper, Field
             }else {
                 map.put(split[split.length-2]+"_"+split[split.length-1], (Integer) redisTemplate.opsForValue().get(key));
             }
-
         }
         return map;
     }

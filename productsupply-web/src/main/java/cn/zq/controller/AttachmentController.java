@@ -6,6 +6,7 @@ import cn.zq.pojo.Attachment;
 import cn.zq.pojo.User;
 import cn.zq.service.AttachmentService;
 import cn.zq.utils.FileUtils;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,12 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -27,7 +32,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/attachment")
 @Slf4j
-@CrossOrigin
 public class AttachmentController {
     @Autowired
     AttachmentService attachmentService;
@@ -35,32 +39,33 @@ public class AttachmentController {
     * 多附件上传
     * */
     @PostMapping("/uploads")
-    public Message uploads(@RequestParam("files") List<MultipartFile> files, @RequestParam String bussinessKey, @RequestParam String bussiness) {
-        for (MultipartFile file : files) {
-            try {
-                InputStream is = file.getInputStream();
-                ByteArrayOutputStream os = new ByteArrayOutputStream();
-                IOUtils.copy(is, os);
-                byte[] bytes = os.toByteArray();
-                String end = "";
-                System.out.println(file.getContentType());
-//                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
-                File newFile = new File("C:/MyDocument/myJavaProject/productsupply/file/" + file.getOriginalFilename());
-                File finalFile= FileUtils.createFile(newFile,0);
-                OutputStream outputStream = new FileOutputStream(finalFile);
-                outputStream.write(bytes);
-                //附件信息插入数据库
-                Attachment attachment = new Attachment();
-                attachment.setPath(newFile.getPath());
-                attachment.setBusinessKey(bussinessKey);
-                attachment.setBusiness(bussiness);
-                attachmentService.save(attachment);
-            } catch (IOException e) {
-                e.printStackTrace();
-                log.error("文件上传发生异常 -> {}", e.getMessage());
-                return Message.failed("文件上传失败");
-            }
-        }
+    public Message uploads(@RequestParam("files") Map<String,List<MultipartFile>> files, @RequestParam String bussinessKey, @RequestParam String bussiness ) {
+//        for (MultipartFile file : files) {
+//            try {
+//                InputStream is = file.getInputStream();
+//                ByteArrayOutputStream os = new ByteArrayOutputStream();
+//                IOUtils.copy(is, os);
+//                byte[] bytes = os.toByteArray();
+//                String end = "";
+//                System.out.println(file.getContentType());
+////                File newFile = new File("E:/kjk/project/java/productsupply/file/" + file.getOriginalFilename());
+//                File newFile = new File("C:/MyDocument/myJavaProject/productsupply/file/" + file.getOriginalFilename());
+//                File finalFile= FileUtils.createFile(newFile,0);
+//                OutputStream outputStream = new FileOutputStream(finalFile);
+//                outputStream.write(bytes);
+//                //附件信息插入数据库
+//                Attachment attachment = new Attachment();
+//                attachment.setPath(newFile.getPath());
+//                attachment.setBusinessKey(bussinessKey);
+//                attachment.setBusiness(bussiness);
+//                attachmentService.save(attachment);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                log.error("文件上传发生异常 -> {}", e.getMessage());
+//                return Message.failed("文件上传失败");
+//            }
+//        }
+
         return Message.success("上传成功");
     }
     /*
@@ -95,5 +100,26 @@ public class AttachmentController {
         }
         return Message.success("上传成功");
     }*/
+    @GetMapping("/getFilesForBusiness")
+    public void getFilesForBusiness(String business,String businessKey,String businessField,HttpServletRequest request, HttpServletResponse response){
+        QueryWrapper<Attachment> objectQueryWrapper = new QueryWrapper<>();
+        objectQueryWrapper.eq("business_key",businessKey).eq("business",business).eq("business_field",businessField);
+        List<Attachment> attachments = attachmentService.list(objectQueryWrapper);
+        try {
+            for (Attachment attachment : attachments) {
+                attachmentService.getFile(attachment.getPath(), response);
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @PostMapping("/getFile")
+    public void getFile(String url,HttpServletRequest request, HttpServletResponse response){
+        try {
+            attachmentService.getFile(url, response);
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 

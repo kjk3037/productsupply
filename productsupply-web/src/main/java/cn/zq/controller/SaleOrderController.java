@@ -2,8 +2,10 @@ package cn.zq.controller;
 
 
 import cn.zq.common.Message;
+import cn.zq.pojo.Attachment;
 import cn.zq.pojo.FieldStatus;
 import cn.zq.pojo.SaleOrder;
+import cn.zq.service.AttachmentService;
 import cn.zq.service.FieldStatusService;
 import cn.zq.service.SaleOrderService;
 import cn.zq.service.activiti.ActProcessService;
@@ -14,7 +16,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,18 +42,25 @@ public class SaleOrderController {
     ActProcessService actProcessService;
     @Autowired
     FieldStatusService fieldStatusService;
+    @Autowired
+    AttachmentService attachmentService;
     @GetMapping("/getByKey")
     public Message getByKey(String key) throws Exception {
         HashMap<String, Object> map = new HashMap<>();
         String taskDefinitionKey = actTaskService.getTaskByBusKey(key).getTaskDefinitionKey();
-        map.put("data",saleOrderService.getByKey(key));
+        SaleOrder saleOrder = saleOrderService.getByKey(key);
+        QueryWrapper<Attachment> attachmentQueryWrapper = new QueryWrapper<>();
+        attachmentQueryWrapper.eq("business","saleOrder").eq("business_field","attachment").eq("business_key",saleOrder.getCode());
+        saleOrder.setAttachments(attachmentService.list(attachmentQueryWrapper));
+        map.put("data",saleOrder);
         map.put("process",actProcessService.getHisActivitiesByBusinessKey(key));
         map.put("field",fieldStatusService.getMapByKey("saleOrder", taskDefinitionKey));
         return Message.success(map);
     }
     @PostMapping("/createOrder")
-    public Message createOrder(@RequestBody SaleOrder order){
+    public Message createOrder(@RequestParam SaleOrder order,@RequestParam Map<String, List<MultipartFile>> files){
         String resultCode = saleOrderService.createOrder(order);
+        attachmentService.uploads(files,"saleOrder",resultCode);
         return Message.success(resultCode,"下单成功");
     }
     @PostMapping("/confirm")

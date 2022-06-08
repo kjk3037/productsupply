@@ -37,7 +37,7 @@ public class MybatisGenerUtils {
     //作者名
     private final String author = "kjk";
     //指定生成的表名
-    private final String[] tableNames = new String[]{"field_status"};
+    private final String[] tableNames = new String[]{"bill_of_material"};
     @Test
     public void generateCode() {
         //serviceNameStartWithI：user -> UserService, 设置成true: user -> IUserService

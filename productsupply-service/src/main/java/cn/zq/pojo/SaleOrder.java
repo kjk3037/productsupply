@@ -104,7 +104,17 @@ import org.springframework.web.multipart.MultipartFile;
     @TableField(exist = false)
     private List<SaleOrderDetail> saleOrderDetails;
     @TableField(exist = false)
-    private List<MultipartFile> attachment;
+    private List<Attachment> attachments;
     @TableField(exist = false)
     private String customerName;
+    @TableField(exist = false)
+    private String orderTypeName;
+    @TableField(exist = false)
+    private String orderStatusName;
+    @TableField(exist = false)
+    private String deliveryStatusName;
+    @TableField(exist = false)
+    private String receiptStatusName;
+    @TableField(exist = false)
+    private String settlementMethodName;
 }

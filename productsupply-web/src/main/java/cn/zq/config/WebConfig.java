@@ -24,9 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
             "localhost:8080",
             "localhost:8081",
             "127.0.0.1:8081",
-
     };
-
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
