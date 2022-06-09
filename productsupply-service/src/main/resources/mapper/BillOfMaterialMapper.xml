@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zq.dao.BillOfMaterialMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.BillOfMaterial">
+        <id column="id" property="id" />
+        <result column="parent_code" property="parentCode" />
+        <result column="material_code" property="materialCode" />
+        <result column="material_name" property="materialName" />
+        <result column="material_standard" property="materialStandard" />
+        <result column="material_model" property="materialModel" />
+        <result column="status" property="status" />
+        <result column="importance" property="importance" />
+        <result column="technology" property="technology" />
+        <result column="count" property="count" />
+        <result column="loss_rate" property="lossRate" />
+        <result column="supplier" property="supplier" />
+        <result column="tag_number" property="tagNumber" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, parent_code, material_code, status, importance, technology, count, loss_rate, supplier, tag_number, remark, create_time, update_time
+    </sql>
+    <select id="selectByCode" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        select b.*,m.material_name as material_name ,m.standard as material_standard,m.model as material_model
+        from bill_of_material b
+        left join material_info m on m.`code`=b.material_code
+        where b.parent_code=#{code} order by id asc
+    </select>
+</mapper>

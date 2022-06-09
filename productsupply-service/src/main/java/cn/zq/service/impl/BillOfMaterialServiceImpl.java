@@ -5,6 +5,7 @@ import cn.zq.dao.BillOfMaterialMapper;
 import cn.zq.service.BillOfMaterialService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -20,7 +21,8 @@ import java.util.List;
  */
 @Service
 public class BillOfMaterialServiceImpl extends ServiceImpl<BillOfMaterialMapper, BillOfMaterial> implements BillOfMaterialService {
-
+    @Autowired
+    BillOfMaterialMapper billOfMaterialMapper;
     @Override
     public List getBOM(String parentCode) {
         QueryWrapper<BillOfMaterial> queryWrapper = new QueryWrapper<>();
@@ -32,9 +34,7 @@ public class BillOfMaterialServiceImpl extends ServiceImpl<BillOfMaterialMapper,
     @Override
     public List getCompleteBOM(String parentCode,String parentLevel) {
         List<BillOfMaterial> completeBOM = new LinkedList<>();
-        QueryWrapper<BillOfMaterial> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("parent_code",parentCode).orderByAsc("id");
-        List<BillOfMaterial> BOM = list(queryWrapper);
+        List<BillOfMaterial> BOM = billOfMaterialMapper.selectByCode(parentCode);
         if (BOM!=null && BOM.size()!=0){
             Integer cLevel=1;
             StringBuffer level;
