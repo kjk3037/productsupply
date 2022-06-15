@@ -43,6 +43,7 @@ public class ActProcessService {
         Deployment deploy = repositoryService.createDeployment().addClasspathResource("processes/saleOrder.bpmn20.xml").name("saleOrder").deploy();
         System.out.println("id: "+deploy.getId());
         System.out.println("name: "+deploy.getName());
+
     }
     /*
     *@describe 开启流程创建实例
@@ -60,7 +61,8 @@ public class ActProcessService {
         log.info("ProcessInstance is created");
     }
     public List getHisActivitiesByBusinessKey(String businessKey) throws Exception {
-      return getHisActivities(runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(businessKey).singleResult().getProcessInstanceId()) ;
+        return getHisActivities(historyService.createHistoricProcessInstanceQuery().processInstanceBusinessKey(businessKey).singleResult().getId());
+      //return getHisActivities(runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(businessKey).singleResult().getProcessInstanceId()) ;
     }
     /*
     *@describe 获取流程实例历史节点且转换成ActivityVo
@@ -81,7 +83,7 @@ public class ActProcessService {
             ActivityVo activityVo = new ActivityVo();
             BeanUtils.copyF(instance,activityVo);
             if (activityVo.getAssignee()!=null&&activityVo.getAssignee()!="") {
-                User byUserId = userService.getByUserId(activityVo.getAssignee());
+                User byUserId =userService.getByUserId(activityVo.getAssignee());
                 UserVo userVo = new UserVo(byUserId);
                 activityVo.setAssigneeInfo(userVo);
             }else {
@@ -108,7 +110,7 @@ public class ActProcessService {
         }
     }
     /*
-    * 添加流程变量(属性数据)
+    * 设置流程变量(属性数据)
     * */
     public Map setFieldValue(Object o1,Object o2,Object o3,Object o4){
         HashMap<String, Object> var = new HashMap<>();
@@ -120,7 +122,7 @@ public class ActProcessService {
         return var;
     }
     /*
-     * 添加流程变量(属性名称)
+     * 设置流程变量(属性名称)
      * */
     public Map setFieldName(Object o1,Object o2,Object o3,Object o4){
         HashMap<String, Object> var = new HashMap<>();

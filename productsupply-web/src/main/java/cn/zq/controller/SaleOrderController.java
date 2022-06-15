@@ -47,7 +47,12 @@ public class SaleOrderController {
     @GetMapping("/getByKey")
     public Message getByKey(String key) throws Exception {
         HashMap<String, Object> map = new HashMap<>();
-        String taskDefinitionKey = actTaskService.getTaskByBusKey(key).getTaskDefinitionKey();
+        String taskDefinitionKey;
+        try {
+            taskDefinitionKey = actTaskService.getTaskByBusKey(key).getTaskDefinitionKey();
+        }catch (NullPointerException e){
+            taskDefinitionKey="end";
+        }
         SaleOrder saleOrder = saleOrderService.getByKey(key);
         QueryWrapper<Attachment> attachmentQueryWrapper = new QueryWrapper<>();
         attachmentQueryWrapper.eq("business","saleOrder").eq("business_field","attachment").eq("business_key",saleOrder.getCode());
@@ -58,15 +63,23 @@ public class SaleOrderController {
         return Message.success(map);
     }
     @PostMapping("/createOrder")
-    public Message createOrder(@RequestParam SaleOrder order,@RequestParam Map<String, List<MultipartFile>> files){
+    public Message createOrder(@RequestBody SaleOrder order){
         String resultCode = saleOrderService.createOrder(order);
-        attachmentService.uploads(files,"saleOrder",resultCode);
         return Message.success(resultCode,"下单成功");
     }
     @PostMapping("/confirm")
-    public Message copnfirm(String orderCode,String comment){
+    public Message copnfirm(@RequestParam String orderCode,@RequestParam String comment){
         saleOrderService.confirmOrder(orderCode,comment);
         return Message.success("通过");
+    }
+    @PostMapping("/rollback")
+    public Message rollback(@RequestParam String procInstId,@RequestParam String currentTaskId,@RequestParam String targetTaskId){
+        try {
+            actTaskService.rollback(procInstId,currentTaskId,targetTaskId);
+        }catch (Exception e){
+            return Message.failed("退回失败");
+        }
+        return Message.success("退回成功");
     }
     @GetMapping("/getList")
     public Message getList(){

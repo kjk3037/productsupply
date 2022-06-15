@@ -66,21 +66,21 @@ public class ExcelUtils {
         titleCell.setCellStyle(style);
         QueryWrapper<DataField> dataFieldQueryWrapper = new QueryWrapper<>();
         dataFieldQueryWrapper.eq("parent_id","68");
-        List<DataField> billOfMaterialField = dataFieldService.list(dataFieldQueryWrapper);
-        CellRangeAddress cellAddresses = new CellRangeAddress(0, 0, 0, billOfMaterialField.size() - 1);
+        List<DataField> dataFields = dataFieldService.list(dataFieldQueryWrapper);
+        CellRangeAddress cellAddresses = new CellRangeAddress(0, 0, 0, dataFields.size() - 1);
         sheet.addMergedRegion(cellAddresses);
         //设置表头
-        for(int i=0;i<billOfMaterialField.size();i++){
+        for(int i=0;i<dataFields.size();i++){
             HSSFCell cell = fieldRow.createCell(i);
-            cell.setCellValue(billOfMaterialField.get(i).getLabel());
+            cell.setCellValue(dataFields.get(i).getLabel());
             cell.setCellStyle(style);
         }
         //设置数值
         for(int o=0;o<completeBOM.size();o++){
             HSSFRow row=sheet.createRow(o+2);
-            for (int p=0;p<billOfMaterialField.size();p++){
+            for (int p=0;p<dataFields.size();p++){
                 //字段名称获取
-                String prop = billOfMaterialField.get(p).getProp();
+                String prop = dataFields.get(p).getProp();
                 Class<BillOfMaterial> billOfMaterialClass = BillOfMaterial.class;
                 Field field = billOfMaterialClass.getDeclaredField(prop);
                 //首字母大写  用以通过反射匹配field相应get方法
@@ -98,6 +98,75 @@ public class ExcelUtils {
                     }
                     else if (field.getType()== BigDecimal.class){
                         cell.setCellValue(new BigDecimal((String) method.invoke(completeBOM.get(o)).toString()).doubleValue());
+                    }
+                }
+            }
+        }
+        //FileOutputStream fos = new FileOutputStream("C:\\MyDocument\\myJavaProject\\productsupply\\file\\"+parentCode+" "+materialInfoService.getByCode(parentCode).getMaterialName()+" BOM.xlsx");
+        //返回excel文件字节流
+        ServletOutputStream sos=response.getOutputStream();
+        excel.write(sos);
+        sos.close();
+    }
+
+    //输出数据excel文件
+    public static void outputData(Class targetClazz,String businessKey, HttpServletResponse response) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException, IOException {
+        //获取数据信息
+        Object obj=BeanUtils.getBean(targetClazz);
+        String targetClassName = obj.getClass().getName();
+        String targetServiceClassName=targetClassName.substring(0,1).toLowerCase()+targetClassName.substring(1)+"Service";
+        Object objService=BeanUtils.getBean(targetServiceClassName);
+        Method getListMethod = objService.getClass().getMethod("getList");
+        DataFieldService dataFieldService= (DataFieldService) BeanUtils.getBean(DataFieldService.class);
+        List data = (List) getListMethod.invoke(objService);
+        HSSFWorkbook excel=new HSSFWorkbook();
+        //获取雅黑字体样式
+        HSSFFont simpleFont = getExportFont(excel);
+        simpleFont.setBold(true);
+        //获取居中样式
+        HSSFCellStyle style = getStyle(excel);
+        style.setFont(simpleFont);
+        HSSFSheet sheet = excel.createSheet("BOM");
+        sheet.setDefaultColumnWidth(20);
+        HSSFRow titleRow = sheet.createRow(0);
+        HSSFRow fieldRow= sheet.createRow(1);
+        HSSFCell titleCell = titleRow.createCell(0);
+        //设置标题样式
+        titleCell.setCellValue("导出数据");
+        titleCell.setCellStyle(style);
+        QueryWrapper<DataField> dataFieldQueryWrapper = new QueryWrapper<>();
+        dataFieldQueryWrapper.eq("parent_id","68");
+        List<DataField> dataFields = dataFieldService.list(dataFieldQueryWrapper);
+        CellRangeAddress cellAddresses = new CellRangeAddress(0, 0, 0, dataFields.size() - 1);
+        sheet.addMergedRegion(cellAddresses);
+        //设置表头
+        for(int i=0;i<dataFields.size();i++){
+            HSSFCell cell = fieldRow.createCell(i);
+            cell.setCellValue(dataFields.get(i).getLabel());
+            cell.setCellStyle(style);
+        }
+        //设置数值
+        for(int o=0;o<data.size();o++){
+            HSSFRow row=sheet.createRow(o+2);
+            for (int p=0;p<dataFields.size();p++){
+                //字段名称获取
+                String prop = dataFields.get(p).getProp();
+                Field field = obj.getClass().getDeclaredField(prop);
+                //首字母大写  用以通过反射匹配field相应get方法
+                prop=prop.substring(0,1).toUpperCase()+prop.substring(1);
+                Method method=obj.getClass().getMethod("get"+prop);
+                HSSFCell cell=row.createCell(p);
+                cell.setCellStyle(style);
+                if (method.invoke(data.get(o))!=null){
+                    if (field.getType()==Integer.class){
+                        cell.setCellValue(new Double((Integer) method.invoke(data.get(o))));
+                    }else if(field.getType()==String.class) {
+                        cell.setCellValue((String) method.invoke(data.get(o)));
+                    }else if (field.getType()==Float.class){
+                        cell.setCellValue(new Double((float) method.invoke(data.get(o))));
+                    }
+                    else if (field.getType()== BigDecimal.class){
+                        cell.setCellValue(new BigDecimal( method.invoke(data.get(o)).toString()).doubleValue());
                     }
                 }
             }

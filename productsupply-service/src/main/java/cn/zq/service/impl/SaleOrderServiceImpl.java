@@ -91,7 +91,22 @@ public class SaleOrderServiceImpl extends ServiceImpl<SaleOrderMapper, SaleOrder
     @Transactional
     public void confirmOrder(String orderCode,String comment){
         Task taskByBusKey = actTaskService.getTaskByBusKey(orderCode);
-        actTaskService.claimTask(orderCode,ShiroUtils.getUsername());
+
+//        if (taskByBusKey.getTaskDefinitionKey().equals("sid-ea74e1f9-738b-4a42-93e5-052844c63df7")){
+//            HashMap<String, Object> map = new HashMap<>();
+//            QueryWrapper<SaleOrderDetail> saleOrderDetailQueryWrapper = new QueryWrapper<>();
+//            saleOrderDetailQueryWrapper.eq("order_code",orderCode);
+//            List<SaleOrderDetail> saleOrderDetails = saleOrderDetailMapper.selectList(saleOrderDetailQueryWrapper);
+//            map.put("",saleOrderDetails);
+//            for (SaleOrderDetail saleOrderDetail:saleOrderDetails){
+//
+//            }
+//
+//            actTaskService.execute(taskByBusKey);
+//        }else {
+//            actTaskService.execute(taskByBusKey.getProcessInstanceId(),comment);
+//        }
+        actTaskService.claimTask(orderCode,userService.getByUsername(ShiroUtils.getUsername()).getId());
         actTaskService.execute(taskByBusKey.getProcessInstanceId(),comment);
         finishOrder(orderCode,comment,1);
     }

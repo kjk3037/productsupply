@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
+import cn.zq.pojo.base.BaseMaterialInfo;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
-    public class SaleOrderDetail implements Serializable {
+    public class SaleOrderDetail extends BaseMaterialInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -72,9 +73,6 @@ import lombok.EqualsAndHashCode;
     private Date createTime;
 
     private Date updateTime;
-    @TableField(exist = false)
-    private String materialName;
-    @TableField(exist = false)
-    private String materialStandard;
+
 
 }

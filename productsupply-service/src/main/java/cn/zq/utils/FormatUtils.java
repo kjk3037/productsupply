@@ -45,7 +45,7 @@ public class FormatUtils {
 //    }
     public static List<DataField> printAllFields(Object o,int type){
         Class cls= o.getClass();
-        Field[] fields=cls.getDeclaredFields();
+        List<Field> fields=ReflectUtils.getObjectFields(o);
         String name = cls.getName();
         int i = name.lastIndexOf(".");
         String className=name.substring(i+1,i+2).toLowerCase()+ name.substring(i+2);

@@ -214,6 +214,7 @@ public class ActTaskService {
 //        Authentication.setAuthenticatedUserId(nowUser);
         taskService.addComment(task.getId(), task.getProcessInstanceId(), "退回");
         //完成任务
+        taskService.setAssignee(task.getId(),userService.getByUsername(ShiroUtils.getUsername()).getId());
         taskService.complete(task.getId());
         //恢复原方向
         flowNode.setOutgoingFlows(oriSequenceFlows);

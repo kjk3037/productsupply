@@ -117,4 +117,6 @@ import org.springframework.web.multipart.MultipartFile;
     private String receiptStatusName;
     @TableField(exist = false)
     private String settlementMethodName;
+//    @TableField(exist = false)
+//    private List<MultipartFile> attachmentFiles;
 }

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
+import cn.zq.pojo.base.BaseMaterialInfo;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +19,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
-    public class BillOfMaterial implements Serializable {
+    public class BillOfMaterial extends BaseMaterialInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -80,14 +81,4 @@ import lombok.EqualsAndHashCode;
     //层级
     @TableField(exist = false)
     private String level;
-    //物料名称
-    @TableField(exist = false)
-    private String materialName;
-    //物料规格
-    @TableField(exist = false)
-    private String materialStandard;
-    //物料型号
-    @TableField(exist = false)
-    private String materialModel;
-
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2022-05-29
  */
 @RestController
-@RequestMapping("//fieldStatus")
+@RequestMapping("/fieldStatus")
 public class FieldStatusController {
 
 }

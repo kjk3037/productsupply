@@ -28,7 +28,6 @@ import java.util.Set;
 @Configuration
 public class RedisConfig {
     private static final Logger logger = LoggerFactory.getLogger(RedisConfig.class);
-    @DependsOn("jedisConfig")
 	@Bean("redisTemplate")
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
 	    logger.info("init RedisTemplate");
@@ -53,7 +52,6 @@ public class RedisConfig {
 
         return template;
     }
-    @DependsOn("jedisConfig")
     @Bean("shiroRedisTemplate")
     public RedisTemplate<String, Object> shiroRedisTemplate(RedisConnectionFactory factory) {
         logger.info("init Shiro-RedisTemplate");

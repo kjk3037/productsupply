@@ -3,6 +3,7 @@ package cn.zq.controller;
 
 import cn.zq.common.Message;
 import cn.zq.pojo.DataField;
+import cn.zq.pojo.MaterialRequirementOutput;
 import cn.zq.pojo.SaleOrder;
 import cn.zq.service.DataFieldService;
 import cn.zq.utils.FormatUtils;
@@ -30,7 +31,7 @@ public class DataFieldController {
     DataFieldService dataFieldService;
     @PostMapping("/addFields")
     public Message addFields(){
-        List<DataField> dataFields = FormatUtils.printAllFields(new SaleOrder(),1);
+        List<DataField> dataFields = FormatUtils.printAllFields(new MaterialRequirementOutput(),1);
         dataFieldService.saveBatch(dataFields);
         return Message.success("OK");
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zq.dao.MaterialRequirementInputMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zq.pojo.MaterialRequirementInput">
+        <id column="id" property="id" />
+        <result column="material_code" property="materialCode" />
+        <result column="bussiness_type" property="bussinessType" />
+        <result column="bussiness_key" property="bussinessId" />
+        <result column="quantity" property="quantity" />
+        <result column="require_date" property="requireDate" />
+        <result column="require_type" property="requireType" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="material_name" property="materialName" />
+        <result column="material_standard" property="materialStandard" />
+        <result column="material_model" property="materialModel" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, material_code, bussiness_type, bussiness_id, quantity, require_date, require_type, status, create_time, update_time
+    </sql>
+
+</mapper>
