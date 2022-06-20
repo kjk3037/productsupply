@@ -1,23 +1,16 @@
 package cn.zq.dao;
 
 import cn.zq.pojo.DictType;
-import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author kjk
+ * @since 2022-06-16
+ */
+public interface DictTypeMapper extends BaseMapper<DictType> {
 
-@Mapper
-public interface DictTypeMapper {
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(DictType record);
-
-    int insertSelective(DictType record);
-
-    DictType selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(DictType record);
-
-    int updateByPrimaryKey(DictType record);
-
-    List getList();
 }

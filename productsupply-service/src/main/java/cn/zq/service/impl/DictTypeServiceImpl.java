@@ -1,23 +1,20 @@
 package cn.zq.service.impl;
 
-import cn.zq.dao.DictTypeMapper;
 import cn.zq.pojo.DictType;
+import cn.zq.dao.DictTypeMapper;
 import cn.zq.service.DictTypeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author kjk
+ * @since 2022-06-16
+ */
 @Service
-public class DictTypeServiceImpl implements DictTypeService {
-    @Autowired
-    DictTypeMapper dictTypeMapper;
-    @Override
-    public DictType selectByPrimaryKey(Integer id) {
-        return null;
-    }
+public class DictTypeServiceImpl extends ServiceImpl<DictTypeMapper, DictType> implements DictTypeService {
 
-    @Override
-    public List getList() {
-        return null;
-    }
 }

@@ -43,4 +43,6 @@ import lombok.EqualsAndHashCode;
   private Integer isList;
   @TableField(exist = false)
   private List<DataField> childs;
+
+  private Integer dataType;
 }

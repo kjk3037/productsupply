@@ -13,6 +13,7 @@
         <result column="parent_key" property="parentKey" />
         <result column="parent_id" property="parentId" />
         <result column="is_list" property="isList" />
+        <result column="data_type" property="dataType" />
         <collection property="childs" ofType="cn.zq.pojo.DataField" javaType="java.util.List" select="selectChild" column="id">
         </collection>
     </resultMap>
@@ -26,6 +27,7 @@
         <result column="parent_key" property="parentKey" />
         <result column="parent_id" property="parentId" />
         <result column="is_list" property="isList" />
+        <result column="data_type" property="dataType" />
     </resultMap>
 
     <!-- 通用查询结果列 -->

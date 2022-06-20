@@ -1,45 +1,41 @@
 package cn.zq.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class Dict implements Serializable {
-    private Integer id;
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author kjk
+ * @since 2022-06-16
+ */
+@Data
+  @EqualsAndHashCode(callSuper = false)
+    public class Dict implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+      @TableId(value = "id", type = IdType.AUTO)
+      private Integer id;
 
     private Integer typeId;
 
-    private String name;
+      /**
+     * 数值
+     */
+      private Integer value;
+
+      /**
+     * 名称
+     */
+      private String name;
 
     private String desc;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
-    }
 }
