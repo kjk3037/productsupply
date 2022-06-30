@@ -16,4 +16,5 @@ import java.util.List;
 public interface BillOfMaterialService extends IService<BillOfMaterial> {
     List getBOM(String parentCode);
     List getCompleteBOM(String parentCode,String parentLevel);
+    List getListBOMDetail(List codes);
 }

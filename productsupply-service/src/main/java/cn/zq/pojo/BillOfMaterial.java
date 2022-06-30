@@ -81,4 +81,10 @@ import lombok.EqualsAndHashCode;
     //层级
     @TableField(exist = false)
     private String level;
+    @TableField(exist = false)
+    private String materialName;
+  @TableField(exist = false)
+  private String materialStandard;
+  @TableField(exist = false)
+  private String materialModel;
 }

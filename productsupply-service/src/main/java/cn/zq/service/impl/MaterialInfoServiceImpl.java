@@ -31,7 +31,7 @@ public class MaterialInfoServiceImpl extends ServiceImpl<MaterialInfoMapper, Mat
     @Override
     public MaterialInfo getByCode(String code) {
         QueryWrapper<MaterialInfo> objectQueryWrapper = new QueryWrapper<>();
-        objectQueryWrapper.eq("code",code);
+        objectQueryWrapper.eq("code",code).last("limit 1");
         return materialInfoMapper.selectOne(objectQueryWrapper);
     }
 
@@ -40,6 +40,13 @@ public class MaterialInfoServiceImpl extends ServiceImpl<MaterialInfoMapper, Mat
         QueryWrapper<MaterialInfo> objectQueryWrapper = new QueryWrapper<>();
         objectQueryWrapper.eq(KEY,key);
         return materialInfoMapper.selectOne(objectQueryWrapper);
+    }
+
+    @Override
+    public List getListMaterial(List codes) {
+        QueryWrapper<MaterialInfo> objectQueryWrapper = new QueryWrapper<>();
+        objectQueryWrapper.in(KEY,codes);
+        return materialInfoMapper.selectList(objectQueryWrapper);
     }
 
 }

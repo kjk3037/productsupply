@@ -2,7 +2,9 @@ package cn.zq.service.impl;
 
 import cn.zq.pojo.BillOfMaterial;
 import cn.zq.dao.BillOfMaterialMapper;
+import cn.zq.pojo.MaterialInfo;
 import cn.zq.service.BillOfMaterialService;
+import cn.zq.service.MaterialInfoService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ import java.util.List;
 public class BillOfMaterialServiceImpl extends ServiceImpl<BillOfMaterialMapper, BillOfMaterial> implements BillOfMaterialService {
     @Autowired
     BillOfMaterialMapper billOfMaterialMapper;
+    @Autowired
+    MaterialInfoService materialInfoService;
     @Override
     public List getBOM(String parentCode) {
         QueryWrapper<BillOfMaterial> queryWrapper = new QueryWrapper<>();
@@ -58,5 +62,19 @@ public class BillOfMaterialServiceImpl extends ServiceImpl<BillOfMaterialMapper,
             }
         }
         return completeBOM;
+    }
+
+    @Override
+    public List getListBOMDetail(List codes) {
+        QueryWrapper<BillOfMaterial> BOMQueryWrapper = new QueryWrapper<>();
+        BOMQueryWrapper.in("parent_code",codes);
+        LinkedList<BillOfMaterial> BOMDetailList = (LinkedList<BillOfMaterial>) list(BOMQueryWrapper);
+        QueryWrapper<MaterialInfo> MaterialQueryWrapper = new QueryWrapper<>();
+        BOMQueryWrapper.in("code",codes);
+        List<MaterialInfo> materialInfolist = materialInfoService.list(MaterialQueryWrapper);
+        for (MaterialInfo materialInfo:materialInfolist){
+
+        }
+        return null;
     }
 }

@@ -17,4 +17,5 @@ public interface MaterialInfoService extends IService<MaterialInfo> {
     List getAllMaterial();
     MaterialInfo getByCode(String code);
     MaterialInfo getByKey(String key);
+    List getListMaterial(List codes);
 }
